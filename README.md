@@ -88,7 +88,7 @@ Check out my work, projects, and blog posts on my portfolio:
 ## 📊 GitHub Stats
 
 <div >
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sirdesai22&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuvrajkarna2717&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages" />
 </div>
 
 <div >
