@@ -77,10 +77,10 @@ Check out my work, projects, and blog posts on my portfolio:
 </details>
 
 <details open>
-  <summary><b>🚧 Learning</b></summary>
+  <summary><b>🚧 Currently Learning</b></summary>
   <br>
   <p>
-    <img src="https://skillicons.dev/icons?i=php,laravel,spring" />
+    <img src="https://skillicons.dev/icons?i=nestjs,php,laravel" />
   </p>
 </details>
 
