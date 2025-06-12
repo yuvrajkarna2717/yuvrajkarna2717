@@ -80,7 +80,7 @@ Check out my work, projects, and blog posts on my portfolio:
   <summary><b>🚧 Currently Learning</b></summary>
   <br>
   <p>
-    <img src="https://skillicons.dev/icons?i=nestjs,php,laravel" />
+    <img src="https://skillicons.dev/icons?i=nestjs,php,laravel,cs,dotnet" />
   </p>
 </details>
 
