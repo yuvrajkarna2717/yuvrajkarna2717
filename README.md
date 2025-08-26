@@ -9,10 +9,10 @@
 
 ## 💫 About Me
 
-- 👋 Hi, I'm **Yuvraj Karna** — a Software Engineer who loves building impactful products and contributing in open sorce.  
+- 👋 Hi, I'm **Yuvraj Karna** — Software Engineer who loves building impactful products and contributing in open source projects.  
 - 💻 Specialized in full-stack development: JavaScript, Node.js, React, Python, and more.  
-- 🚀 Currently working on open-source projects, SaaS tools, and web scraping apps.  
-- 📚 I enjoy sharing knowledge through blogs and creating developer tools.  
+- 🚀 Currently working on open-source projects, SaaS tools.  
+- 📚 I enjoy sharing knowledge through blogs and creating developer tools. Here [@medium](https://yuvrajkarna.medium.com/) 
 - 🌍 Open to remote opportunities and collaborations on exciting tech projects!
 - 📦 Previously active on [@yuvrajkarna27](https://github.com/yuvrajkarna).
 - 📫 Reach me at: **yuvrajkarna.code@gmail.com**
@@ -25,7 +25,7 @@
   <a href="https://www.linkedin.com/in/yuvrajkarna27" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
-  <a href="https://www.instagram.com/sirdesai.exe/" target="_blank">
+  <a href="https://www.instagram.com/yuvrajkarna_/" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/>
   </a>
   <a href="https://x.com/yuvrajkarna" target="_blank">
@@ -44,26 +44,25 @@ Check out my work, projects, and blog posts:
 🔗 [Visit My Website](https://yuvraj-karna.vercel.app)
 
 ---
-
 ## 💻 Tech Stack
 
 <table>
    <tr>
     <td><b>Languages</b></td>
     <td>
-      <img src="https://skillicons.dev/icons?i=javascript,typescript,python,c,cpp" />
+      <img src="https://skillicons.dev/icons?i=javascript,typescript,python,c,cpp,java" />
     </td>
   </tr>
   <tr>
     <td><b>Frontend</b></td>
     <td>
-      <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,tailwindcss,bootstrap" />
+      <img src="https://skillicons.dev/icons?i=html,css,react,nextjs,tailwindcss,bootstrap" />
     </td>
   </tr>
   <tr>
     <td><b>Backend</b></td>
     <td>
-      <img src="https://skillicons.dev/icons?i=nodejs,express,nestjs" />
+      <img src="https://skillicons.dev/icons?i=nodejs,express,nestjs,fastapi" />
     </td>
   </tr>
   <tr>
@@ -78,20 +77,26 @@ Check out my work, projects, and blog posts:
       <img src="https://skillicons.dev/icons?i=githubactions,vercel,netlify" />
     </td>
   </tr>
- 
   <tr>
-    <td><b>Extra Tools</b></td>
+    <td><b>Testing</b></td>
     <td>
-      <img src="https://skillicons.dev/icons?i=git,github,postman,figma,vscode,jest,npm" />
+      <img src="https://skillicons.dev/icons?i=jest,cypress,vitest" />
+    </td>
+  </tr>
+  <tr>
+    <td><b>Others</b></td>
+    <td>
+      <img src="https://skillicons.dev/icons?i=git,github,postman,figma,graphql,prisma" />
     </td>
   </tr>
   <tr>
     <td><b>Learning</b></td>
     <td>
-      <img src="https://skillicons.dev/icons?i=cs,dotnet,php,laravel,docker" />
+      <img src="https://skillicons.dev/icons?i=cs,dotnet,docker" />
     </td>
   </tr>
 </table>
+
 
 ---
 
@@ -104,13 +109,6 @@ Check out my work, projects, and blog posts:
 </p>
 
 ---
-
-## ✍️ Random Dev Quote
-
-<p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Random Dev Quote" />
-</p>
-
 
 <div>
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=yuvrajkarna2717&theme=tokyo-night&hide_border=true" alt="GitHub Activity Graph" />
