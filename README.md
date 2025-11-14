@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=0E75B6&center=true&vCenter=true&random=false&width=600&height=80&lines=Hi+%F0%9F%91%8B%2C+I'm+Yuvraj+Karna!;Full-Stack+Developer;Open+Source+Enthusiast" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=0E75B6&center=true&vCenter=true&random=false&width=600&height=80&lines=Hi+%F0%9F%91%8B%2C+I'm+Yuvraj+Karna!;Software+Engineer;Open+Source+Contributer" alt="yuvraj karna" />
   
   <p>
     <img src="https://visitor-badge.laobi.icu/badge?page_id=yuvrajkarna2717&color=0e75b6&style=flat" alt="visitors"/>
@@ -8,7 +8,7 @@
   </p>
 </div>
 
-## 🚀 About Me
+## About Me
 
 ```typescript
 const yuvraj = {
@@ -25,26 +25,7 @@ const yuvraj = {
 };
 ```
 
-## 🌟 Featured Projects
-
-<table>
-<tr>
-<td width="100%">
-
-### 🌿 [Mora - Browser Productivity Copilot](https://github.com/yuvrajkarna2717/mora)
-**Privacy-first Chrome extension for time tracking**
-- 🔒 Local-first data storage
-- ⚡ Real-time analytics dashboard  
-- 🚫 Focus mode with website blocking
-- 📊 Beautiful data visualizations
-
-**Tech:** React, TypeScript, Chrome APIs, Tailwind CSS
-
-</td>
-</tr>
-</table>
-
-## 💻 Tech Arsenal
+## Tech Arsenal
 
 <details>
 <summary>🔧 <b>Click to expand my tech stack</b></summary>
@@ -61,28 +42,28 @@ const yuvraj = {
 
 </details>
 
-## 📊 GitHub Analytics
+## GitHub Analytics
 
-<div align="center">
+<!-- <div align="center">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=yuvrajkarna2717&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true"/>
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yuvrajkarna2717&layout=compact&langs_count=8&theme=tokyonight&hide_border=true"/>
-</div>
+</div> -->
 
 <div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=yuvrajkarna2717&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
 </div>
 
-<div align="center">
+<!-- <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=yuvrajkarna2717&theme=tokyo-night&hide_border=true&custom_title=Contribution%20Graph" alt="GitHub Activity Graph"/>
-</div>
+</div> -->
 
-## 🏆 GitHub Trophies
 
-<div align="center">
+
+<!-- <div align="center"> github trophies
   <img src="https://github-profile-trophy.vercel.app/?username=yuvrajkarna2717&theme=tokyonight&no-frame=true&row=1&column=6" alt="GitHub Trophies"/>
-</div>
+</div> -->
 
-## 📝 Latest Blog Posts
+## Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
 - 🚀 [Building Privacy-First Browser Extensions](https://yuvrajkarna.medium.com/)
@@ -92,7 +73,7 @@ const yuvraj = {
 
 ➡️ [Read more on Medium](https://yuvrajkarna.medium.com/)
 
-## 🤝 Let's Connect
+## Let's Connect
 
 <div align="center">
   
@@ -105,12 +86,9 @@ const yuvraj = {
 
 </div>
 
-## 💡 Fun Facts
+## Fun Facts
 
-- 🌱 I'm passionate about **privacy-first** and **open-source** technologies
-- 🎯 Currently building **Mora** - a browser productivity copilot that respects your privacy
 - 📚 I love sharing knowledge through **technical blogs** and **open-source contributions**
-- ☕ Fueled by coffee and driven by curiosity to solve real-world problems
 - 🌍 Open to **remote opportunities** and exciting **collaborations**
 - 🔗 Previous (github): [github Link](https://github.com/yuvrajkarna)
 
