@@ -1,0 +1,4059 @@
+{
+  "schema_version": 2,
+  "username": "yuvrajkarna2717",
+  "updated_at": "2026-08-19T09:27:16.702390Z",
+  "current": {
+    "date": "2026-08-19",
+    "period": {
+      "from": "2025-08-19",
+      "to": "2026-08-19"
+    },
+    "summary": {
+      "accessible_repositories": 48,
+      "active_repositories": 21,
+      "private_active_repositories": 6,
+      "public_active_repositories": 15,
+      "commits": 212,
+      "active_days": 77
+    },
+    "languages": {
+      "bytes": {
+        "Java": 6719479,
+        "Vue": 1747387,
+        "TypeScript": 1481653,
+        "JavaScript": 524429,
+        "C++": 141503,
+        "Jupyter": 87447,
+        "SCSS": 67032,
+        "Python": 27793,
+        "PLpgSQL": 21288,
+        "HTML": 16828,
+        "MDX": 15693,
+        "Shell": 12911,
+        "CSS": 11227,
+        "Makefile": 9688,
+        "Dockerfile": 4734,
+        "C#": 4415,
+        "Batchfile": 3292
+      },
+      "percentage": {
+        "Java": 61.66,
+        "Vue": 16.04,
+        "TypeScript": 13.6,
+        "JavaScript": 4.81,
+        "C++": 1.3,
+        "Jupyter": 0.8,
+        "SCSS": 0.62,
+        "Python": 0.26,
+        "PLpgSQL": 0.2,
+        "HTML": 0.15,
+        "MDX": 0.14,
+        "Shell": 0.12,
+        "CSS": 0.1,
+        "Makefile": 0.09,
+        "Dockerfile": 0.04,
+        "C#": 0.04,
+        "Batchfile": 0.03
+      }
+    },
+    "technologies": [
+      {
+        "technology": "JavaScript",
+        "repository_count": 9,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer",
+          "yuvrajkarna2717/gitwhistle",
+          "yuvrajkarna2717/interview-prep-docs",
+          "yuvrajkarna2717/kestra",
+          "yuvrajkarna2717/mora",
+          "yuvrajkarna2717/openbooks-api",
+          "yuvrajkarna2717/react-hook-granth",
+          "yuvrajkarna2717/thedigitalprofile.com",
+          "yuvrajkarna2717/yuvrajkarna"
+        ]
+      },
+      {
+        "technology": "TypeScript",
+        "repository_count": 9,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer",
+          "yuvrajkarna2717/gitwhistle",
+          "yuvrajkarna2717/interview-prep-docs",
+          "yuvrajkarna2717/kestra",
+          "yuvrajkarna2717/quickrev-bot",
+          "yuvrajkarna2717/react-hook-granth",
+          "yuvrajkarna2717/thedigitalprofile.com",
+          "yuvrajkarna2717/trackit-cli",
+          "yuvrajkarna2717/yuvrajkarna"
+        ]
+      },
+      {
+        "technology": "CSS",
+        "repository_count": 7,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer",
+          "yuvrajkarna2717/gitwhistle",
+          "yuvrajkarna2717/interview-prep-docs",
+          "yuvrajkarna2717/kestra",
+          "yuvrajkarna2717/mora",
+          "yuvrajkarna2717/thedigitalprofile.com",
+          "yuvrajkarna2717/yuvrajkarna"
+        ]
+      },
+      {
+        "technology": "GitHub Actions",
+        "repository_count": 6,
+        "repositories": [
+          "yuvrajkarna2717/kestra",
+          "yuvrajkarna2717/openbooks-api",
+          "yuvrajkarna2717/prefixpilot",
+          "yuvrajkarna2717/react-hook-granth",
+          "yuvrajkarna2717/yuvrajkarna",
+          "yuvrajkarna2717/yuvrajkarna2717"
+        ]
+      },
+      {
+        "technology": "ESLint",
+        "repository_count": 6,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer",
+          "yuvrajkarna2717/interview-prep-docs",
+          "yuvrajkarna2717/quickrev-bot",
+          "yuvrajkarna2717/react-hook-granth",
+          "yuvrajkarna2717/thedigitalprofile.com",
+          "yuvrajkarna2717/yuvrajkarna"
+        ]
+      },
+      {
+        "technology": "React",
+        "repository_count": 5,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer",
+          "yuvrajkarna2717/interview-prep-docs",
+          "yuvrajkarna2717/react-hook-granth",
+          "yuvrajkarna2717/thedigitalprofile.com",
+          "yuvrajkarna2717/yuvrajkarna"
+        ]
+      },
+      {
+        "technology": "HTML",
+        "repository_count": 5,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer",
+          "yuvrajkarna2717/gitwhistle",
+          "yuvrajkarna2717/kestra",
+          "yuvrajkarna2717/mora",
+          "yuvrajkarna2717/yuvrajkarna"
+        ]
+      },
+      {
+        "technology": "Tailwind CSS",
+        "repository_count": 4,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer",
+          "yuvrajkarna2717/interview-prep-docs",
+          "yuvrajkarna2717/thedigitalprofile.com",
+          "yuvrajkarna2717/yuvrajkarna"
+        ]
+      },
+      {
+        "technology": "Docker",
+        "repository_count": 4,
+        "repositories": [
+          "yuvrajkarna2717/gitwhistle",
+          "yuvrajkarna2717/kestra",
+          "yuvrajkarna2717/openbooks-api",
+          "yuvrajkarna2717/prefixpilot"
+        ]
+      },
+      {
+        "technology": "Vite",
+        "repository_count": 4,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer",
+          "yuvrajkarna2717/openbooks-api",
+          "yuvrajkarna2717/react-hook-granth",
+          "yuvrajkarna2717/yuvrajkarna"
+        ]
+      },
+      {
+        "technology": "Shell",
+        "repository_count": 3,
+        "repositories": [
+          "yuvrajkarna2717/kestra",
+          "yuvrajkarna2717/mora",
+          "yuvrajkarna2717/prefixpilot"
+        ]
+      },
+      {
+        "technology": "Prettier",
+        "repository_count": 3,
+        "repositories": [
+          "yuvrajkarna2717/quickrev-bot",
+          "yuvrajkarna2717/react-hook-granth",
+          "yuvrajkarna2717/yuvrajkarna"
+        ]
+      },
+      {
+        "technology": "Dockerfile",
+        "repository_count": 3,
+        "repositories": [
+          "yuvrajkarna2717/gitwhistle",
+          "yuvrajkarna2717/kestra",
+          "yuvrajkarna2717/openbooks-api"
+        ]
+      },
+      {
+        "technology": "Python",
+        "repository_count": 2,
+        "repositories": [
+          "yuvrajkarna2717/kestra",
+          "yuvrajkarna2717/yuvrajkarna2717"
+        ]
+      },
+      {
+        "technology": "Next.js",
+        "repository_count": 2,
+        "repositories": [
+          "yuvrajkarna2717/interview-prep-docs",
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ]
+      },
+      {
+        "technology": "C++",
+        "repository_count": 2,
+        "repositories": [
+          "yuvrajkarna2717/CP-31-Sheet",
+          "yuvrajkarna2717/Restart-DSA"
+        ]
+      },
+      {
+        "technology": "Zod",
+        "repository_count": 2,
+        "repositories": [
+          "yuvrajkarna2717/quickrev-bot",
+          "yuvrajkarna2717/trackit-cli"
+        ]
+      },
+      {
+        "technology": "Express",
+        "repository_count": 2,
+        "repositories": [
+          "yuvrajkarna2717/openbooks-api",
+          "yuvrajkarna2717/quickrev-bot"
+        ]
+      },
+      {
+        "technology": "Vitest",
+        "repository_count": 2,
+        "repositories": [
+          "yuvrajkarna2717/openbooks-api",
+          "yuvrajkarna2717/react-hook-granth"
+        ]
+      },
+      {
+        "technology": "C#",
+        "repository_count": 2,
+        "repositories": [
+          "yuvrajkarna2717/GameStore.Api",
+          "yuvrajkarna2717/c-sharp"
+        ]
+      },
+      {
+        "technology": "Mongoose",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ]
+      },
+      {
+        "technology": "Jupyter",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/ai-ml-learning"
+        ]
+      },
+      {
+        "technology": "MDX",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/interview-prep-docs"
+        ]
+      },
+      {
+        "technology": "PostgreSQL",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/openbooks-api"
+        ]
+      },
+      {
+        "technology": "Redis",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/openbooks-api"
+        ]
+      },
+      {
+        "technology": "Google Gemini API",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/quickrev-bot"
+        ]
+      },
+      {
+        "technology": "Rollup",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/react-hook-granth"
+        ]
+      },
+      {
+        "technology": "Batchfile",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/kestra"
+        ]
+      },
+      {
+        "technology": "Java",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/kestra"
+        ]
+      },
+      {
+        "technology": "Makefile",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/kestra"
+        ]
+      },
+      {
+        "technology": "PLpgSQL",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/kestra"
+        ]
+      },
+      {
+        "technology": "SCSS",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/kestra"
+        ]
+      },
+      {
+        "technology": "Vue",
+        "repository_count": 1,
+        "repositories": [
+          "yuvrajkarna2717/kestra"
+        ]
+      }
+    ],
+    "repositories": [
+      {
+        "name": "mora",
+        "full_name": "yuvrajkarna2717/mora",
+        "url": "https://github.com/yuvrajkarna2717/mora",
+        "private": false,
+        "fork": false,
+        "commits": 45,
+        "languages": {
+          "JavaScript": 288489,
+          "HTML": 9493,
+          "CSS": 372,
+          "Shell": 134
+        },
+        "technologies": [
+          "CSS",
+          "HTML",
+          "JavaScript",
+          "Shell"
+        ],
+        "daily_activity": {
+          "2026-05-06": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-30": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-29": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-28": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-22": {
+            "commits": 4,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-11": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-09": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-08": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-07": {
+            "commits": 3,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-06": {
+            "commits": 8,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2026-01-04": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2025-12-29": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2025-12-26": {
+            "commits": 4,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2025-12-25": {
+            "commits": 5,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2025-12-14": {
+            "commits": 3,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2025-11-20": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2025-11-19": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          },
+          "2025-11-06": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/mora"
+            ]
+          }
+        }
+      },
+      {
+        "name": "openbooks-api",
+        "full_name": "yuvrajkarna2717/openbooks-api",
+        "url": "https://github.com/yuvrajkarna2717/openbooks-api",
+        "private": false,
+        "fork": false,
+        "commits": 41,
+        "languages": {
+          "JavaScript": 41506,
+          "Dockerfile": 732
+        },
+        "technologies": [
+          "Docker",
+          "Dockerfile",
+          "Express",
+          "GitHub Actions",
+          "JavaScript",
+          "PostgreSQL",
+          "Redis",
+          "Vite",
+          "Vitest"
+        ],
+        "daily_activity": {
+          "2026-01-22": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/openbooks-api"
+            ]
+          },
+          "2026-01-05": {
+            "commits": 5,
+            "repositories": [
+              "yuvrajkarna2717/openbooks-api"
+            ]
+          },
+          "2026-01-02": {
+            "commits": 21,
+            "repositories": [
+              "yuvrajkarna2717/openbooks-api"
+            ]
+          },
+          "2025-12-30": {
+            "commits": 13,
+            "repositories": [
+              "yuvrajkarna2717/openbooks-api"
+            ]
+          },
+          "2025-12-29": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/openbooks-api"
+            ]
+          }
+        }
+      },
+      {
+        "name": "thedigitalprofile.com",
+        "full_name": "yuvrajkarna2717/thedigitalprofile.com",
+        "url": "https://github.com/yuvrajkarna2717/thedigitalprofile.com",
+        "private": true,
+        "fork": false,
+        "commits": 26,
+        "languages": {
+          "TypeScript": 436550,
+          "CSS": 4031,
+          "JavaScript": 559
+        },
+        "technologies": [
+          "CSS",
+          "ESLint",
+          "JavaScript",
+          "Mongoose",
+          "Next.js",
+          "React",
+          "Tailwind CSS",
+          "TypeScript"
+        ],
+        "daily_activity": {
+          "2026-08-13": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-08-11": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-08-10": {
+            "commits": 3,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-08-04": {
+            "commits": 3,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-08-03": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-07-23": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-06-09": {
+            "commits": 6,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-06-08": {
+            "commits": 4,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-06-06": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-04-27": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-03-26": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          },
+          "2026-02-03": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/thedigitalprofile.com"
+            ]
+          }
+        }
+      },
+      {
+        "name": "yuvrajkarna",
+        "full_name": "yuvrajkarna2717/yuvrajkarna",
+        "url": "https://github.com/yuvrajkarna2717/yuvrajkarna",
+        "private": false,
+        "fork": false,
+        "commits": 20,
+        "languages": {
+          "TypeScript": 178251,
+          "JavaScript": 7290,
+          "HTML": 2934,
+          "CSS": 1821
+        },
+        "technologies": [
+          "CSS",
+          "ESLint",
+          "GitHub Actions",
+          "HTML",
+          "JavaScript",
+          "Prettier",
+          "React",
+          "Tailwind CSS",
+          "TypeScript",
+          "Vite"
+        ],
+        "daily_activity": {
+          "2026-06-04": {
+            "commits": 3,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-06-03": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-06-02": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-05-27": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-05-26": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-02-03": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-01-20": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-01-15": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-01-14": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-01-12": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2026-01-01": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2025-12-22": {
+            "commits": 5,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          },
+          "2025-11-25": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna"
+            ]
+          }
+        }
+      },
+      {
+        "name": "react-hook-granth",
+        "full_name": "yuvrajkarna2717/react-hook-granth",
+        "url": "https://github.com/yuvrajkarna2717/react-hook-granth",
+        "private": false,
+        "fork": false,
+        "commits": 14,
+        "languages": {
+          "JavaScript": 70263,
+          "TypeScript": 24333
+        },
+        "technologies": [
+          "ESLint",
+          "GitHub Actions",
+          "JavaScript",
+          "Prettier",
+          "React",
+          "Rollup",
+          "TypeScript",
+          "Vite",
+          "Vitest"
+        ],
+        "daily_activity": {
+          "2025-12-09": {
+            "commits": 7,
+            "repositories": [
+              "yuvrajkarna2717/react-hook-granth"
+            ]
+          },
+          "2025-12-05": {
+            "commits": 7,
+            "repositories": [
+              "yuvrajkarna2717/react-hook-granth"
+            ]
+          }
+        }
+      },
+      {
+        "name": "ai-ml-learning",
+        "full_name": "yuvrajkarna2717/ai-ml-learning",
+        "url": "https://github.com/yuvrajkarna2717/ai-ml-learning",
+        "private": true,
+        "fork": false,
+        "commits": 12,
+        "languages": {
+          "Jupyter": 87447
+        },
+        "technologies": [
+          "Jupyter"
+        ],
+        "daily_activity": {
+          "2026-06-29": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/ai-ml-learning"
+            ]
+          },
+          "2026-06-25": {
+            "commits": 10,
+            "repositories": [
+              "yuvrajkarna2717/ai-ml-learning"
+            ]
+          },
+          "2026-06-06": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/ai-ml-learning"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Restart-DSA",
+        "full_name": "yuvrajkarna2717/Restart-DSA",
+        "url": "https://github.com/yuvrajkarna2717/Restart-DSA",
+        "private": true,
+        "fork": false,
+        "commits": 10,
+        "languages": {
+          "C++": 119136
+        },
+        "technologies": [
+          "C++"
+        ],
+        "daily_activity": {
+          "2026-07-28": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/Restart-DSA"
+            ]
+          },
+          "2026-07-14": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/Restart-DSA"
+            ]
+          },
+          "2026-05-26": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/Restart-DSA"
+            ]
+          },
+          "2026-05-18": {
+            "commits": 7,
+            "repositories": [
+              "yuvrajkarna2717/Restart-DSA"
+            ]
+          }
+        }
+      },
+      {
+        "name": "CP-31-Sheet",
+        "full_name": "yuvrajkarna2717/CP-31-Sheet",
+        "url": "https://github.com/yuvrajkarna2717/CP-31-Sheet",
+        "private": false,
+        "fork": false,
+        "commits": 9,
+        "languages": {
+          "C++": 22367
+        },
+        "technologies": [
+          "C++"
+        ],
+        "daily_activity": {
+          "2026-01-03": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/CP-31-Sheet"
+            ]
+          },
+          "2025-12-19": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/CP-31-Sheet"
+            ]
+          },
+          "2025-12-16": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/CP-31-Sheet"
+            ]
+          },
+          "2025-12-15": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/CP-31-Sheet"
+            ]
+          },
+          "2025-12-14": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/CP-31-Sheet"
+            ]
+          },
+          "2025-11-18": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/CP-31-Sheet"
+            ]
+          },
+          "2025-11-11": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/CP-31-Sheet"
+            ]
+          },
+          "2025-11-10": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/CP-31-Sheet"
+            ]
+          }
+        }
+      },
+      {
+        "name": "yuvrajkarna2717",
+        "full_name": "yuvrajkarna2717/yuvrajkarna2717",
+        "url": "https://github.com/yuvrajkarna2717/yuvrajkarna2717",
+        "private": false,
+        "fork": false,
+        "commits": 8,
+        "languages": {
+          "Python": 19162
+        },
+        "technologies": [
+          "GitHub Actions",
+          "Python"
+        ],
+        "daily_activity": {
+          "2026-08-19": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna2717"
+            ]
+          },
+          "2026-07-27": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna2717"
+            ]
+          },
+          "2026-07-16": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna2717"
+            ]
+          },
+          "2025-11-14": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna2717"
+            ]
+          },
+          "2025-10-27": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna2717"
+            ]
+          },
+          "2025-08-26": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yuvrajkarna2717"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Sorting_Visualizer",
+        "full_name": "yuvrajkarna2717/Sorting_Visualizer",
+        "url": "https://github.com/yuvrajkarna2717/Sorting_Visualizer",
+        "private": false,
+        "fork": false,
+        "commits": 5,
+        "languages": {
+          "TypeScript": 36732,
+          "HTML": 2491,
+          "JavaScript": 2007,
+          "CSS": 920
+        },
+        "technologies": [
+          "CSS",
+          "ESLint",
+          "HTML",
+          "JavaScript",
+          "React",
+          "Tailwind CSS",
+          "TypeScript",
+          "Vite"
+        ],
+        "daily_activity": {
+          "2026-06-05": {
+            "commits": 3,
+            "repositories": [
+              "yuvrajkarna2717/Sorting_Visualizer"
+            ]
+          },
+          "2025-10-09": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/Sorting_Visualizer"
+            ]
+          }
+        }
+      },
+      {
+        "name": "DevOps",
+        "full_name": "yuvrajkarna2717/DevOps",
+        "url": "https://github.com/yuvrajkarna2717/DevOps",
+        "private": true,
+        "fork": false,
+        "commits": 5,
+        "languages": {},
+        "technologies": [],
+        "daily_activity": {
+          "2025-10-30": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/DevOps"
+            ]
+          },
+          "2025-10-29": {
+            "commits": 4,
+            "repositories": [
+              "yuvrajkarna2717/DevOps"
+            ]
+          }
+        }
+      },
+      {
+        "name": "CS-Fundamentals",
+        "full_name": "yuvrajkarna2717/CS-Fundamentals",
+        "url": "https://github.com/yuvrajkarna2717/CS-Fundamentals",
+        "private": false,
+        "fork": false,
+        "commits": 3,
+        "languages": {},
+        "technologies": [],
+        "daily_activity": {
+          "2025-12-21": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/CS-Fundamentals"
+            ]
+          },
+          "2025-12-19": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/CS-Fundamentals"
+            ]
+          }
+        }
+      },
+      {
+        "name": "gitwhistle",
+        "full_name": "yuvrajkarna2717/gitwhistle",
+        "url": "https://github.com/yuvrajkarna2717/gitwhistle",
+        "private": false,
+        "fork": false,
+        "commits": 3,
+        "languages": {
+          "TypeScript": 10788,
+          "JavaScript": 3629,
+          "CSS": 1760,
+          "HTML": 355,
+          "Dockerfile": 144
+        },
+        "technologies": [
+          "CSS",
+          "Docker",
+          "Dockerfile",
+          "HTML",
+          "JavaScript",
+          "TypeScript"
+        ],
+        "daily_activity": {
+          "2025-11-18": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/gitwhistle"
+            ]
+          },
+          "2025-11-17": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/gitwhistle"
+            ]
+          }
+        }
+      },
+      {
+        "name": "interview-prep-docs",
+        "full_name": "yuvrajkarna2717/interview-prep-docs",
+        "url": "https://github.com/yuvrajkarna2717/interview-prep-docs",
+        "private": true,
+        "fork": false,
+        "commits": 2,
+        "languages": {
+          "TypeScript": 30093,
+          "MDX": 15693,
+          "JavaScript": 559,
+          "CSS": 151
+        },
+        "technologies": [
+          "CSS",
+          "ESLint",
+          "JavaScript",
+          "MDX",
+          "Next.js",
+          "React",
+          "Tailwind CSS",
+          "TypeScript"
+        ],
+        "daily_activity": {
+          "2026-04-13": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/interview-prep-docs"
+            ]
+          },
+          "2026-04-10": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/interview-prep-docs"
+            ]
+          }
+        }
+      },
+      {
+        "name": "trackit-cli",
+        "full_name": "yuvrajkarna2717/trackit-cli",
+        "url": "https://github.com/yuvrajkarna2717/trackit-cli",
+        "private": false,
+        "fork": false,
+        "commits": 2,
+        "languages": {
+          "TypeScript": 65472
+        },
+        "technologies": [
+          "TypeScript",
+          "Zod"
+        ],
+        "daily_activity": {
+          "2026-04-16": {
+            "commits": 2,
+            "repositories": [
+              "yuvrajkarna2717/trackit-cli"
+            ]
+          }
+        }
+      },
+      {
+        "name": "yc-opensource-startups",
+        "full_name": "yuvrajkarna2717/yc-opensource-startups",
+        "url": "https://github.com/yuvrajkarna2717/yc-opensource-startups",
+        "private": true,
+        "fork": false,
+        "commits": 2,
+        "languages": {},
+        "technologies": [],
+        "daily_activity": {
+          "2026-01-02": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yc-opensource-startups"
+            ]
+          },
+          "2025-11-20": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/yc-opensource-startups"
+            ]
+          }
+        }
+      },
+      {
+        "name": "prefixpilot",
+        "full_name": "yuvrajkarna2717/prefixpilot",
+        "url": "https://github.com/yuvrajkarna2717/prefixpilot",
+        "private": false,
+        "fork": false,
+        "commits": 1,
+        "languages": {
+          "Shell": 2037
+        },
+        "technologies": [
+          "Docker",
+          "GitHub Actions",
+          "Shell"
+        ],
+        "daily_activity": {
+          "2026-08-03": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/prefixpilot"
+            ]
+          }
+        }
+      },
+      {
+        "name": "quickrev-bot",
+        "full_name": "yuvrajkarna2717/quickrev-bot",
+        "url": "https://github.com/yuvrajkarna2717/quickrev-bot",
+        "private": false,
+        "fork": false,
+        "commits": 1,
+        "languages": {
+          "TypeScript": 51496
+        },
+        "technologies": [
+          "ESLint",
+          "Express",
+          "Google Gemini API",
+          "Prettier",
+          "TypeScript",
+          "Zod"
+        ],
+        "daily_activity": {
+          "2026-02-05": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/quickrev-bot"
+            ]
+          }
+        }
+      },
+      {
+        "name": "kestra",
+        "full_name": "yuvrajkarna2717/kestra",
+        "url": "https://github.com/yuvrajkarna2717/kestra",
+        "private": false,
+        "fork": true,
+        "commits": 1,
+        "languages": {
+          "Java": 6719479,
+          "Vue": 1747387,
+          "TypeScript": 647938,
+          "JavaScript": 110127,
+          "SCSS": 67032,
+          "PLpgSQL": 21288,
+          "Shell": 10740,
+          "Makefile": 9688,
+          "Python": 8631,
+          "Dockerfile": 3858,
+          "Batchfile": 3292,
+          "CSS": 2172,
+          "HTML": 1555
+        },
+        "technologies": [
+          "Batchfile",
+          "CSS",
+          "Docker",
+          "Dockerfile",
+          "GitHub Actions",
+          "HTML",
+          "Java",
+          "JavaScript",
+          "Makefile",
+          "PLpgSQL",
+          "Python",
+          "SCSS",
+          "Shell",
+          "TypeScript",
+          "Vue"
+        ],
+        "daily_activity": {
+          "2025-11-26": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/kestra"
+            ]
+          }
+        }
+      },
+      {
+        "name": "c-sharp",
+        "full_name": "yuvrajkarna2717/c-sharp",
+        "url": "https://github.com/yuvrajkarna2717/c-sharp",
+        "private": false,
+        "fork": false,
+        "commits": 1,
+        "languages": {
+          "C#": 2288
+        },
+        "technologies": [
+          "C#"
+        ],
+        "daily_activity": {
+          "2025-09-15": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/c-sharp"
+            ]
+          }
+        }
+      },
+      {
+        "name": "GameStore.Api",
+        "full_name": "yuvrajkarna2717/GameStore.Api",
+        "url": "https://github.com/yuvrajkarna2717/GameStore.Api",
+        "private": false,
+        "fork": false,
+        "commits": 1,
+        "languages": {
+          "C#": 2127
+        },
+        "technologies": [
+          "C#"
+        ],
+        "daily_activity": {
+          "2025-09-15": {
+            "commits": 1,
+            "repositories": [
+              "yuvrajkarna2717/GameStore.Api"
+            ]
+          }
+        }
+      }
+    ],
+    "daily_activity": {
+      "2025-08-26": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna2717"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-09-15": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/GameStore.Api",
+          "yuvrajkarna2717/c-sharp"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 0,
+        "public_repository_count": 2
+      },
+      "2025-10-09": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-10-27": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna2717"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-10-29": {
+        "commits": 4,
+        "repositories": [
+          "yuvrajkarna2717/DevOps"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2025-10-30": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/DevOps"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2025-11-06": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-11-10": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/CP-31-Sheet"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-11-11": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/CP-31-Sheet"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-11-14": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna2717"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-11-17": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/gitwhistle"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-11-18": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/CP-31-Sheet",
+          "yuvrajkarna2717/gitwhistle"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 0,
+        "public_repository_count": 2
+      },
+      "2025-11-19": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-11-20": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/mora",
+          "yuvrajkarna2717/yc-opensource-startups"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 1,
+        "public_repository_count": 1
+      },
+      "2025-11-25": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-11-26": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/kestra"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-12-05": {
+        "commits": 7,
+        "repositories": [
+          "yuvrajkarna2717/react-hook-granth"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-12-09": {
+        "commits": 7,
+        "repositories": [
+          "yuvrajkarna2717/react-hook-granth"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-12-14": {
+        "commits": 4,
+        "repositories": [
+          "yuvrajkarna2717/CP-31-Sheet",
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 0,
+        "public_repository_count": 2
+      },
+      "2025-12-15": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/CP-31-Sheet"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-12-16": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/CP-31-Sheet"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-12-19": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/CP-31-Sheet",
+          "yuvrajkarna2717/CS-Fundamentals"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 0,
+        "public_repository_count": 2
+      },
+      "2025-12-21": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/CS-Fundamentals"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-12-22": {
+        "commits": 5,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-12-25": {
+        "commits": 5,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-12-26": {
+        "commits": 4,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2025-12-29": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/mora",
+          "yuvrajkarna2717/openbooks-api"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 0,
+        "public_repository_count": 2
+      },
+      "2025-12-30": {
+        "commits": 13,
+        "repositories": [
+          "yuvrajkarna2717/openbooks-api"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-01": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-02": {
+        "commits": 22,
+        "repositories": [
+          "yuvrajkarna2717/openbooks-api",
+          "yuvrajkarna2717/yc-opensource-startups"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 1,
+        "public_repository_count": 1
+      },
+      "2026-01-03": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/CP-31-Sheet"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-04": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-05": {
+        "commits": 5,
+        "repositories": [
+          "yuvrajkarna2717/openbooks-api"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-06": {
+        "commits": 8,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-07": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-08": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-09": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-11": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-12": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-14": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-15": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-20": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-22": {
+        "commits": 5,
+        "repositories": [
+          "yuvrajkarna2717/mora",
+          "yuvrajkarna2717/openbooks-api"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 0,
+        "public_repository_count": 2
+      },
+      "2026-01-28": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-29": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-01-30": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-02-03": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com",
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 1,
+        "public_repository_count": 1
+      },
+      "2026-02-05": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/quickrev-bot"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-03-26": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-04-10": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/interview-prep-docs"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-04-13": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/interview-prep-docs"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-04-16": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/trackit-cli"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-04-27": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-05-06": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/mora"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-05-18": {
+        "commits": 7,
+        "repositories": [
+          "yuvrajkarna2717/Restart-DSA"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-05-26": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/Restart-DSA",
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 1,
+        "public_repository_count": 1
+      },
+      "2026-05-27": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-06-02": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-06-03": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-06-04": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-06-05": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/Sorting_Visualizer"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-06-06": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/ai-ml-learning",
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 2,
+        "public_repository_count": 0
+      },
+      "2026-06-08": {
+        "commits": 4,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-06-09": {
+        "commits": 6,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-06-25": {
+        "commits": 10,
+        "repositories": [
+          "yuvrajkarna2717/ai-ml-learning"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-06-29": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/ai-ml-learning"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-07-14": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/Restart-DSA"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-07-16": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna2717"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-07-23": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-07-27": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna2717"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      },
+      "2026-07-28": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/Restart-DSA"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-08-03": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/prefixpilot",
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 2,
+        "private_repository_count": 1,
+        "public_repository_count": 1
+      },
+      "2026-08-04": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-08-10": {
+        "commits": 3,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-08-11": {
+        "commits": 1,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-08-13": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/thedigitalprofile.com"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 1,
+        "public_repository_count": 0
+      },
+      "2026-08-19": {
+        "commits": 2,
+        "repositories": [
+          "yuvrajkarna2717/yuvrajkarna2717"
+        ],
+        "repository_count": 1,
+        "private_repository_count": 0,
+        "public_repository_count": 1
+      }
+    }
+  },
+  "history": [
+    {
+      "date": "2026-08-19",
+      "period": {
+        "from": "2025-08-19",
+        "to": "2026-08-19"
+      },
+      "summary": {
+        "accessible_repositories": 48,
+        "active_repositories": 21,
+        "private_active_repositories": 6,
+        "public_active_repositories": 15,
+        "commits": 212,
+        "active_days": 77
+      },
+      "languages": {
+        "bytes": {
+          "Java": 6719479,
+          "Vue": 1747387,
+          "TypeScript": 1481653,
+          "JavaScript": 524429,
+          "C++": 141503,
+          "Jupyter": 87447,
+          "SCSS": 67032,
+          "Python": 27793,
+          "PLpgSQL": 21288,
+          "HTML": 16828,
+          "MDX": 15693,
+          "Shell": 12911,
+          "CSS": 11227,
+          "Makefile": 9688,
+          "Dockerfile": 4734,
+          "C#": 4415,
+          "Batchfile": 3292
+        },
+        "percentage": {
+          "Java": 61.66,
+          "Vue": 16.04,
+          "TypeScript": 13.6,
+          "JavaScript": 4.81,
+          "C++": 1.3,
+          "Jupyter": 0.8,
+          "SCSS": 0.62,
+          "Python": 0.26,
+          "PLpgSQL": 0.2,
+          "HTML": 0.15,
+          "MDX": 0.14,
+          "Shell": 0.12,
+          "CSS": 0.1,
+          "Makefile": 0.09,
+          "Dockerfile": 0.04,
+          "C#": 0.04,
+          "Batchfile": 0.03
+        }
+      },
+      "technologies": [
+        {
+          "technology": "JavaScript",
+          "repository_count": 9,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer",
+            "yuvrajkarna2717/gitwhistle",
+            "yuvrajkarna2717/interview-prep-docs",
+            "yuvrajkarna2717/kestra",
+            "yuvrajkarna2717/mora",
+            "yuvrajkarna2717/openbooks-api",
+            "yuvrajkarna2717/react-hook-granth",
+            "yuvrajkarna2717/thedigitalprofile.com",
+            "yuvrajkarna2717/yuvrajkarna"
+          ]
+        },
+        {
+          "technology": "TypeScript",
+          "repository_count": 9,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer",
+            "yuvrajkarna2717/gitwhistle",
+            "yuvrajkarna2717/interview-prep-docs",
+            "yuvrajkarna2717/kestra",
+            "yuvrajkarna2717/quickrev-bot",
+            "yuvrajkarna2717/react-hook-granth",
+            "yuvrajkarna2717/thedigitalprofile.com",
+            "yuvrajkarna2717/trackit-cli",
+            "yuvrajkarna2717/yuvrajkarna"
+          ]
+        },
+        {
+          "technology": "CSS",
+          "repository_count": 7,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer",
+            "yuvrajkarna2717/gitwhistle",
+            "yuvrajkarna2717/interview-prep-docs",
+            "yuvrajkarna2717/kestra",
+            "yuvrajkarna2717/mora",
+            "yuvrajkarna2717/thedigitalprofile.com",
+            "yuvrajkarna2717/yuvrajkarna"
+          ]
+        },
+        {
+          "technology": "GitHub Actions",
+          "repository_count": 6,
+          "repositories": [
+            "yuvrajkarna2717/kestra",
+            "yuvrajkarna2717/openbooks-api",
+            "yuvrajkarna2717/prefixpilot",
+            "yuvrajkarna2717/react-hook-granth",
+            "yuvrajkarna2717/yuvrajkarna",
+            "yuvrajkarna2717/yuvrajkarna2717"
+          ]
+        },
+        {
+          "technology": "ESLint",
+          "repository_count": 6,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer",
+            "yuvrajkarna2717/interview-prep-docs",
+            "yuvrajkarna2717/quickrev-bot",
+            "yuvrajkarna2717/react-hook-granth",
+            "yuvrajkarna2717/thedigitalprofile.com",
+            "yuvrajkarna2717/yuvrajkarna"
+          ]
+        },
+        {
+          "technology": "React",
+          "repository_count": 5,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer",
+            "yuvrajkarna2717/interview-prep-docs",
+            "yuvrajkarna2717/react-hook-granth",
+            "yuvrajkarna2717/thedigitalprofile.com",
+            "yuvrajkarna2717/yuvrajkarna"
+          ]
+        },
+        {
+          "technology": "HTML",
+          "repository_count": 5,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer",
+            "yuvrajkarna2717/gitwhistle",
+            "yuvrajkarna2717/kestra",
+            "yuvrajkarna2717/mora",
+            "yuvrajkarna2717/yuvrajkarna"
+          ]
+        },
+        {
+          "technology": "Tailwind CSS",
+          "repository_count": 4,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer",
+            "yuvrajkarna2717/interview-prep-docs",
+            "yuvrajkarna2717/thedigitalprofile.com",
+            "yuvrajkarna2717/yuvrajkarna"
+          ]
+        },
+        {
+          "technology": "Docker",
+          "repository_count": 4,
+          "repositories": [
+            "yuvrajkarna2717/gitwhistle",
+            "yuvrajkarna2717/kestra",
+            "yuvrajkarna2717/openbooks-api",
+            "yuvrajkarna2717/prefixpilot"
+          ]
+        },
+        {
+          "technology": "Vite",
+          "repository_count": 4,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer",
+            "yuvrajkarna2717/openbooks-api",
+            "yuvrajkarna2717/react-hook-granth",
+            "yuvrajkarna2717/yuvrajkarna"
+          ]
+        },
+        {
+          "technology": "Shell",
+          "repository_count": 3,
+          "repositories": [
+            "yuvrajkarna2717/kestra",
+            "yuvrajkarna2717/mora",
+            "yuvrajkarna2717/prefixpilot"
+          ]
+        },
+        {
+          "technology": "Prettier",
+          "repository_count": 3,
+          "repositories": [
+            "yuvrajkarna2717/quickrev-bot",
+            "yuvrajkarna2717/react-hook-granth",
+            "yuvrajkarna2717/yuvrajkarna"
+          ]
+        },
+        {
+          "technology": "Dockerfile",
+          "repository_count": 3,
+          "repositories": [
+            "yuvrajkarna2717/gitwhistle",
+            "yuvrajkarna2717/kestra",
+            "yuvrajkarna2717/openbooks-api"
+          ]
+        },
+        {
+          "technology": "Python",
+          "repository_count": 2,
+          "repositories": [
+            "yuvrajkarna2717/kestra",
+            "yuvrajkarna2717/yuvrajkarna2717"
+          ]
+        },
+        {
+          "technology": "Next.js",
+          "repository_count": 2,
+          "repositories": [
+            "yuvrajkarna2717/interview-prep-docs",
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ]
+        },
+        {
+          "technology": "C++",
+          "repository_count": 2,
+          "repositories": [
+            "yuvrajkarna2717/CP-31-Sheet",
+            "yuvrajkarna2717/Restart-DSA"
+          ]
+        },
+        {
+          "technology": "Zod",
+          "repository_count": 2,
+          "repositories": [
+            "yuvrajkarna2717/quickrev-bot",
+            "yuvrajkarna2717/trackit-cli"
+          ]
+        },
+        {
+          "technology": "Express",
+          "repository_count": 2,
+          "repositories": [
+            "yuvrajkarna2717/openbooks-api",
+            "yuvrajkarna2717/quickrev-bot"
+          ]
+        },
+        {
+          "technology": "Vitest",
+          "repository_count": 2,
+          "repositories": [
+            "yuvrajkarna2717/openbooks-api",
+            "yuvrajkarna2717/react-hook-granth"
+          ]
+        },
+        {
+          "technology": "C#",
+          "repository_count": 2,
+          "repositories": [
+            "yuvrajkarna2717/GameStore.Api",
+            "yuvrajkarna2717/c-sharp"
+          ]
+        },
+        {
+          "technology": "Mongoose",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ]
+        },
+        {
+          "technology": "Jupyter",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/ai-ml-learning"
+          ]
+        },
+        {
+          "technology": "MDX",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/interview-prep-docs"
+          ]
+        },
+        {
+          "technology": "PostgreSQL",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/openbooks-api"
+          ]
+        },
+        {
+          "technology": "Redis",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/openbooks-api"
+          ]
+        },
+        {
+          "technology": "Google Gemini API",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/quickrev-bot"
+          ]
+        },
+        {
+          "technology": "Rollup",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/react-hook-granth"
+          ]
+        },
+        {
+          "technology": "Batchfile",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/kestra"
+          ]
+        },
+        {
+          "technology": "Java",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/kestra"
+          ]
+        },
+        {
+          "technology": "Makefile",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/kestra"
+          ]
+        },
+        {
+          "technology": "PLpgSQL",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/kestra"
+          ]
+        },
+        {
+          "technology": "SCSS",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/kestra"
+          ]
+        },
+        {
+          "technology": "Vue",
+          "repository_count": 1,
+          "repositories": [
+            "yuvrajkarna2717/kestra"
+          ]
+        }
+      ],
+      "repositories": [
+        {
+          "name": "mora",
+          "full_name": "yuvrajkarna2717/mora",
+          "url": "https://github.com/yuvrajkarna2717/mora",
+          "private": false,
+          "fork": false,
+          "commits": 45,
+          "languages": {
+            "JavaScript": 288489,
+            "HTML": 9493,
+            "CSS": 372,
+            "Shell": 134
+          },
+          "technologies": [
+            "CSS",
+            "HTML",
+            "JavaScript",
+            "Shell"
+          ],
+          "daily_activity": {
+            "2026-05-06": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-30": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-29": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-28": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-22": {
+              "commits": 4,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-11": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-09": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-08": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-07": {
+              "commits": 3,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-06": {
+              "commits": 8,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2026-01-04": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2025-12-29": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2025-12-26": {
+              "commits": 4,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2025-12-25": {
+              "commits": 5,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2025-12-14": {
+              "commits": 3,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2025-11-20": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2025-11-19": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            },
+            "2025-11-06": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/mora"
+              ]
+            }
+          }
+        },
+        {
+          "name": "openbooks-api",
+          "full_name": "yuvrajkarna2717/openbooks-api",
+          "url": "https://github.com/yuvrajkarna2717/openbooks-api",
+          "private": false,
+          "fork": false,
+          "commits": 41,
+          "languages": {
+            "JavaScript": 41506,
+            "Dockerfile": 732
+          },
+          "technologies": [
+            "Docker",
+            "Dockerfile",
+            "Express",
+            "GitHub Actions",
+            "JavaScript",
+            "PostgreSQL",
+            "Redis",
+            "Vite",
+            "Vitest"
+          ],
+          "daily_activity": {
+            "2026-01-22": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/openbooks-api"
+              ]
+            },
+            "2026-01-05": {
+              "commits": 5,
+              "repositories": [
+                "yuvrajkarna2717/openbooks-api"
+              ]
+            },
+            "2026-01-02": {
+              "commits": 21,
+              "repositories": [
+                "yuvrajkarna2717/openbooks-api"
+              ]
+            },
+            "2025-12-30": {
+              "commits": 13,
+              "repositories": [
+                "yuvrajkarna2717/openbooks-api"
+              ]
+            },
+            "2025-12-29": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/openbooks-api"
+              ]
+            }
+          }
+        },
+        {
+          "name": "thedigitalprofile.com",
+          "full_name": "yuvrajkarna2717/thedigitalprofile.com",
+          "url": "https://github.com/yuvrajkarna2717/thedigitalprofile.com",
+          "private": true,
+          "fork": false,
+          "commits": 26,
+          "languages": {
+            "TypeScript": 436550,
+            "CSS": 4031,
+            "JavaScript": 559
+          },
+          "technologies": [
+            "CSS",
+            "ESLint",
+            "JavaScript",
+            "Mongoose",
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "TypeScript"
+          ],
+          "daily_activity": {
+            "2026-08-13": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-08-11": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-08-10": {
+              "commits": 3,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-08-04": {
+              "commits": 3,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-08-03": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-07-23": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-06-09": {
+              "commits": 6,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-06-08": {
+              "commits": 4,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-06-06": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-04-27": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-03-26": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            },
+            "2026-02-03": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/thedigitalprofile.com"
+              ]
+            }
+          }
+        },
+        {
+          "name": "yuvrajkarna",
+          "full_name": "yuvrajkarna2717/yuvrajkarna",
+          "url": "https://github.com/yuvrajkarna2717/yuvrajkarna",
+          "private": false,
+          "fork": false,
+          "commits": 20,
+          "languages": {
+            "TypeScript": 178251,
+            "JavaScript": 7290,
+            "HTML": 2934,
+            "CSS": 1821
+          },
+          "technologies": [
+            "CSS",
+            "ESLint",
+            "GitHub Actions",
+            "HTML",
+            "JavaScript",
+            "Prettier",
+            "React",
+            "Tailwind CSS",
+            "TypeScript",
+            "Vite"
+          ],
+          "daily_activity": {
+            "2026-06-04": {
+              "commits": 3,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-06-03": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-06-02": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-05-27": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-05-26": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-02-03": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-01-20": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-01-15": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-01-14": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-01-12": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2026-01-01": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2025-12-22": {
+              "commits": 5,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            },
+            "2025-11-25": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna"
+              ]
+            }
+          }
+        },
+        {
+          "name": "react-hook-granth",
+          "full_name": "yuvrajkarna2717/react-hook-granth",
+          "url": "https://github.com/yuvrajkarna2717/react-hook-granth",
+          "private": false,
+          "fork": false,
+          "commits": 14,
+          "languages": {
+            "JavaScript": 70263,
+            "TypeScript": 24333
+          },
+          "technologies": [
+            "ESLint",
+            "GitHub Actions",
+            "JavaScript",
+            "Prettier",
+            "React",
+            "Rollup",
+            "TypeScript",
+            "Vite",
+            "Vitest"
+          ],
+          "daily_activity": {
+            "2025-12-09": {
+              "commits": 7,
+              "repositories": [
+                "yuvrajkarna2717/react-hook-granth"
+              ]
+            },
+            "2025-12-05": {
+              "commits": 7,
+              "repositories": [
+                "yuvrajkarna2717/react-hook-granth"
+              ]
+            }
+          }
+        },
+        {
+          "name": "ai-ml-learning",
+          "full_name": "yuvrajkarna2717/ai-ml-learning",
+          "url": "https://github.com/yuvrajkarna2717/ai-ml-learning",
+          "private": true,
+          "fork": false,
+          "commits": 12,
+          "languages": {
+            "Jupyter": 87447
+          },
+          "technologies": [
+            "Jupyter"
+          ],
+          "daily_activity": {
+            "2026-06-29": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/ai-ml-learning"
+              ]
+            },
+            "2026-06-25": {
+              "commits": 10,
+              "repositories": [
+                "yuvrajkarna2717/ai-ml-learning"
+              ]
+            },
+            "2026-06-06": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/ai-ml-learning"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Restart-DSA",
+          "full_name": "yuvrajkarna2717/Restart-DSA",
+          "url": "https://github.com/yuvrajkarna2717/Restart-DSA",
+          "private": true,
+          "fork": false,
+          "commits": 10,
+          "languages": {
+            "C++": 119136
+          },
+          "technologies": [
+            "C++"
+          ],
+          "daily_activity": {
+            "2026-07-28": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/Restart-DSA"
+              ]
+            },
+            "2026-07-14": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/Restart-DSA"
+              ]
+            },
+            "2026-05-26": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/Restart-DSA"
+              ]
+            },
+            "2026-05-18": {
+              "commits": 7,
+              "repositories": [
+                "yuvrajkarna2717/Restart-DSA"
+              ]
+            }
+          }
+        },
+        {
+          "name": "CP-31-Sheet",
+          "full_name": "yuvrajkarna2717/CP-31-Sheet",
+          "url": "https://github.com/yuvrajkarna2717/CP-31-Sheet",
+          "private": false,
+          "fork": false,
+          "commits": 9,
+          "languages": {
+            "C++": 22367
+          },
+          "technologies": [
+            "C++"
+          ],
+          "daily_activity": {
+            "2026-01-03": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/CP-31-Sheet"
+              ]
+            },
+            "2025-12-19": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/CP-31-Sheet"
+              ]
+            },
+            "2025-12-16": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/CP-31-Sheet"
+              ]
+            },
+            "2025-12-15": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/CP-31-Sheet"
+              ]
+            },
+            "2025-12-14": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/CP-31-Sheet"
+              ]
+            },
+            "2025-11-18": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/CP-31-Sheet"
+              ]
+            },
+            "2025-11-11": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/CP-31-Sheet"
+              ]
+            },
+            "2025-11-10": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/CP-31-Sheet"
+              ]
+            }
+          }
+        },
+        {
+          "name": "yuvrajkarna2717",
+          "full_name": "yuvrajkarna2717/yuvrajkarna2717",
+          "url": "https://github.com/yuvrajkarna2717/yuvrajkarna2717",
+          "private": false,
+          "fork": false,
+          "commits": 8,
+          "languages": {
+            "Python": 19162
+          },
+          "technologies": [
+            "GitHub Actions",
+            "Python"
+          ],
+          "daily_activity": {
+            "2026-08-19": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna2717"
+              ]
+            },
+            "2026-07-27": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna2717"
+              ]
+            },
+            "2026-07-16": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna2717"
+              ]
+            },
+            "2025-11-14": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna2717"
+              ]
+            },
+            "2025-10-27": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna2717"
+              ]
+            },
+            "2025-08-26": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yuvrajkarna2717"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Sorting_Visualizer",
+          "full_name": "yuvrajkarna2717/Sorting_Visualizer",
+          "url": "https://github.com/yuvrajkarna2717/Sorting_Visualizer",
+          "private": false,
+          "fork": false,
+          "commits": 5,
+          "languages": {
+            "TypeScript": 36732,
+            "HTML": 2491,
+            "JavaScript": 2007,
+            "CSS": 920
+          },
+          "technologies": [
+            "CSS",
+            "ESLint",
+            "HTML",
+            "JavaScript",
+            "React",
+            "Tailwind CSS",
+            "TypeScript",
+            "Vite"
+          ],
+          "daily_activity": {
+            "2026-06-05": {
+              "commits": 3,
+              "repositories": [
+                "yuvrajkarna2717/Sorting_Visualizer"
+              ]
+            },
+            "2025-10-09": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/Sorting_Visualizer"
+              ]
+            }
+          }
+        },
+        {
+          "name": "DevOps",
+          "full_name": "yuvrajkarna2717/DevOps",
+          "url": "https://github.com/yuvrajkarna2717/DevOps",
+          "private": true,
+          "fork": false,
+          "commits": 5,
+          "languages": {},
+          "technologies": [],
+          "daily_activity": {
+            "2025-10-30": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/DevOps"
+              ]
+            },
+            "2025-10-29": {
+              "commits": 4,
+              "repositories": [
+                "yuvrajkarna2717/DevOps"
+              ]
+            }
+          }
+        },
+        {
+          "name": "CS-Fundamentals",
+          "full_name": "yuvrajkarna2717/CS-Fundamentals",
+          "url": "https://github.com/yuvrajkarna2717/CS-Fundamentals",
+          "private": false,
+          "fork": false,
+          "commits": 3,
+          "languages": {},
+          "technologies": [],
+          "daily_activity": {
+            "2025-12-21": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/CS-Fundamentals"
+              ]
+            },
+            "2025-12-19": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/CS-Fundamentals"
+              ]
+            }
+          }
+        },
+        {
+          "name": "gitwhistle",
+          "full_name": "yuvrajkarna2717/gitwhistle",
+          "url": "https://github.com/yuvrajkarna2717/gitwhistle",
+          "private": false,
+          "fork": false,
+          "commits": 3,
+          "languages": {
+            "TypeScript": 10788,
+            "JavaScript": 3629,
+            "CSS": 1760,
+            "HTML": 355,
+            "Dockerfile": 144
+          },
+          "technologies": [
+            "CSS",
+            "Docker",
+            "Dockerfile",
+            "HTML",
+            "JavaScript",
+            "TypeScript"
+          ],
+          "daily_activity": {
+            "2025-11-18": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/gitwhistle"
+              ]
+            },
+            "2025-11-17": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/gitwhistle"
+              ]
+            }
+          }
+        },
+        {
+          "name": "interview-prep-docs",
+          "full_name": "yuvrajkarna2717/interview-prep-docs",
+          "url": "https://github.com/yuvrajkarna2717/interview-prep-docs",
+          "private": true,
+          "fork": false,
+          "commits": 2,
+          "languages": {
+            "TypeScript": 30093,
+            "MDX": 15693,
+            "JavaScript": 559,
+            "CSS": 151
+          },
+          "technologies": [
+            "CSS",
+            "ESLint",
+            "JavaScript",
+            "MDX",
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "TypeScript"
+          ],
+          "daily_activity": {
+            "2026-04-13": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/interview-prep-docs"
+              ]
+            },
+            "2026-04-10": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/interview-prep-docs"
+              ]
+            }
+          }
+        },
+        {
+          "name": "trackit-cli",
+          "full_name": "yuvrajkarna2717/trackit-cli",
+          "url": "https://github.com/yuvrajkarna2717/trackit-cli",
+          "private": false,
+          "fork": false,
+          "commits": 2,
+          "languages": {
+            "TypeScript": 65472
+          },
+          "technologies": [
+            "TypeScript",
+            "Zod"
+          ],
+          "daily_activity": {
+            "2026-04-16": {
+              "commits": 2,
+              "repositories": [
+                "yuvrajkarna2717/trackit-cli"
+              ]
+            }
+          }
+        },
+        {
+          "name": "yc-opensource-startups",
+          "full_name": "yuvrajkarna2717/yc-opensource-startups",
+          "url": "https://github.com/yuvrajkarna2717/yc-opensource-startups",
+          "private": true,
+          "fork": false,
+          "commits": 2,
+          "languages": {},
+          "technologies": [],
+          "daily_activity": {
+            "2026-01-02": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yc-opensource-startups"
+              ]
+            },
+            "2025-11-20": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/yc-opensource-startups"
+              ]
+            }
+          }
+        },
+        {
+          "name": "prefixpilot",
+          "full_name": "yuvrajkarna2717/prefixpilot",
+          "url": "https://github.com/yuvrajkarna2717/prefixpilot",
+          "private": false,
+          "fork": false,
+          "commits": 1,
+          "languages": {
+            "Shell": 2037
+          },
+          "technologies": [
+            "Docker",
+            "GitHub Actions",
+            "Shell"
+          ],
+          "daily_activity": {
+            "2026-08-03": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/prefixpilot"
+              ]
+            }
+          }
+        },
+        {
+          "name": "quickrev-bot",
+          "full_name": "yuvrajkarna2717/quickrev-bot",
+          "url": "https://github.com/yuvrajkarna2717/quickrev-bot",
+          "private": false,
+          "fork": false,
+          "commits": 1,
+          "languages": {
+            "TypeScript": 51496
+          },
+          "technologies": [
+            "ESLint",
+            "Express",
+            "Google Gemini API",
+            "Prettier",
+            "TypeScript",
+            "Zod"
+          ],
+          "daily_activity": {
+            "2026-02-05": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/quickrev-bot"
+              ]
+            }
+          }
+        },
+        {
+          "name": "kestra",
+          "full_name": "yuvrajkarna2717/kestra",
+          "url": "https://github.com/yuvrajkarna2717/kestra",
+          "private": false,
+          "fork": true,
+          "commits": 1,
+          "languages": {
+            "Java": 6719479,
+            "Vue": 1747387,
+            "TypeScript": 647938,
+            "JavaScript": 110127,
+            "SCSS": 67032,
+            "PLpgSQL": 21288,
+            "Shell": 10740,
+            "Makefile": 9688,
+            "Python": 8631,
+            "Dockerfile": 3858,
+            "Batchfile": 3292,
+            "CSS": 2172,
+            "HTML": 1555
+          },
+          "technologies": [
+            "Batchfile",
+            "CSS",
+            "Docker",
+            "Dockerfile",
+            "GitHub Actions",
+            "HTML",
+            "Java",
+            "JavaScript",
+            "Makefile",
+            "PLpgSQL",
+            "Python",
+            "SCSS",
+            "Shell",
+            "TypeScript",
+            "Vue"
+          ],
+          "daily_activity": {
+            "2025-11-26": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/kestra"
+              ]
+            }
+          }
+        },
+        {
+          "name": "c-sharp",
+          "full_name": "yuvrajkarna2717/c-sharp",
+          "url": "https://github.com/yuvrajkarna2717/c-sharp",
+          "private": false,
+          "fork": false,
+          "commits": 1,
+          "languages": {
+            "C#": 2288
+          },
+          "technologies": [
+            "C#"
+          ],
+          "daily_activity": {
+            "2025-09-15": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/c-sharp"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GameStore.Api",
+          "full_name": "yuvrajkarna2717/GameStore.Api",
+          "url": "https://github.com/yuvrajkarna2717/GameStore.Api",
+          "private": false,
+          "fork": false,
+          "commits": 1,
+          "languages": {
+            "C#": 2127
+          },
+          "technologies": [
+            "C#"
+          ],
+          "daily_activity": {
+            "2025-09-15": {
+              "commits": 1,
+              "repositories": [
+                "yuvrajkarna2717/GameStore.Api"
+              ]
+            }
+          }
+        }
+      ],
+      "daily_activity": {
+        "2025-08-26": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna2717"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-09-15": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/GameStore.Api",
+            "yuvrajkarna2717/c-sharp"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 0,
+          "public_repository_count": 2
+        },
+        "2025-10-09": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-10-27": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna2717"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-10-29": {
+          "commits": 4,
+          "repositories": [
+            "yuvrajkarna2717/DevOps"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2025-10-30": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/DevOps"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2025-11-06": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-11-10": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/CP-31-Sheet"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-11-11": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/CP-31-Sheet"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-11-14": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna2717"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-11-17": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/gitwhistle"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-11-18": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/CP-31-Sheet",
+            "yuvrajkarna2717/gitwhistle"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 0,
+          "public_repository_count": 2
+        },
+        "2025-11-19": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-11-20": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/mora",
+            "yuvrajkarna2717/yc-opensource-startups"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 1,
+          "public_repository_count": 1
+        },
+        "2025-11-25": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-11-26": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/kestra"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-12-05": {
+          "commits": 7,
+          "repositories": [
+            "yuvrajkarna2717/react-hook-granth"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-12-09": {
+          "commits": 7,
+          "repositories": [
+            "yuvrajkarna2717/react-hook-granth"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-12-14": {
+          "commits": 4,
+          "repositories": [
+            "yuvrajkarna2717/CP-31-Sheet",
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 0,
+          "public_repository_count": 2
+        },
+        "2025-12-15": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/CP-31-Sheet"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-12-16": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/CP-31-Sheet"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-12-19": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/CP-31-Sheet",
+            "yuvrajkarna2717/CS-Fundamentals"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 0,
+          "public_repository_count": 2
+        },
+        "2025-12-21": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/CS-Fundamentals"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-12-22": {
+          "commits": 5,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-12-25": {
+          "commits": 5,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-12-26": {
+          "commits": 4,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2025-12-29": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/mora",
+            "yuvrajkarna2717/openbooks-api"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 0,
+          "public_repository_count": 2
+        },
+        "2025-12-30": {
+          "commits": 13,
+          "repositories": [
+            "yuvrajkarna2717/openbooks-api"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-01": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-02": {
+          "commits": 22,
+          "repositories": [
+            "yuvrajkarna2717/openbooks-api",
+            "yuvrajkarna2717/yc-opensource-startups"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 1,
+          "public_repository_count": 1
+        },
+        "2026-01-03": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/CP-31-Sheet"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-04": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-05": {
+          "commits": 5,
+          "repositories": [
+            "yuvrajkarna2717/openbooks-api"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-06": {
+          "commits": 8,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-07": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-08": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-09": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-11": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-12": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-14": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-15": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-20": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-22": {
+          "commits": 5,
+          "repositories": [
+            "yuvrajkarna2717/mora",
+            "yuvrajkarna2717/openbooks-api"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 0,
+          "public_repository_count": 2
+        },
+        "2026-01-28": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-29": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-01-30": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-02-03": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com",
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 1,
+          "public_repository_count": 1
+        },
+        "2026-02-05": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/quickrev-bot"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-03-26": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-04-10": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/interview-prep-docs"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-04-13": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/interview-prep-docs"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-04-16": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/trackit-cli"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-04-27": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-05-06": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/mora"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-05-18": {
+          "commits": 7,
+          "repositories": [
+            "yuvrajkarna2717/Restart-DSA"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-05-26": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/Restart-DSA",
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 1,
+          "public_repository_count": 1
+        },
+        "2026-05-27": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-06-02": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-06-03": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-06-04": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-06-05": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/Sorting_Visualizer"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-06-06": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/ai-ml-learning",
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 2,
+          "public_repository_count": 0
+        },
+        "2026-06-08": {
+          "commits": 4,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-06-09": {
+          "commits": 6,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-06-25": {
+          "commits": 10,
+          "repositories": [
+            "yuvrajkarna2717/ai-ml-learning"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-06-29": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/ai-ml-learning"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-07-14": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/Restart-DSA"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-07-16": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna2717"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-07-23": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-07-27": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna2717"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        },
+        "2026-07-28": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/Restart-DSA"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-08-03": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/prefixpilot",
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 2,
+          "private_repository_count": 1,
+          "public_repository_count": 1
+        },
+        "2026-08-04": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-08-10": {
+          "commits": 3,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-08-11": {
+          "commits": 1,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-08-13": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/thedigitalprofile.com"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 1,
+          "public_repository_count": 0
+        },
+        "2026-08-19": {
+          "commits": 2,
+          "repositories": [
+            "yuvrajkarna2717/yuvrajkarna2717"
+          ],
+          "repository_count": 1,
+          "private_repository_count": 0,
+          "public_repository_count": 1
+        }
+      }
+    }
+  ]
+}
