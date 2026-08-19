@@ -10,7 +10,7 @@ This script renders a self-contained, dependency-free SVG "CRT terminal" card
 
 Nothing else in README.md is touched. The card is a real .svg file referenced
 via <img>, so it renders identically in light/dark GitHub themes and supports
-gradients, filters and light SMIL animation (the blinking cursor / power LED).
+gradients, filters and light SMIL animation (the blinking power LED).
 """
 
 import datetime
@@ -29,36 +29,27 @@ END_MARKER = "<!-- GITHUB_STATS_END -->"
 MAX_LANGUAGES = 6
 MAX_TECHNOLOGIES = 8
 MAX_REPOSITORIES = 5
-HEATMAP_DAYS = 140
-HEATMAP_COLUMNS = 20
-
-SOCIAL_LINKS = [
-    ("github", "https://github.com/yuvrajkarna2717"),
-    ("linkedin", "https://www.linkedin.com/in/yuvrajkarna"),
-    ("twitter", "https://x.com/yuvrajkarna"),
-    ("leetcode", "https://www.leetcode.com/u/yuvrajkarna"),
-]
 
 
 # ============================================================
-# THEME — "phosphor CRT" palette / type
+# THEME — deep-space blue terminal, green reserved for status
 # ============================================================
 
 class Theme:
-    bezel = "#15120c"
-    bezel_edge = "#2a2115"
-    screen = "#0b0906"
-    screen_edge = "#241b0e"
-    divider = "#3a2c14"
+    bezel = "#0b0f17"
+    bezel_edge = "#1b2438"
+    screen = "#070b12"
+    screen_edge = "#17202f"
+    divider = "#223148"
 
-    amber_bright = "#ffc94d"
-    amber = "#e0a530"
-    amber_mid = "#b8801f"
-    amber_dim = "#6e5320"
-    amber_track = "#241a0a"
+    blue_bright = "#7dd3ff"
+    blue = "#4a9eff"
+    blue_mid = "#3178c6"
+    blue_dim = "#1f4068"
+    blue_track = "#101a2b"
 
-    green_led = "#4ee08a"
-    text_muted = "#8a7654"
+    green_status = "#3ddc84"
+    text_muted = "#5b6b85"
 
     font = "'JetBrains Mono','Fira Code','SFMono-Regular',Menlo,Consolas,monospace"
 
@@ -112,7 +103,7 @@ def truncate(text, max_chars):
 
 def svg_text(x, y, content, size=13, color=None, weight=400, anchor="start",
              letter_spacing=None, opacity=None, filter_id=None):
-    color = color or T.amber
+    color = color or T.blue
     parts = [
         f'<text x="{x}" y="{y}" font-family="{T.font}" font-size="{size}" '
         f'font-weight="{weight}" fill="{color}" text-anchor="{anchor}"'
@@ -148,7 +139,7 @@ def dashed_divider(x, y, w, color=None):
 
 
 def section_label(x, y, label):
-    return svg_text(x, y, f"\u25b8 {label}", size=12.5, color=T.amber_bright,
+    return svg_text(x, y, f"\u25b8 {label}", size=12.5, color=T.blue_bright,
                      weight=700, letter_spacing="1.5")
 
 
@@ -175,15 +166,15 @@ class Card:
 
 def build_title_bar(card, updated_at):
     card.advance(30)
-    # power LED with a slow flicker
+    # power LED — the one place besides "PUBLIC" tags where green (status) appears
     led_x, led_y = card.pad_x, card.y
     card.add(
-        f'<circle cx="{led_x}" cy="{led_y - 4}" r="4" fill="{T.green_led}">'
+        f'<circle cx="{led_x}" cy="{led_y - 4}" r="4" fill="{T.green_status}">'
         f'<animate attributeName="opacity" values="1;0.55;1" dur="2.4s" repeatCount="indefinite" />'
         f'</circle>'
     )
-    card.add(svg_text(led_x + 14, led_y, "yuvraj@github", size=13, color=T.amber_bright, weight=700))
-    card.add(svg_text(led_x + 14 + 118, led_y, "~ % status.sh", size=13, color=T.text_muted))
+    card.add(svg_text(led_x + 14, led_y, "yuvrajkarna2717@github", size=13, color=T.blue_bright, weight=700))
+    card.add(svg_text(led_x + 14 + 202, led_y, "~ % status.sh", size=13, color=T.text_muted))
 
     stamp = updated_at.replace("T", " ").replace("Z", " UTC") if updated_at else ""
     if stamp:
@@ -212,7 +203,7 @@ def build_stat_grid(card, stats):
 
     for index, (value, label) in enumerate(items):
         cx = card.pad_x + col_w * index + col_w / 2
-        card.add(svg_text(cx, card.y, value, size=24, color=T.amber_bright,
+        card.add(svg_text(cx, card.y, value, size=24, color=T.blue_bright,
                            weight=700, anchor="middle", filter_id="glow"))
         card.add(svg_text(cx, card.y + 20, label, size=9.5, color=T.text_muted,
                            anchor="middle", letter_spacing="1.5"))
@@ -244,12 +235,12 @@ def build_languages(card, stats):
 
     for name, pct in languages:
         pct = clamp(pct, 0, 100)
-        card.add(svg_text(card.pad_x, card.y + 6, truncate(name, 14), size=12, color=T.amber))
-        card.add(svg_rect(bar_x, card.y - 6, bar_w, bar_h, T.amber_track, rx=4))
+        card.add(svg_text(card.pad_x, card.y + 6, truncate(name, 14), size=12, color=T.blue))
+        card.add(svg_rect(bar_x, card.y - 6, bar_w, bar_h, T.blue_track, rx=4))
         fill_w = bar_w * pct / 100
-        card.add(svg_rect(bar_x, card.y - 6, fill_w, bar_h, T.amber_bright, rx=4, filter_id="soft-glow"))
+        card.add(svg_rect(bar_x, card.y - 6, fill_w, bar_h, T.blue_bright, rx=4, filter_id="soft-glow"))
         card.add(svg_text(bar_x + bar_w + pct_w, card.y + 6, format_percentage(pct),
-                           size=11.5, color=T.amber_mid, anchor="end"))
+                           size=11.5, color=T.blue_mid, anchor="end"))
         card.advance(24)
 
     card.advance(14)
@@ -282,13 +273,13 @@ def build_technologies(card, stats):
 
         border_opacity = 0.35 + 0.55 * (pct / 100)
         card.add(svg_rect(x, y, chip_w, chip_h, T.screen_edge, rx=6,
-                           stroke=T.amber_dim, stroke_width=1, opacity=None))
+                           stroke=T.blue_dim, stroke_width=1, opacity=None))
         card.add(
             f'<rect x="{x:.1f}" y="{y:.1f}" width="{chip_w:.1f}" height="{chip_h:.1f}" '
-            f'rx="6" fill="none" stroke="{T.amber_bright}" stroke-width="1" '
+            f'rx="6" fill="none" stroke="{T.blue_bright}" stroke-width="1" '
             f'opacity="{border_opacity:.2f}" />'
         )
-        card.add(svg_text(x + 12, y + 19, truncate(name, 16), size=12, color=T.amber, weight=600))
+        card.add(svg_text(x + 12, y + 19, truncate(name, 16), size=12, color=T.blue, weight=600))
         card.add(svg_text(x + chip_w - 12, y + 19, f"{repo_count} repos \u00b7 {format_percentage(pct)}",
                            size=10, color=T.text_muted, anchor="end"))
 
@@ -311,12 +302,13 @@ def build_top_repositories(card, stats):
         commits = repository.get("commits", 0)
         private = repository.get("private", False)
 
-        card.add(svg_text(card.pad_x, card.y + 5, "$", size=12, color=T.amber_dim))
+        card.add(svg_text(card.pad_x, card.y + 5, "$", size=12, color=T.blue_dim))
         card.add(svg_text(card.pad_x + 16, card.y + 5, truncate(name, 28), size=12,
-                           color=T.amber_bright, weight=600))
+                           color=T.blue_bright, weight=600))
 
+        # PUBLIC is the other spot green (status) is allowed to appear.
         tag_text = "PRIVATE" if private else "PUBLIC"
-        tag_color = T.amber_dim if private else T.green_led
+        tag_color = T.blue_dim if private else T.green_status
         commit_label = f"{format_number(commits)} commits"
 
         card.add(svg_text(card.pad_x + card.content_w - 70, card.y + 5, commit_label,
@@ -328,83 +320,6 @@ def build_top_repositories(card, stats):
     card.advance(10)
     card.add(dashed_divider(card.pad_x, card.y, card.content_w))
     card.advance(32)
-
-
-def bucket_color(count, maximum):
-    if maximum <= 0 or count <= 0:
-        return T.amber_track
-    ratio = clamp(count / maximum, 0, 1)
-    steps = [
-        (0.25, T.amber_dim),
-        (0.50, T.amber_mid),
-        (0.75, T.amber),
-        (1.01, T.amber_bright),
-    ]
-    for threshold, color in steps:
-        if ratio <= threshold:
-            return color
-    return T.amber_bright
-
-
-def build_heatmap(card, stats):
-    daily_activity = stats.get("daily_activity", {})
-    if not daily_activity:
-        return
-
-    values = list(daily_activity.values())[-HEATMAP_DAYS:]
-    maximum = max(values, default=0)
-
-    card.add(section_label(card.pad_x, card.y, f"ACTIVITY \u00b7 last {len(values)} days"))
-    card.advance(22)
-
-    size = 15
-    gap = 4
-    columns = HEATMAP_COLUMNS
-
-    for index, count in enumerate(values):
-        col = index % columns
-        row = index // columns
-        x = card.pad_x + col * (size + gap)
-        y = card.y + row * (size + gap)
-        color = bucket_color(count, maximum)
-        card.add(svg_rect(x, y, size, size, color, rx=3))
-
-    rows = -(-len(values) // columns)
-    grid_h = rows * (size + gap) - gap
-    card.advance(grid_h + 18)
-
-    legend_x = card.pad_x
-    card.add(svg_text(legend_x, card.y, "less", size=10, color=T.text_muted))
-    swatch_x = legend_x + 32
-    swatches = [T.amber_track, T.amber_dim, T.amber_mid, T.amber, T.amber_bright]
-    for i, color in enumerate(swatches):
-        card.add(svg_rect(swatch_x + i * (size - 1), card.y - 11, size - 3, size - 3, color, rx=2))
-    card.add(svg_text(swatch_x + len(swatches) * (size - 1) + 8, card.y, "more", size=10, color=T.text_muted))
-
-    card.advance(28)
-    card.add(dashed_divider(card.pad_x, card.y, card.content_w))
-    card.advance(30)
-
-
-def build_footer(card, updated_at):
-    sync_label = "$ last_sync --utc"
-    sync_value = updated_at.replace("T", " ").replace("Z", "") if updated_at else "unknown"
-
-    card.add(svg_text(card.pad_x, card.y, sync_label, size=11, color=T.amber_dim))
-    card.add(svg_text(card.pad_x + 130, card.y, sync_value, size=11, color=T.text_muted))
-
-    connect_cmd = "$ connect " + " ".join(f"--{name}" for name, _ in SOCIAL_LINKS)
-    card.add(svg_text(card.pad_x + card.content_w, card.y, connect_cmd, size=11,
-                       color=T.amber_dim, anchor="end"))
-
-    cursor_x = card.pad_x + card.content_w + 4
-    card.add(
-        f'<rect x="{cursor_x:.1f}" y="{card.y - 10:.1f}" width="6" height="12" fill="{T.amber_bright}">'
-        f'<animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite" />'
-        f'</rect>'
-    )
-
-    card.advance(20)
 
 
 def build_svg(stats):
@@ -420,8 +335,6 @@ def build_svg(stats):
     build_languages(card, stats)
     build_technologies(card, stats)
     build_top_repositories(card, stats)
-    build_heatmap(card, stats)
-    build_footer(card, updated_at)
 
     height = int(card.y + 20)
     bezel_pad = 14
@@ -488,15 +401,13 @@ def build_svg(stats):
 # ============================================================
 
 def build_readme_section():
-    """Build the small markdown fragment that sits between the markers."""
+    """Build the small markdown fragment that sits between the markers.
+
+    Deliberately just the image — social links live in their own static
+    section of README.md so they stay clickable (an <img> can't carry links).
+    """
 
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-
-    connect_badges = "\n".join(
-        f'  <a href="{url}"><img src="https://img.shields.io/badge/{name.upper()}-connect-1a1408'
-        f'?style=flat-square&labelColor=0b0906&color=241a0a" alt="{name}" /></a>'
-        for name, url in SOCIAL_LINKS
-    )
 
     return f"""{START_MARKER}
 
