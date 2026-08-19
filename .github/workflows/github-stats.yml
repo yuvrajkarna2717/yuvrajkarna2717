@@ -1,47 +1,52 @@
-name: Update GitHub Tech Stack
+name: Update GitHub Stats
 
 on:
   schedule:
-    # Runs every day at 6:00 AM IST (00:30 UTC)
-    - cron: "30 0 * * *"
+    - cron: "0 3 * * *"
 
-  # Allows you to run it manually from GitHub Actions
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  update:
+  update-github-stats:
+
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Generate GitHub analytics
+      - name: Generate GitHub statistics
         env:
           GITHUB_TOKEN: ${{ secrets.ANALYTICS_TOKEN }}
           GITHUB_USERNAME: yuvrajkarna2717
-        run: python scripts/github_analyzer.py
+        run: |
+          python scripts/github_analyzer.py
 
-      - name: Commit updated analytics
+      - name: Update README
+        run: |
+          python scripts/update_readme.py
+
+      - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/github-stats.json
+          git add data/github-stats.json README.md
 
-          if git diff --cached --quiet; then
-            echo "No analytics changes to commit."
-          else
-            git commit -m "chore: update github analytics"
-            git push
-          fi
+          git diff --cached --quiet || \
+            git commit -m "chore: update github stats"
+
+      - name: Push changes
+        run: |
+          git push
