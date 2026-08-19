@@ -1,85 +1,28 @@
-from pathlib import Path
-import json, textwrap, zipfile, os
+#!/usr/bin/env python3
 
-root = Path("/mnt/data/github-tech-stack-workflow")
-(root / ".github" / "workflows").mkdir(parents=True, exist_ok=True)
-(root / "scripts").mkdir(parents=True, exist_ok=True)
-(root / "data").mkdir(parents=True, exist_ok=True)
-
-workflow = """name: Update GitHub Tech Stack
-
-on:
-  schedule:
-    # Daily at 00:30 UTC (06:00 IST)
-    - cron: "30 0 * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-jobs:
-  update:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Generate GitHub analytics
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_ANALYTICS_TOKEN }}
-          GITHUB_USERNAME: yuvrajkarna2717
-        run: python scripts/github_analyzer.py
-
-      - name: Commit updated analytics
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add data/github-stats.json
-
-          if git diff --cached --quiet; then
-            echo "No analytics changes to commit."
-          else
-            git commit -m "chore: update github analytics"
-            git push
-          fi
-"""
-
-analyzer = r'''#!/usr/bin/env python3
 """
 GitHub Tech Stack Analyzer
 ==========================
 
-Designed to run inside GitHub Actions.
+Collects GitHub activity and technology information for a user.
 
-What it does:
-- Uses an authenticated GitHub token.
-- Reads public + private repositories accessible to that token.
-- Finds repositories where the requested user authored commits in the last 12 months.
-- Detects languages using GitHub's language API.
-- Detects technologies from package.json, requirements.txt and pyproject.toml.
-- Detects Docker, GitHub Actions, TypeScript, Vite, Next.js, etc. from files.
-- Stores the latest snapshot plus daily history in data/github-stats.json.
+Features:
+- Public + private repositories accessible to the token
+- Last 365 days of activity
+- Daily commit activity
+- Repository-level statistics
+- Language detection
+- Technology/framework detection
+- Historical daily snapshots
+- UI-friendly JSON output
 
-Environment:
-    GITHUB_TOKEN      Required
-    GITHUB_USERNAME   Optional; defaults to yuvrajkarna2717
+Required environment variables:
+    GITHUB_TOKEN
+    GITHUB_USERNAME
 
-Run locally:
-    GITHUB_TOKEN=... GITHUB_USERNAME=yuvrajkarna2717 python scripts/github_analyzer.py
-
-No third-party Python packages are required.
+Output:
+    data/github-stats.json
 """
-
-from __future__ import annotations
 
 import base64
 import json
@@ -94,104 +37,189 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-API = "https://api.github.com"
-USERNAME = os.getenv("GITHUB_USERNAME", "yuvrajkarna2717")
-TOKEN = os.getenv("GITHUB_TOKEN")
-OUTPUT = os.getenv("GITHUB_STATS_OUTPUT", "data/github-stats.json")
-MONTHS = int(os.getenv("GITHUB_ANALYSIS_MONTHS", "12"))
 
-if not TOKEN:
-    raise SystemExit("GITHUB_TOKEN is missing.")
+# ============================================================
+# CONFIGURATION
+# ============================================================
 
-PACKAGE_SIGNALS = {
-    # JS / TS
+GITHUB_API = "https://api.github.com"
+
+GITHUB_USERNAME = os.getenv(
+    "GITHUB_USERNAME",
+    "yuvrajkarna2717",
+)
+
+GITHUB_TOKEN = os.getenv(
+    "GITHUB_TOKEN"
+)
+
+OUTPUT_FILE = "data/github-stats.json"
+
+ANALYSIS_DAYS = 365
+
+
+# ============================================================
+# TECHNOLOGY MAPPINGS
+# ============================================================
+
+PACKAGE_TO_TECHNOLOGY = {
+    # --------------------------------------------------------
+    # JavaScript / TypeScript
+    # --------------------------------------------------------
+
     "react": "React",
     "react-dom": "React",
     "next": "Next.js",
     "vite": "Vite",
+
     "express": "Express",
     "fastify": "Fastify",
     "@nestjs/core": "NestJS",
+
+    # Database
     "mongoose": "Mongoose",
     "mongodb": "MongoDB",
     "pg": "PostgreSQL",
     "prisma": "Prisma",
     "@prisma/client": "Prisma",
     "sequelize": "Sequelize",
-    "@reduxjs/toolkit": "Redux Toolkit",
+
+    # State / API
     "redux": "Redux",
+    "@reduxjs/toolkit": "Redux Toolkit",
     "react-redux": "Redux",
     "@tanstack/react-query": "TanStack Query",
+
     "axios": "Axios",
     "zod": "Zod",
-    "typescript": "TypeScript",
-    "tailwindcss": "Tailwind CSS",
+
+    # UI
     "bootstrap": "Bootstrap",
     "react-bootstrap": "React Bootstrap",
+    "tailwindcss": "Tailwind CSS",
     "framer-motion": "Framer Motion",
-    "socket.io": "Socket.IO",
+
+    # Authentication / realtime
     "jsonwebtoken": "JWT",
     "passport": "Passport.js",
     "passport-google-oauth20": "Google OAuth",
+    "socket.io": "Socket.IO",
+
+    # AI
     "openai": "OpenAI API",
     "@anthropic-ai/sdk": "Anthropic API",
     "@google/generative-ai": "Google Gemini API",
+
     "langchain": "LangChain",
     "@langchain/core": "LangChain",
     "@langchain/langgraph": "LangGraph",
     "langgraph": "LangGraph",
 
+    # --------------------------------------------------------
     # Python
+    # --------------------------------------------------------
+
     "fastapi": "FastAPI",
     "flask": "Flask",
     "django": "Django",
+
     "pydantic": "Pydantic",
     "uvicorn": "Uvicorn",
+
     "sqlalchemy": "SQLAlchemy",
     "alembic": "Alembic",
+
     "requests": "Requests",
     "httpx": "HTTPX",
+
+    # Data / ML
     "numpy": "NumPy",
     "pandas": "Pandas",
     "scipy": "SciPy",
+
     "scikit-learn": "scikit-learn",
     "sklearn": "scikit-learn",
+
     "torch": "PyTorch",
     "tensorflow": "TensorFlow",
+
     "transformers": "Hugging Face Transformers",
+
+    # Computer Vision
     "opencv-python": "OpenCV",
-    "cv2": "OpenCV",
-    "langchain-community": "LangChain",
-    "langchain-openai": "LangChain",
-    "openai": "OpenAI API",
-    "anthropic": "Anthropic API",
-    "google-generativeai": "Google Gemini API",
+
+    # Infrastructure
     "redis": "Redis",
     "celery": "Celery",
 
-    # Tooling
+    # Python AI
+    "langchain-community": "LangChain",
+    "langchain-openai": "LangChain",
+
+    "google-generativeai": "Google Gemini API",
+
+    # --------------------------------------------------------
+    # Development Tools
+    # --------------------------------------------------------
+
+    "typescript": "TypeScript",
     "eslint": "ESLint",
     "prettier": "Prettier",
+
     "jest": "Jest",
     "vitest": "Vitest",
+
     "playwright": "Playwright",
     "cypress": "Cypress",
 }
+
 
 LANGUAGE_ALIASES = {
     "Jupyter Notebook": "Jupyter",
 }
 
 
-class GitHub:
-    def __init__(self, token: str):
-        self.token = token
-        self.cache: dict[str, object] = {}
+# ============================================================
+# GITHUB API CLIENT
+# ============================================================
 
-    def get(self, path: str, params: dict | None = None):
-        url = path if path.startswith("http") else API + path
+class GitHubClient:
+    """
+    Small GitHub REST API client.
+
+    Handles:
+    - Authentication
+    - Requests
+    - Pagination
+    - Rate limiting
+    - Response caching
+    """
+
+    def __init__(self, token):
+        self.token = token
+        self.cache = {}
+
+    def request(self, path, params=None):
+        """
+        Make a GET request to GitHub API.
+        """
+
+        url = (
+            path
+            if path.startswith("http")
+            else GITHUB_API + path
+        )
+
         if params:
-            url += ("&" if "?" in url else "?") + urlencode(params)
+            query = urlencode(params)
+
+            separator = (
+                "&"
+                if "?" in url
+                else "?"
+            )
+
+            url += separator + query
 
         if url in self.cache:
             return self.cache[url]
@@ -200,459 +228,1808 @@ class GitHub:
             "Accept": "application/vnd.github+json",
             "Authorization": f"Bearer {self.token}",
             "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "yuvrajkarna-github-tech-stack",
+            "User-Agent": "github-tech-stack-analyzer",
         }
 
         for attempt in range(4):
+
             try:
-                req = Request(url, headers=headers)
-                with urlopen(req, timeout=30) as response:
-                    data = json.loads(response.read().decode("utf-8"))
+
+                request = Request(
+                    url,
+                    headers=headers,
+                )
+
+                with urlopen(
+                    request,
+                    timeout=30,
+                ) as response:
+
+                    data = json.loads(
+                        response
+                        .read()
+                        .decode("utf-8")
+                    )
+
                     self.cache[url] = data
+
                     return data
-            except HTTPError as e:
-                body = e.read().decode("utf-8", errors="replace")
-                if e.code in (403, 429) and attempt < 3:
-                    retry = e.headers.get("Retry-After")
-                    wait = int(retry) if retry else min(2 ** attempt, 30)
-                    print(f"Rate limited; waiting {wait}s...", file=sys.stderr)
-                    time.sleep(wait)
+
+            except HTTPError as error:
+
+                body = error.read().decode(
+                    "utf-8",
+                    errors="replace",
+                )
+
+                if (
+                    error.code in (403, 429)
+                    and attempt < 3
+                ):
+
+                    wait_seconds = 2 ** attempt
+
+                    print(
+                        f"Rate limited. "
+                        f"Retrying in "
+                        f"{wait_seconds}s..."
+                    )
+
+                    time.sleep(
+                        wait_seconds
+                    )
+
                     continue
-                raise RuntimeError(f"GitHub API {e.code}: {body[:500]}") from e
-            except URLError as e:
+
+                raise RuntimeError(
+                    f"GitHub API error "
+                    f"{error.code}: "
+                    f"{body[:500]}"
+                )
+
+            except URLError as error:
+
                 if attempt < 3:
-                    time.sleep(2 ** attempt)
+
+                    time.sleep(
+                        2 ** attempt
+                    )
+
                     continue
-                raise RuntimeError(f"Network error: {e}") from e
 
-        raise RuntimeError(f"Request failed: {url}")
+                raise RuntimeError(
+                    f"Network error: {error}"
+                )
 
-    def pages(self, path: str, params: dict | None = None):
-        params = dict(params or {})
+        raise RuntimeError(
+            f"Failed request: {url}"
+        )
+
+    def paginate(
+        self,
+        path,
+        params=None,
+    ):
+        """
+        Fetch all pages from a GitHub endpoint.
+        """
+
+        params = dict(
+            params or {}
+        )
+
         params["per_page"] = 100
-        result = []
+
+        results = []
+
         page = 1
 
         while True:
+
             params["page"] = page
-            data = self.get(path, params)
-            if not isinstance(data, list):
+
+            data = self.request(
+                path,
+                params,
+            )
+
+            if not isinstance(
+                data,
+                list,
+            ):
                 return data
-            result.extend(data)
+
+            results.extend(data)
+
             if len(data) < 100:
-                return result
+                break
+
             page += 1
 
-
-def iso(dt: datetime) -> str:
-    return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+        return results
 
 
-def parse_date(value: str | None):
+# ============================================================
+# DATE HELPERS
+# ============================================================
+
+def get_analysis_period():
+    """
+    Return the start and end dates
+    for the rolling analysis period.
+    """
+
+    end = datetime.now(
+        timezone.utc
+    )
+
+    start = end - timedelta(
+        days=ANALYSIS_DAYS
+    )
+
+    return start, end
+
+
+def parse_github_date(value):
+    """
+    Convert GitHub ISO timestamp to datetime.
+    """
+
     if not value:
         return None
+
     try:
-        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+        return datetime.fromisoformat(
+            value.replace(
+                "Z",
+                "+00:00",
+            )
+        )
+
     except ValueError:
+
         return None
 
 
-def detect_package_json(text: str):
-    found = Counter()
-    try:
-        data = json.loads(text)
-    except json.JSONDecodeError:
-        return found
+def to_iso_datetime(value):
+    """
+    Convert datetime to GitHub-style ISO format.
+    """
 
-    for section in (
-        "dependencies",
-        "devDependencies",
-        "peerDependencies",
-        "optionalDependencies",
+    return (
+        value
+        .astimezone(timezone.utc)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
+
+
+# ============================================================
+# JSON HELPERS
+# ============================================================
+
+def load_existing_data():
+    """
+    Load previously generated analytics data.
+
+    Returns an empty structure if the file
+    does not exist or is invalid.
+    """
+
+    if not os.path.exists(
+        OUTPUT_FILE
     ):
-        deps = data.get(section, {})
-        if not isinstance(deps, dict):
-            continue
-        for name in deps:
-            tech = PACKAGE_SIGNALS.get(name.lower())
-            if tech:
-                found[tech] += 1
 
-    scripts = data.get("scripts", {})
-    if isinstance(scripts, dict):
-        scripts_text = " ".join(map(str, scripts.values())).lower()
-        for needle, tech in {
-            "vite": "Vite",
-            "webpack": "Webpack",
-            "rollup": "Rollup",
-            "eslint": "ESLint",
-            "prettier": "Prettier",
-            "jest": "Jest",
-            "vitest": "Vitest",
-            "playwright": "Playwright",
-            "cypress": "Cypress",
-            "tsc": "TypeScript",
-        }.items():
-            if needle in scripts_text:
-                found[tech] += 1
-
-    return found
-
-
-def detect_requirements(text: str):
-    found = Counter()
-    for raw in text.splitlines():
-        line = raw.strip()
-        if not line or line.startswith("#") or line.startswith("-"):
-            continue
-        match = re.match(r"^([A-Za-z0-9_.-]+)", line)
-        if not match:
-            continue
-        name = match.group(1).lower()
-        tech = PACKAGE_SIGNALS.get(name)
-        if tech:
-            found[tech] += 1
-    return found
-
-
-def detect_pyproject(text: str):
-    found = Counter()
-    lower = text.lower()
-    for package, tech in PACKAGE_SIGNALS.items():
-        if re.search(
-            rf'(?m)["\']?{re.escape(package.lower())}(?:\[[^\]]+\])?\s*(?:=|>|<|!|~|:)',
-            lower,
-        ):
-            found[tech] += 1
-    return found
-
-
-def decode_file(obj):
-    if not isinstance(obj, dict) or obj.get("encoding") != "base64":
-        return None
-    try:
-        return base64.b64decode(obj["content"]).decode("utf-8", errors="replace")
-    except Exception:
-        return None
-
-
-def file_signals(files: list[str]):
-    found = Counter()
-    lower = {f.lower() for f in files}
-
-    if any(PurePosixPath(f).name.lower().startswith("dockerfile") for f in files):
-        found["Docker"] += 1
-    if any(f.startswith(".github/workflows/") for f in lower):
-        found["GitHub Actions"] += 1
-
-    direct = {
-        "package.json": "Node.js",
-        "requirements.txt": "Python",
-        "pyproject.toml": "Python",
-        "tsconfig.json": "TypeScript",
-        "vite.config.js": "Vite",
-        "vite.config.ts": "Vite",
-        "vite.config.mjs": "Vite",
-        "vite.config.cjs": "Vite",
-        "next.config.js": "Next.js",
-        "next.config.mjs": "Next.js",
-        "next.config.ts": "Next.js",
-        "tailwind.config.js": "Tailwind CSS",
-        "tailwind.config.ts": "Tailwind CSS",
-    }
-    for name, tech in direct.items():
-        if name in lower:
-            found[tech] += 1
-    return found
-
-
-def repo_files(api: GitHub, full_name: str, branch: str):
-    try:
-        data = api.get(
-            f"/repos/{full_name}/git/trees/{branch}",
-            {"recursive": "1"},
-        )
-        return [
-            item["path"]
-            for item in data.get("tree", [])
-            if item.get("type") == "blob"
-        ]
-    except Exception as e:
-        print(f"  Could not inspect tree: {e}", file=sys.stderr)
-        return []
-
-
-def read_file(api: GitHub, full_name: str, path: str, branch: str):
-    try:
-        obj = api.get(
-            f"/repos/{full_name}/contents/{path}",
-            {"ref": branch},
-        )
-        return decode_file(obj)
-    except Exception:
-        return None
-
-
-def repo_languages(api: GitHub, full_name: str):
-    try:
-        return api.get(f"/repos/{full_name}/languages")
-    except Exception:
-        return {}
-
-
-def repo_commits(api: GitHub, full_name: str, since: datetime, until: datetime):
-    # The authenticated user is used by GitHub when author is omitted.
-    # We still pass author=USERNAME to make the intent explicit.
-    try:
-        return api.pages(
-            f"/repos/{full_name}/commits",
-            {
-                "author": USERNAME,
-                "since": iso(since),
-                "until": iso(until),
-            },
-        )
-    except Exception:
-        return []
-
-
-def pct(counter: Counter):
-    total = sum(counter.values())
-    if total == 0:
-        return {}
-    return {
-        key: round(value / total * 100, 2)
-        for key, value in counter.most_common()
-    }
-
-
-def load_existing():
-    if not os.path.exists(OUTPUT):
         return {
-            "schema_version": 1,
-            "username": USERNAME,
+            "schema_version": 2,
+            "username": GITHUB_USERNAME,
             "updated_at": None,
             "current": None,
             "history": [],
         }
 
     try:
-        with open(OUTPUT, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        data.setdefault("schema_version", 1)
-        data.setdefault("history", [])
-        return data
+
+        with open(
+            OUTPUT_FILE,
+            "r",
+            encoding="utf-8",
+        ) as file:
+
+            return json.load(file)
+
     except Exception:
+
+        print(
+            "Existing JSON could not be read. "
+            "Starting fresh."
+        )
+
         return {
-            "schema_version": 1,
-            "username": USERNAME,
+            "schema_version": 2,
+            "username": GITHUB_USERNAME,
             "updated_at": None,
             "current": None,
             "history": [],
         }
 
 
-def main():
-    now = datetime.now(timezone.utc)
-    since = now - timedelta(days=MONTHS * 30.4375)
+def save_data(data):
+    """
+    Save analytics data to JSON.
+    """
 
-    print(f"GitHub Tech Stack Analyzer: @{USERNAME}")
-    print(f"Period: {since.date()} -> {now.date()}")
+    directory = os.path.dirname(
+        OUTPUT_FILE
+    )
 
-    api = GitHub(TOKEN)
+    if directory:
 
-    # /user/repos is important here:
-    # unlike /users/{username}/repos, it can return private repositories
-    # accessible to the authenticated token.
-    repos = api.pages(
+        os.makedirs(
+            directory,
+            exist_ok=True,
+        )
+
+    with open(
+        OUTPUT_FILE,
+        "w",
+        encoding="utf-8",
+    ) as file:
+
+        json.dump(
+            data,
+            file,
+            indent=2,
+            ensure_ascii=False,
+        )
+
+
+# ============================================================
+# REPOSITORY DISCOVERY
+# ============================================================
+
+def get_user_repositories(
+    github,
+):
+    """
+    Get repositories accessible to
+    the authenticated GitHub user.
+
+    Includes:
+    - Public repositories
+    - Private repositories
+    - Organization repositories
+    - Collaborator repositories
+    """
+
+    print(
+        "\nFetching repositories..."
+    )
+
+    repositories = github.paginate(
         "/user/repos",
         {
             "visibility": "all",
-            "affiliation": "owner,collaborator,organization_member",
+            "affiliation":
+                "owner,collaborator,organization_member",
             "sort": "updated",
             "direction": "desc",
         },
     )
 
-    if not isinstance(repos, list):
-        raise RuntimeError("Unexpected response from /user/repos")
+    print(
+        f"Accessible repositories: "
+        f"{len(repositories)}"
+    )
 
-    print(f"Accessible repositories: {len(repos)}")
+    return repositories
 
-    languages = Counter()
-    technologies = Counter()
-    technology_repos = defaultdict(set)
-    commit_days = Counter()
-    active_repos = []
-    total_commits = 0
 
-    for index, repo in enumerate(repos, 1):
-        full_name = repo["full_name"]
-        print(f"[{index}/{len(repos)}] {full_name}")
+# ============================================================
+# COMMIT ANALYSIS
+# ============================================================
 
-        commits = repo_commits(api, full_name, since, now)
-        if not commits:
+def get_repository_commits(
+    github,
+    repository,
+    start,
+    end,
+):
+    """
+    Get commits authored by the
+    target user within the analysis period.
+    """
+
+    try:
+
+        return github.paginate(
+            f"/repos/{repository}/commits",
+            {
+                "author":
+                    GITHUB_USERNAME,
+
+                "since":
+                    to_iso_datetime(start),
+
+                "until":
+                    to_iso_datetime(end),
+            },
+        )
+
+    except Exception:
+
+        return []
+
+
+def get_commit_date(commit):
+    """
+    Extract the author's commit date.
+    """
+
+    value = (
+        commit
+        .get("commit", {})
+        .get("author", {})
+        .get("date")
+    )
+
+    return parse_github_date(
+        value
+    )
+
+
+def build_daily_commit_activity(
+    commits,
+    repository,
+):
+    """
+    Convert commits into daily activity.
+
+    Example:
+
+    {
+        "2026-08-19": {
+            "commits": 5,
+            "repositories": ["repo-a"]
+        }
+    }
+    """
+
+    activity = defaultdict(
+        lambda: {
+            "commits": 0,
+            "repositories": set(),
+        }
+    )
+
+    for commit in commits:
+
+        date = get_commit_date(
+            commit
+        )
+
+        if not date:
             continue
 
-        total_commits += len(commits)
+        date_key = (
+            date.date()
+            .isoformat()
+        )
 
-        for commit in commits:
-            date = parse_date(
-                (commit.get("commit") or {}).get("author", {}).get("date")
+        activity[
+            date_key
+        ]["commits"] += 1
+
+        activity[
+            date_key
+        ]["repositories"].add(
+            repository
+        )
+
+    return activity
+
+
+# ============================================================
+# LANGUAGE ANALYSIS
+# ============================================================
+
+def get_repository_languages(
+    github,
+    repository,
+):
+    """
+    Get GitHub's language byte statistics.
+    """
+
+    try:
+
+        languages = github.request(
+            f"/repos/{repository}/languages"
+        )
+
+    except Exception:
+
+        return Counter()
+
+    result = Counter()
+
+    for language, byte_count in (
+        languages.items()
+    ):
+
+        normalized = (
+            LANGUAGE_ALIASES.get(
+                language,
+                language,
             )
-            if date:
-                commit_days[date.date().isoformat()] += 1
-
-        raw_languages = repo_languages(api, full_name)
-        repo_languages_counter = Counter(
-            LANGUAGE_ALIASES.get(lang, lang)
-            for lang in raw_languages
         )
-        languages.update(
+
+        result[
+            normalized
+        ] += byte_count
+
+    return result
+
+
+# ============================================================
+# REPOSITORY FILE ANALYSIS
+# ============================================================
+
+def get_repository_files(
+    github,
+    repository,
+    branch,
+):
+    """
+    Get all files in the repository tree.
+    """
+
+    try:
+
+        data = github.request(
+            f"/repos/{repository}/git/trees/{branch}",
             {
-                LANGUAGE_ALIASES.get(lang, lang): amount
-                for lang, amount in raw_languages.items()
-            }
+                "recursive": "1",
+            },
         )
 
-        tech = Counter()
-        tech.update(file_signals(
-            repo_files(api, full_name, repo.get("default_branch") or "main")
-        ))
+        return [
+            item["path"]
 
-        files = repo_files(
-            api,
-            full_name,
-            repo.get("default_branch") or "main",
+            for item in data.get(
+                "tree",
+                [],
+            )
+
+            if item.get(
+                "type"
+            ) == "blob"
+        ]
+
+    except Exception as error:
+
+        print(
+            f"Could not inspect "
+            f"{repository}: {error}"
         )
 
-        # Read only the common root-level manifests.
-        branch = repo.get("default_branch") or "main"
-        for manifest, detector in (
-            ("package.json", detect_package_json),
-            ("requirements.txt", detect_requirements),
-            ("pyproject.toml", detect_pyproject),
-        ):
-            if manifest in {f.lower() for f in files}:
-                # Find the exact path, preferring root.
-                path = next(
-                    (f for f in files if f.lower() == manifest),
-                    None,
-                )
-                if path:
-                    content = read_file(api, full_name, path, branch)
-                    if content:
-                        tech.update(detector(content))
+        return []
 
-        # Languages are also included as technologies.
-        tech.update({lang: 1 for lang in repo_languages_counter})
 
-        for name in tech:
-            technologies[name] += 1
-            technology_repos[name].add(full_name)
+def read_repository_file(
+    github,
+    repository,
+    path,
+    branch,
+):
+    """
+    Read a file from a repository.
+    """
 
-        active_repos.append({
-            "name": repo.get("name"),
-            "full_name": full_name,
-            "url": repo.get("html_url"),
-            "private": bool(repo.get("private")),
-            "fork": bool(repo.get("fork")),
-            "commits_by_you": len(commits),
-            "languages": dict(repo_languages_counter),
-            "technologies": sorted(tech),
-        })
+    try:
 
-    active_repos.sort(key=lambda r: r["commits_by_you"], reverse=True)
+        data = github.request(
+            f"/repos/{repository}/contents/{path}",
+            {
+                "ref": branch,
+            },
+        )
 
-    technology_summary = [
-        {
-            "technology": name,
-            "repository_count": count,
-            "repositories": sorted(technology_repos[name]),
-        }
-        for name, count in technologies.most_common()
-    ]
+        return decode_github_file(
+            data
+        )
 
-    snapshot = {
-        "date": now.date().isoformat(),
-        "period": {
-            "from": since.date().isoformat(),
-            "to": now.date().isoformat(),
-        },
-        "summary": {
-            "accessible_repositories": len(repos),
-            "active_repositories": len(active_repos),
-            "private_active_repositories": sum(
-                1 for r in active_repos if r["private"]
-            ),
-            "public_active_repositories": sum(
-                1 for r in active_repos if not r["private"]
-            ),
-            "commits_by_you": total_commits,
-            "active_days": len(commit_days),
-        },
-        "languages": {
-            "bytes": dict(languages.most_common()),
-            "percentage": pct(languages),
-        },
-        "technologies": technology_summary,
-        "repositories": active_repos,
-        "commit_activity": dict(sorted(commit_days.items())),
+    except Exception:
+
+        return None
+
+
+def decode_github_file(data):
+    """
+    Decode GitHub's base64 file response.
+    """
+
+    if not isinstance(
+        data,
+        dict,
+    ):
+
+        return None
+
+    if data.get(
+        "encoding"
+    ) != "base64":
+
+        return None
+
+    try:
+
+        return base64.b64decode(
+            data["content"]
+        ).decode(
+            "utf-8",
+            errors="replace",
+        )
+
+    except Exception:
+
+        return None
+
+
+# ============================================================
+# TECHNOLOGY DETECTION
+# ============================================================
+
+def detect_special_files(
+    files,
+):
+    """
+    Detect technologies based on
+    repository configuration files.
+    """
+
+    technologies = Counter()
+
+    normalized_files = {
+        file.lower()
+        for file in files
     }
 
-    data = load_existing()
-    data["username"] = USERNAME
-    data["updated_at"] = iso(now)
-    data["current"] = snapshot
+    # Docker
+    if any(
+        PurePosixPath(file)
+        .name
+        .lower()
+        .startswith("dockerfile")
 
-    # Keep one snapshot per calendar day.
-    history = [
-        item for item in data.get("history", [])
-        if item.get("date") != snapshot["date"]
+        for file in files
+    ):
+
+        technologies[
+            "Docker"
+        ] += 1
+
+    # GitHub Actions
+    if any(
+        file.startswith(
+            ".github/workflows/"
+        )
+
+        for file in normalized_files
+    ):
+
+        technologies[
+            "GitHub Actions"
+        ] += 1
+
+    special_files = {
+        "tsconfig.json":
+            "TypeScript",
+
+        "vite.config.js":
+            "Vite",
+
+        "vite.config.ts":
+            "Vite",
+
+        "vite.config.mjs":
+            "Vite",
+
+        "next.config.js":
+            "Next.js",
+
+        "next.config.mjs":
+            "Next.js",
+
+        "next.config.ts":
+            "Next.js",
+
+        "tailwind.config.js":
+            "Tailwind CSS",
+
+        "tailwind.config.ts":
+            "Tailwind CSS",
+    }
+
+    for filename, technology in (
+        special_files.items()
+    ):
+
+        if filename in normalized_files:
+
+            technologies[
+                technology
+            ] += 1
+
+    return technologies
+
+
+def detect_package_json(
+    content,
+):
+    """
+    Detect JavaScript/TypeScript
+    technologies from package.json.
+    """
+
+    technologies = Counter()
+
+    try:
+
+        package = json.loads(
+            content
+        )
+
+    except Exception:
+
+        return technologies
+
+    dependency_sections = [
+        "dependencies",
+        "devDependencies",
+        "peerDependencies",
+        "optionalDependencies",
     ]
-    history.append(snapshot)
-    history.sort(key=lambda item: item.get("date", ""))
-    data["history"] = history
 
-    os.makedirs(os.path.dirname(OUTPUT) or ".", exist_ok=True)
-    with open(OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+    for section in dependency_sections:
 
-    print("\nDone.")
-    print(f"Active repositories: {len(active_repos)}")
-    print(f"Private active repositories: {snapshot['summary']['private_active_repositories']}")
-    print(f"Commits: {total_commits}")
-    print(f"Active days: {len(commit_days)}")
-    print(f"Saved: {OUTPUT}")
+        dependencies = package.get(
+            section,
+            {},
+        )
+
+        if not isinstance(
+            dependencies,
+            dict,
+        ):
+
+            continue
+
+        for dependency in (
+            dependencies
+        ):
+
+            technology = (
+                PACKAGE_TO_TECHNOLOGY.get(
+                    dependency.lower()
+                )
+            )
+
+            if technology:
+
+                technologies[
+                    technology
+                ] += 1
+
+    detect_package_scripts(
+        package,
+        technologies,
+    )
+
+    return technologies
+
+
+def detect_package_scripts(
+    package,
+    technologies,
+):
+    """
+    Detect tooling from npm scripts.
+    """
+
+    scripts = package.get(
+        "scripts",
+        {},
+    )
+
+    if not isinstance(
+        scripts,
+        dict,
+    ):
+
+        return
+
+    script_text = " ".join(
+        str(value)
+        for value in scripts.values()
+    ).lower()
+
+    script_tools = {
+        "vite":
+            "Vite",
+
+        "webpack":
+            "Webpack",
+
+        "rollup":
+            "Rollup",
+
+        "eslint":
+            "ESLint",
+
+        "prettier":
+            "Prettier",
+
+        "jest":
+            "Jest",
+
+        "vitest":
+            "Vitest",
+
+        "playwright":
+            "Playwright",
+
+        "cypress":
+            "Cypress",
+
+        "tsc":
+            "TypeScript",
+    }
+
+    for keyword, technology in (
+        script_tools.items()
+    ):
+
+        if keyword in script_text:
+
+            technologies[
+                technology
+            ] += 1
+
+
+def detect_requirements(
+    content,
+):
+    """
+    Detect Python packages from
+    requirements.txt.
+    """
+
+    technologies = Counter()
+
+    for line in content.splitlines():
+
+        line = line.strip()
+
+        if not line:
+            continue
+
+        if line.startswith("#"):
+            continue
+
+        if line.startswith("-"):
+            continue
+
+        match = re.match(
+            r"^([A-Za-z0-9_.-]+)",
+            line,
+        )
+
+        if not match:
+            continue
+
+        package = (
+            match.group(1)
+            .lower()
+        )
+
+        technology = (
+            PACKAGE_TO_TECHNOLOGY.get(
+                package
+            )
+        )
+
+        if technology:
+
+            technologies[
+                technology
+            ] += 1
+
+    return technologies
+
+
+def detect_pyproject(
+    content,
+):
+    """
+    Detect Python packages from
+    pyproject.toml.
+    """
+
+    technologies = Counter()
+
+    lower_content = (
+        content.lower()
+    )
+
+    for package, technology in (
+        PACKAGE_TO_TECHNOLOGY.items()
+    ):
+
+        pattern = (
+            rf'(?m)["\']?'
+            rf'{re.escape(package.lower())}'
+            rf'(?:\[[^\]]+\])?'
+            rf'\s*(?:=|>|<|!|~|:)'
+        )
+
+        if re.search(
+            pattern,
+            lower_content,
+        ):
+
+            technologies[
+                technology
+            ] += 1
+
+    return technologies
+
+
+def detect_repository_technologies(
+    github,
+    repository,
+    files,
+    branch,
+    languages,
+):
+    """
+    Combine all technology detection
+    strategies for a repository.
+    """
+
+    technologies = Counter()
+
+    # Configuration files
+    technologies.update(
+        detect_special_files(
+            files
+        )
+    )
+
+    normalized_files = {
+        file.lower()
+        for file in files
+    }
+
+    # --------------------------------------------------------
+    # package.json
+    # --------------------------------------------------------
+
+    package_path = next(
+        (
+            file
+            for file in files
+
+            if file.lower()
+            == "package.json"
+        ),
+        None,
+    )
+
+    if package_path:
+
+        content = read_repository_file(
+            github,
+            repository,
+            package_path,
+            branch,
+        )
+
+        if content:
+
+            technologies.update(
+                detect_package_json(
+                    content
+                )
+            )
+
+    # --------------------------------------------------------
+    # requirements.txt
+    # --------------------------------------------------------
+
+    requirements_path = next(
+        (
+            file
+            for file in files
+
+            if file.lower()
+            == "requirements.txt"
+        ),
+        None,
+    )
+
+    if requirements_path:
+
+        content = read_repository_file(
+            github,
+            repository,
+            requirements_path,
+            branch,
+        )
+
+        if content:
+
+            technologies.update(
+                detect_requirements(
+                    content
+                )
+            )
+
+    # --------------------------------------------------------
+    # pyproject.toml
+    # --------------------------------------------------------
+
+    pyproject_path = next(
+        (
+            file
+            for file in files
+
+            if file.lower()
+            == "pyproject.toml"
+        ),
+        None,
+    )
+
+    if pyproject_path:
+
+        content = read_repository_file(
+            github,
+            repository,
+            pyproject_path,
+            branch,
+        )
+
+        if content:
+
+            technologies.update(
+                detect_pyproject(
+                    content
+                )
+            )
+
+    # --------------------------------------------------------
+    # Languages
+    # --------------------------------------------------------
+
+    for language in languages:
+
+        technologies[
+            language
+        ] += 1
+
+    return technologies
+
+
+# ============================================================
+# REPOSITORY ANALYSIS
+# ============================================================
+
+def analyze_repository(
+    github,
+    repository,
+    start,
+    end,
+):
+    """
+    Analyze one repository.
+
+    Returns None if the user
+    has no commits during the period.
+    """
+
+    full_name = repository[
+        "full_name"
+    ]
+
+    print(
+        f"  Analyzing {full_name}"
+    )
+
+    # --------------------------------------------------------
+    # Commits
+    # --------------------------------------------------------
+
+    commits = get_repository_commits(
+        github,
+        full_name,
+        start,
+        end,
+    )
+
+    if not commits:
+
+        return None
+
+    # --------------------------------------------------------
+    # Languages
+    # --------------------------------------------------------
+
+    languages = get_repository_languages(
+        github,
+        full_name,
+    )
+
+    # --------------------------------------------------------
+    # Files
+    # --------------------------------------------------------
+
+    branch = (
+        repository.get(
+            "default_branch"
+        )
+        or "main"
+    )
+
+    files = get_repository_files(
+        github,
+        full_name,
+        branch,
+    )
+
+    # --------------------------------------------------------
+    # Technologies
+    # --------------------------------------------------------
+
+    technologies = (
+        detect_repository_technologies(
+            github,
+            full_name,
+            files,
+            branch,
+            languages,
+        )
+    )
+
+    # --------------------------------------------------------
+    # Daily activity
+    # --------------------------------------------------------
+
+    daily_activity = (
+        build_daily_commit_activity(
+            commits,
+            full_name,
+        )
+    )
+
+    return {
+        "name":
+            repository.get(
+                "name"
+            ),
+
+        "full_name":
+            full_name,
+
+        "url":
+            repository.get(
+                "html_url"
+            ),
+
+        "private":
+            repository.get(
+                "private",
+                False,
+            ),
+
+        "fork":
+            repository.get(
+                "fork",
+                False,
+            ),
+
+        "commits":
+            len(commits),
+
+        "languages":
+            dict(
+                languages.most_common()
+            ),
+
+        "technologies":
+            sorted(
+                technologies
+            ),
+
+        "daily_activity":
+            convert_daily_activity(
+                daily_activity
+            ),
+    }
+
+
+# ============================================================
+# DAILY ACTIVITY AGGREGATION
+# ============================================================
+
+def convert_daily_activity(
+    activity,
+):
+    """
+    Convert sets to JSON-compatible lists.
+    """
+
+    result = {}
+
+    for date, stats in (
+        activity.items()
+    ):
+
+        result[date] = {
+
+            "commits":
+                stats["commits"],
+
+            "repositories":
+                sorted(
+                    stats[
+                        "repositories"
+                    ]
+                ),
+        }
+
+    return result
+
+
+def aggregate_daily_activity(
+    repository_results,
+):
+    """
+    Combine daily activity from all repositories.
+    """
+
+    daily = defaultdict(
+        lambda: {
+            "commits": 0,
+            "repositories": set(),
+            "private_repositories": set(),
+            "public_repositories": set(),
+        }
+    )
+
+    for repository in (
+        repository_results
+    ):
+
+        repository_name = (
+            repository[
+                "full_name"
+            ]
+        )
+
+        is_private = (
+            repository[
+                "private"
+            ]
+        )
+
+        for date, activity in (
+            repository[
+                "daily_activity"
+            ].items()
+        ):
+
+            daily[date][
+                "commits"
+            ] += activity[
+                "commits"
+            ]
+
+            daily[date][
+                "repositories"
+            ].add(
+                repository_name
+            )
+
+            if is_private:
+
+                daily[date][
+                    "private_repositories"
+                ].add(
+                    repository_name
+                )
+
+            else:
+
+                daily[date][
+                    "public_repositories"
+                ].add(
+                    repository_name
+                )
+
+    result = {}
+
+    for date in sorted(
+        daily
+    ):
+
+        stats = daily[
+            date
+        ]
+
+        result[date] = {
+
+            "commits":
+                stats[
+                    "commits"
+                ],
+
+            "repositories":
+                sorted(
+                    stats[
+                        "repositories"
+                    ]
+                ),
+
+            "repository_count":
+                len(
+                    stats[
+                        "repositories"
+                    ]
+                ),
+
+            "private_repository_count":
+                len(
+                    stats[
+                        "private_repositories"
+                    ]
+                ),
+
+            "public_repository_count":
+                len(
+                    stats[
+                        "public_repositories"
+                    ]
+                ),
+        }
+
+    return result
+
+
+# ============================================================
+# GLOBAL AGGREGATION
+# ============================================================
+
+def aggregate_languages(
+    repository_results,
+):
+    """
+    Combine GitHub language statistics
+    across active repositories.
+    """
+
+    languages = Counter()
+
+    for repository in (
+        repository_results
+    ):
+
+        languages.update(
+            repository[
+                "languages"
+            ]
+        )
+
+    return languages
+
+
+def aggregate_technologies(
+    repository_results,
+):
+    """
+    Count technologies by number
+    of repositories using them.
+    """
+
+    technology_repositories = defaultdict(
+        set
+    )
+
+    for repository in (
+        repository_results
+    ):
+
+        for technology in (
+            repository[
+                "technologies"
+            ]
+        ):
+
+            technology_repositories[
+                technology
+            ].add(
+                repository[
+                    "full_name"
+                ]
+            )
+
+    result = []
+
+    sorted_technologies = sorted(
+        technology_repositories.items(),
+        key=lambda item:
+            len(item[1]),
+        reverse=True,
+    )
+
+    for technology, repositories in (
+        sorted_technologies
+    ):
+
+        result.append({
+
+            "technology":
+                technology,
+
+            "repository_count":
+                len(repositories),
+
+            "repositories":
+                sorted(
+                    repositories
+                ),
+        })
+
+    return result
+
+
+def calculate_percentage(
+    counter,
+):
+    """
+    Convert a Counter into percentages.
+    """
+
+    total = sum(
+        counter.values()
+    )
+
+    if total == 0:
+
+        return {}
+
+    return {
+
+        key:
+            round(
+                value / total * 100,
+                2,
+            )
+
+        for key, value
+        in counter.most_common()
+    }
+
+
+# ============================================================
+# SNAPSHOT CREATION
+# ============================================================
+
+def build_snapshot(
+    start,
+    end,
+    accessible_repositories,
+    repository_results,
+):
+    """
+    Build the rolling 12-month snapshot.
+    """
+
+    languages = aggregate_languages(
+        repository_results
+    )
+
+    technologies = aggregate_technologies(
+        repository_results
+    )
+
+    daily_activity = aggregate_daily_activity(
+        repository_results
+    )
+
+    private_repositories = sum(
+        1
+        for repository
+        in repository_results
+
+        if repository[
+            "private"
+        ]
+    )
+
+    public_repositories = sum(
+        1
+        for repository
+        in repository_results
+
+        if not repository[
+            "private"
+        ]
+    )
+
+    total_commits = sum(
+        repository[
+            "commits"
+        ]
+
+        for repository
+        in repository_results
+    )
+
+    return {
+
+        "date":
+            end.date().isoformat(),
+
+        "period": {
+
+            "from":
+                start.date().isoformat(),
+
+            "to":
+                end.date().isoformat(),
+        },
+
+        "summary": {
+
+            "accessible_repositories":
+                len(
+                    accessible_repositories
+                ),
+
+            "active_repositories":
+                len(
+                    repository_results
+                ),
+
+            "private_active_repositories":
+                private_repositories,
+
+            "public_active_repositories":
+                public_repositories,
+
+            "commits":
+                total_commits,
+
+            "active_days":
+                len(
+                    daily_activity
+                ),
+        },
+
+        "languages": {
+
+            "bytes":
+                dict(
+                    languages.most_common()
+                ),
+
+            "percentage":
+                calculate_percentage(
+                    languages
+                ),
+        },
+
+        "technologies":
+            technologies,
+
+        "repositories":
+            sorted(
+                repository_results,
+                key=lambda repository:
+                    repository[
+                        "commits"
+                    ],
+                reverse=True,
+            ),
+
+        "daily_activity":
+            daily_activity,
+    }
+
+
+# ============================================================
+# HISTORY MANAGEMENT
+# ============================================================
+
+def update_history(
+    data,
+    snapshot,
+):
+    """
+    Add today's snapshot to history.
+
+    If today's snapshot already exists,
+    replace it instead of duplicating it.
+    """
+
+    history = data.get(
+        "history",
+        []
+    )
+
+    snapshot_date = snapshot[
+        "date"
+    ]
+
+    history = [
+        item
+
+        for item in history
+
+        if item.get(
+            "date"
+        ) != snapshot_date
+    ]
+
+    history.append(
+        snapshot
+    )
+
+    history.sort(
+        key=lambda item:
+            item.get(
+                "date",
+                "",
+            )
+    )
+
+    data[
+        "history"
+    ] = history
+
+    return data
+
+
+# ============================================================
+# MAIN PIPELINE
+# ============================================================
+
+def run_analysis():
+    """
+    Main analytics pipeline.
+    """
+
+    if not GITHUB_TOKEN:
+
+        raise RuntimeError(
+            "GITHUB_TOKEN is not set."
+        )
+
+    start, end = (
+        get_analysis_period()
+    )
+
+    print(
+        f"\nAnalyzing @{GITHUB_USERNAME}"
+    )
+
+    print(
+        f"Period: "
+        f"{start.date()} → "
+        f"{end.date()}"
+    )
+
+    github = GitHubClient(
+        GITHUB_TOKEN
+    )
+
+    # --------------------------------------------------------
+    # 1. Repository discovery
+    # --------------------------------------------------------
+
+    repositories = (
+        get_user_repositories(
+            github
+        )
+    )
+
+    # --------------------------------------------------------
+    # 2. Repository analysis
+    # --------------------------------------------------------
+
+    active_repositories = []
+
+    for index, repository in enumerate(
+        repositories,
+        start=1,
+    ):
+
+        print(
+            f"\n[{index}/{len(repositories)}] "
+            f"{repository['full_name']}"
+        )
+
+        result = analyze_repository(
+            github,
+            repository,
+            start,
+            end,
+        )
+
+        if result:
+
+            active_repositories.append(
+                result
+            )
+
+    # --------------------------------------------------------
+    # 3. Build snapshot
+    # --------------------------------------------------------
+
+    snapshot = build_snapshot(
+        start,
+        end,
+        repositories,
+        active_repositories,
+    )
+
+    # --------------------------------------------------------
+    # 4. Load existing data
+    # --------------------------------------------------------
+
+    data = load_existing_data()
+
+    data[
+        "schema_version"
+    ] = 2
+
+    data[
+        "username"
+    ] = GITHUB_USERNAME
+
+    data[
+        "updated_at"
+    ] = to_iso_datetime(end)
+
+    # Latest rolling snapshot
+    data[
+        "current"
+    ] = snapshot
+
+    # --------------------------------------------------------
+    # 5. Update history
+    # --------------------------------------------------------
+
+    data = update_history(
+        data,
+        snapshot,
+    )
+
+    # --------------------------------------------------------
+    # 6. Save
+    # --------------------------------------------------------
+
+    save_data(
+        data
+    )
+
+    return snapshot, data
+
+
+# ============================================================
+# CLI
+# ============================================================
+
+def print_summary(
+    snapshot,
+    data,
+):
+    """
+    Print a concise GitHub Actions summary.
+    """
+
+    summary = snapshot[
+        "summary"
+    ]
+
+    print(
+        "\n"
+        + "=" * 60
+    )
+
+    print(
+        "GITHUB TECH STACK ANALYSIS COMPLETE"
+    )
+
+    print(
+        "=" * 60
+    )
+
+    print(
+        f"Active repositories : "
+        f"{summary['active_repositories']}"
+    )
+
+    print(
+        f"Private repositories: "
+        f"{summary['private_active_repositories']}"
+    )
+
+    print(
+        f"Public repositories : "
+        f"{summary['public_active_repositories']}"
+    )
+
+    print(
+        f"Commits             : "
+        f"{summary['commits']}"
+    )
+
+    print(
+        f"Active days         : "
+        f"{summary['active_days']}"
+    )
+
+    print(
+        f"History snapshots   : "
+        f"{len(data['history'])}"
+    )
+
+    print(
+        f"\nOutput: {OUTPUT_FILE}"
+    )
+
+    print(
+        "=" * 60
+    )
+
+
+# ============================================================
+# ENTRY POINT
+# ============================================================
+
+def main():
+
+    try:
+
+        snapshot, data = (
+            run_analysis()
+        )
+
+        print_summary(
+            snapshot,
+            data,
+        )
+
+    except KeyboardInterrupt:
+
+        print(
+            "\nAnalysis stopped."
+        )
+
+        sys.exit(130)
+
+    except Exception as error:
+
+        print(
+            f"\nERROR: {error}",
+            file=sys.stderr,
+        )
+
+        sys.exit(1)
 
 
 if __name__ == "__main__":
+
     main()
-'''
-
-initial_json = {
-    "schema_version": 1,
-    "username": "yuvrajkarna2717",
-    "updated_at": None,
-    "current": None,
-    "history": []
-}
-
-files = {
-    root / ".github" / "workflows" / "github-stats.yml": workflow,
-    root / "scripts" / "github_analyzer.py": analyzer,
-    root / "data" / "github-stats.json": json.dumps(initial_json, indent=2) + "\n",
-}
-
-for path, content in files.items():
-    path.write_text(content, encoding="utf-8")
-
-zip_path = Path("/mnt/data/github-tech-stack-workflow.zip")
-with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-    for path in files:
-        z.write(path, path.relative_to(root))
-
-print("Created:")
-for p in files:
-    print(p)
-print(f"ZIP: {zip_path}")
