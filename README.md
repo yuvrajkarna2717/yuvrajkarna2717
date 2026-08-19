@@ -1,3 +1,6 @@
+<!-- GITHUB_STATS_START -->
+
+
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=0E75B6&center=true&vCenter=true&width=500&height=60&lines=Hi+👋,+I'm+Yuvraj+Karna!;Software+Engineer;Open+Source+Contributor" alt="Yuvraj Karna" />
   
@@ -79,3 +82,5 @@
   
   ⭐ From [yuvrajkarna2717](https://github.com/yuvrajkarna2717) with ❤️
 </div>
+
+<!-- GITHUB_STATS_END -->
