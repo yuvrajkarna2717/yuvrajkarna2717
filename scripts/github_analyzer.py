@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 
 """
-GitHub Tech Stack Analyzer
-==========================
+GitHub Engineering Analytics
 
-Collects GitHub activity and technology information for a user.
+Collects GitHub activity and converts it into a compact,
+UI-friendly JSON dataset.
 
-Features:
-- Public + private repositories accessible to the token
-- Last 365 days of activity
-- Daily commit activity
-- Repository-level statistics
-- Language detection
-- Technology/framework detection
-- Historical daily snapshots
-- UI-friendly JSON output
+The script intentionally does NOT store:
+- Full commit objects
+- Full repository metadata
+- Repository file trees
+- Dependency lists
+- Large raw GitHub responses
 
-Required environment variables:
+It stores only aggregated information useful for a personal
+engineering dashboard.
+
+Environment variables:
     GITHUB_TOKEN
     GITHUB_USERNAME
 
@@ -50,7 +50,7 @@ GITHUB_USERNAME = os.getenv(
 )
 
 GITHUB_TOKEN = os.getenv(
-    "GITHUB_TOKEN"
+    "GITHUB_TOKEN",
 )
 
 OUTPUT_FILE = "data/github-stats.json"
@@ -63,6 +63,7 @@ ANALYSIS_DAYS = 365
 # ============================================================
 
 PACKAGE_TO_TECHNOLOGY = {
+
     # --------------------------------------------------------
     # JavaScript / TypeScript
     # --------------------------------------------------------
@@ -152,10 +153,9 @@ PACKAGE_TO_TECHNOLOGY = {
     "redis": "Redis",
     "celery": "Celery",
 
-    # Python AI
+    # AI
     "langchain-community": "LangChain",
     "langchain-openai": "LangChain",
-
     "google-generativeai": "Google Gemini API",
 
     # --------------------------------------------------------
@@ -188,20 +188,24 @@ class GitHubClient:
     Small GitHub REST API client.
 
     Handles:
-    - Authentication
-    - Requests
-    - Pagination
-    - Rate limiting
-    - Response caching
+    - authentication
+    - pagination
+    - rate limiting
+    - response caching
     """
 
     def __init__(self, token):
+
         self.token = token
         self.cache = {}
 
-    def request(self, path, params=None):
+    def request(
+        self,
+        path,
+        params=None,
+    ):
         """
-        Make a GET request to GitHub API.
+        Make a GET request to GitHub.
         """
 
         url = (
@@ -211,7 +215,10 @@ class GitHubClient:
         )
 
         if params:
-            query = urlencode(params)
+
+            query = urlencode(
+                params
+            )
 
             separator = (
                 "&"
@@ -219,16 +226,27 @@ class GitHubClient:
                 else "?"
             )
 
-            url += separator + query
+            url += (
+                separator + query
+            )
 
         if url in self.cache:
+
             return self.cache[url]
 
         headers = {
-            "Accept": "application/vnd.github+json",
-            "Authorization": f"Bearer {self.token}",
-            "X-GitHub-Api-Version": "2022-11-28",
-            "User-Agent": "github-tech-stack-analyzer",
+
+            "Accept":
+                "application/vnd.github+json",
+
+            "Authorization":
+                f"Bearer {self.token}",
+
+            "X-GitHub-Api-Version":
+                "2022-11-28",
+
+            "User-Agent":
+                "yuvrajkarna-github-analytics",
         }
 
         for attempt in range(4):
@@ -248,10 +266,14 @@ class GitHubClient:
                     data = json.loads(
                         response
                         .read()
-                        .decode("utf-8")
+                        .decode(
+                            "utf-8"
+                        )
                     )
 
-                    self.cache[url] = data
+                    self.cache[
+                        url
+                    ] = data
 
                     return data
 
@@ -267,22 +289,21 @@ class GitHubClient:
                     and attempt < 3
                 ):
 
-                    wait_seconds = 2 ** attempt
+                    wait = 2 ** attempt
 
                     print(
                         f"Rate limited. "
-                        f"Retrying in "
-                        f"{wait_seconds}s..."
+                        f"Retrying in {wait}s..."
                     )
 
                     time.sleep(
-                        wait_seconds
+                        wait
                     )
 
                     continue
 
                 raise RuntimeError(
-                    f"GitHub API error "
+                    f"GitHub API "
                     f"{error.code}: "
                     f"{body[:500]}"
                 )
@@ -298,11 +319,12 @@ class GitHubClient:
                     continue
 
                 raise RuntimeError(
-                    f"Network error: {error}"
+                    f"Network error: "
+                    f"{error}"
                 )
 
         raise RuntimeError(
-            f"Failed request: {url}"
+            f"Request failed: {url}"
         )
 
     def paginate(
@@ -311,14 +333,16 @@ class GitHubClient:
         params=None,
     ):
         """
-        Fetch all pages from a GitHub endpoint.
+        Fetch all pages from an API endpoint.
         """
 
         params = dict(
             params or {}
         )
 
-        params["per_page"] = 100
+        params[
+            "per_page"
+        ] = 100
 
         results = []
 
@@ -326,7 +350,9 @@ class GitHubClient:
 
         while True:
 
-            params["page"] = page
+            params[
+                "page"
+            ] = page
 
             data = self.request(
                 path,
@@ -337,11 +363,15 @@ class GitHubClient:
                 data,
                 list,
             ):
+
                 return data
 
-            results.extend(data)
+            results.extend(
+                data
+            )
 
             if len(data) < 100:
+
                 break
 
             page += 1
@@ -355,27 +385,33 @@ class GitHubClient:
 
 def get_analysis_period():
     """
-    Return the start and end dates
-    for the rolling analysis period.
+    Return the rolling 365-day period.
     """
 
     end = datetime.now(
         timezone.utc
     )
 
-    start = end - timedelta(
-        days=ANALYSIS_DAYS
+    start = (
+        end
+        - timedelta(
+            days=ANALYSIS_DAYS
+        )
     )
 
     return start, end
 
 
-def parse_github_date(value):
+def parse_github_date(
+    value,
+):
     """
-    Convert GitHub ISO timestamp to datetime.
+    Convert GitHub timestamp
+    into a datetime.
     """
 
     if not value:
+
         return None
 
     try:
@@ -392,289 +428,63 @@ def parse_github_date(value):
         return None
 
 
-def to_iso_datetime(value):
+def to_iso_datetime(
+    value,
+):
     """
-    Convert datetime to GitHub-style ISO format.
+    Convert datetime to ISO format.
     """
 
     return (
         value
-        .astimezone(timezone.utc)
+        .astimezone(
+            timezone.utc
+        )
         .isoformat()
-        .replace("+00:00", "Z")
+        .replace(
+            "+00:00",
+            "Z",
+        )
     )
 
 
 # ============================================================
-# JSON HELPERS
+# FILE HELPERS
 # ============================================================
 
-def load_existing_data():
+def decode_github_file(
+    data,
+):
     """
-    Load previously generated analytics data.
-
-    Returns an empty structure if the file
-    does not exist or is invalid.
+    Decode a GitHub base64 file response.
     """
 
-    if not os.path.exists(
-        OUTPUT_FILE
+    if not isinstance(
+        data,
+        dict,
     ):
 
-        return {
-            "schema_version": 2,
-            "username": GITHUB_USERNAME,
-            "updated_at": None,
-            "current": None,
-            "history": [],
-        }
+        return None
+
+    if data.get(
+        "encoding"
+    ) != "base64":
+
+        return None
 
     try:
 
-        with open(
-            OUTPUT_FILE,
-            "r",
-            encoding="utf-8",
-        ) as file:
-
-            return json.load(file)
-
-    except Exception:
-
-        print(
-            "Existing JSON could not be read. "
-            "Starting fresh."
-        )
-
-        return {
-            "schema_version": 2,
-            "username": GITHUB_USERNAME,
-            "updated_at": None,
-            "current": None,
-            "history": [],
-        }
-
-
-def save_data(data):
-    """
-    Save analytics data to JSON.
-    """
-
-    directory = os.path.dirname(
-        OUTPUT_FILE
-    )
-
-    if directory:
-
-        os.makedirs(
-            directory,
-            exist_ok=True,
-        )
-
-    with open(
-        OUTPUT_FILE,
-        "w",
-        encoding="utf-8",
-    ) as file:
-
-        json.dump(
-            data,
-            file,
-            indent=2,
-            ensure_ascii=False,
-        )
-
-
-# ============================================================
-# REPOSITORY DISCOVERY
-# ============================================================
-
-def get_user_repositories(
-    github,
-):
-    """
-    Get repositories accessible to
-    the authenticated GitHub user.
-
-    Includes:
-    - Public repositories
-    - Private repositories
-    - Organization repositories
-    - Collaborator repositories
-    """
-
-    print(
-        "\nFetching repositories..."
-    )
-
-    repositories = github.paginate(
-        "/user/repos",
-        {
-            "visibility": "all",
-            "affiliation":
-                "owner,collaborator,organization_member",
-            "sort": "updated",
-            "direction": "desc",
-        },
-    )
-
-    print(
-        f"Accessible repositories: "
-        f"{len(repositories)}"
-    )
-
-    return repositories
-
-
-# ============================================================
-# COMMIT ANALYSIS
-# ============================================================
-
-def get_repository_commits(
-    github,
-    repository,
-    start,
-    end,
-):
-    """
-    Get commits authored by the
-    target user within the analysis period.
-    """
-
-    try:
-
-        return github.paginate(
-            f"/repos/{repository}/commits",
-            {
-                "author":
-                    GITHUB_USERNAME,
-
-                "since":
-                    to_iso_datetime(start),
-
-                "until":
-                    to_iso_datetime(end),
-            },
+        return base64.b64decode(
+            data["content"]
+        ).decode(
+            "utf-8",
+            errors="replace",
         )
 
     except Exception:
 
-        return []
+        return None
 
-
-def get_commit_date(commit):
-    """
-    Extract the author's commit date.
-    """
-
-    value = (
-        commit
-        .get("commit", {})
-        .get("author", {})
-        .get("date")
-    )
-
-    return parse_github_date(
-        value
-    )
-
-
-def build_daily_commit_activity(
-    commits,
-    repository,
-):
-    """
-    Convert commits into daily activity.
-
-    Example:
-
-    {
-        "2026-08-19": {
-            "commits": 5,
-            "repositories": ["repo-a"]
-        }
-    }
-    """
-
-    activity = defaultdict(
-        lambda: {
-            "commits": 0,
-            "repositories": set(),
-        }
-    )
-
-    for commit in commits:
-
-        date = get_commit_date(
-            commit
-        )
-
-        if not date:
-            continue
-
-        date_key = (
-            date.date()
-            .isoformat()
-        )
-
-        activity[
-            date_key
-        ]["commits"] += 1
-
-        activity[
-            date_key
-        ]["repositories"].add(
-            repository
-        )
-
-    return activity
-
-
-# ============================================================
-# LANGUAGE ANALYSIS
-# ============================================================
-
-def get_repository_languages(
-    github,
-    repository,
-):
-    """
-    Get GitHub's language byte statistics.
-    """
-
-    try:
-
-        languages = github.request(
-            f"/repos/{repository}/languages"
-        )
-
-    except Exception:
-
-        return Counter()
-
-    result = Counter()
-
-    for language, byte_count in (
-        languages.items()
-    ):
-
-        normalized = (
-            LANGUAGE_ALIASES.get(
-                language,
-                language,
-            )
-        )
-
-        result[
-            normalized
-        ] += byte_count
-
-    return result
-
-
-# ============================================================
-# REPOSITORY FILE ANALYSIS
-# ============================================================
 
 def get_repository_files(
     github,
@@ -682,7 +492,10 @@ def get_repository_files(
     branch,
 ):
     """
-    Get all files in the repository tree.
+    Get repository file names.
+
+    These are used only during analysis.
+    They are NOT stored in the output JSON.
     """
 
     try:
@@ -724,7 +537,7 @@ def read_repository_file(
     branch,
 ):
     """
-    Read a file from a repository.
+    Read a repository file.
     """
 
     try:
@@ -745,36 +558,238 @@ def read_repository_file(
         return None
 
 
-def decode_github_file(data):
+# ============================================================
+# REPOSITORY DISCOVERY
+# ============================================================
+
+def get_user_repositories(
+    github,
+):
     """
-    Decode GitHub's base64 file response.
+    Get all repositories accessible
+    to the authenticated user.
+
+    Includes:
+    - public repositories
+    - private repositories
+    - organization repositories
+    - collaborator repositories
     """
 
-    if not isinstance(
-        data,
-        dict,
-    ):
+    print(
+        "\nFetching repositories..."
+    )
 
-        return None
+    repositories = github.paginate(
+        "/user/repos",
+        {
+            "visibility":
+                "all",
 
-    if data.get(
-        "encoding"
-    ) != "base64":
+            "affiliation":
+                "owner,collaborator,organization_member",
 
-        return None
+            "sort":
+                "updated",
+
+            "direction":
+                "desc",
+        },
+    )
+
+    print(
+        f"Accessible repositories: "
+        f"{len(repositories)}"
+    )
+
+    return repositories
+
+
+# ============================================================
+# COMMIT ANALYSIS
+# ============================================================
+
+def get_repository_commits(
+    github,
+    repository,
+    start,
+    end,
+):
+    """
+    Get commits authored by the user
+    during the analysis period.
+    """
 
     try:
 
-        return base64.b64decode(
-            data["content"]
-        ).decode(
-            "utf-8",
-            errors="replace",
+        return github.paginate(
+            f"/repos/{repository}/commits",
+            {
+                "author":
+                    GITHUB_USERNAME,
+
+                "since":
+                    to_iso_datetime(
+                        start
+                    ),
+
+                "until":
+                    to_iso_datetime(
+                        end
+                    ),
+            },
         )
 
     except Exception:
 
-        return None
+        return []
+
+
+def get_commit_date(
+    commit,
+):
+    """
+    Extract commit author date.
+    """
+
+    value = (
+        commit
+        .get("commit", {})
+        .get("author", {})
+        .get("date")
+    )
+
+    return parse_github_date(
+        value
+    )
+
+
+def extract_daily_commits(
+    commits,
+):
+    """
+    Convert commits into:
+
+    {
+        "2026-08-19": 5
+    }
+    """
+
+    daily = Counter()
+
+    for commit in commits:
+
+        date = get_commit_date(
+            commit
+        )
+
+        if not date:
+
+            continue
+
+        date_key = (
+            date
+            .date()
+            .isoformat()
+        )
+
+        daily[
+            date_key
+        ] += 1
+
+    return daily
+
+
+# ============================================================
+# LANGUAGE ANALYSIS
+# ============================================================
+
+def get_repository_languages(
+    github,
+    repository,
+):
+    """
+    Get language byte counts
+    from GitHub.
+    """
+
+    try:
+
+        data = github.request(
+            f"/repos/{repository}/languages"
+        )
+
+    except Exception:
+
+        return Counter()
+
+    languages = Counter()
+
+    for language, bytes_count in (
+        data.items()
+    ):
+
+        normalized = (
+            LANGUAGE_ALIASES.get(
+                language,
+                language,
+            )
+        )
+
+        languages[
+            normalized
+        ] += bytes_count
+
+    return languages
+
+
+def aggregate_languages(
+    repositories,
+):
+    """
+    Aggregate language bytes
+    across repositories.
+    """
+
+    languages = Counter()
+
+    for repository in repositories:
+
+        languages.update(
+            repository[
+                "languages"
+            ]
+        )
+
+    return languages
+
+
+def calculate_percentages(
+    counter,
+):
+    """
+    Convert a Counter into percentages.
+    """
+
+    total = sum(
+        counter.values()
+    )
+
+    if total == 0:
+
+        return {}
+
+    return {
+
+        key:
+            round(
+                value / total * 100,
+                2,
+            )
+
+        for key, value
+        in counter.most_common()
+    }
 
 
 # ============================================================
@@ -785,8 +800,8 @@ def detect_special_files(
     files,
 ):
     """
-    Detect technologies based on
-    repository configuration files.
+    Detect technologies from
+    configuration files.
     """
 
     technologies = Counter()
@@ -801,7 +816,9 @@ def detect_special_files(
         PurePosixPath(file)
         .name
         .lower()
-        .startswith("dockerfile")
+        .startswith(
+            "dockerfile"
+        )
 
         for file in files
     ):
@@ -823,7 +840,8 @@ def detect_special_files(
             "GitHub Actions"
         ] += 1
 
-    special_files = {
+    configuration_files = {
+
         "tsconfig.json":
             "TypeScript",
 
@@ -853,7 +871,7 @@ def detect_special_files(
     }
 
     for filename, technology in (
-        special_files.items()
+        configuration_files.items()
     ):
 
         if filename in normalized_files:
@@ -869,8 +887,8 @@ def detect_package_json(
     content,
 ):
     """
-    Detect JavaScript/TypeScript
-    technologies from package.json.
+    Detect JS/TS technologies
+    from package.json.
     """
 
     technologies = Counter()
@@ -892,7 +910,9 @@ def detect_package_json(
         "optionalDependencies",
     ]
 
-    for section in dependency_sections:
+    for section in (
+        dependency_sections
+    ):
 
         dependencies = package.get(
             section,
@@ -935,7 +955,8 @@ def detect_package_scripts(
     technologies,
 ):
     """
-    Detect tooling from npm scripts.
+    Detect development tools
+    from npm scripts.
     """
 
     scripts = package.get(
@@ -955,7 +976,8 @@ def detect_package_scripts(
         for value in scripts.values()
     ).lower()
 
-    script_tools = {
+    tools = {
+
         "vite":
             "Vite",
 
@@ -988,7 +1010,7 @@ def detect_package_scripts(
     }
 
     for keyword, technology in (
-        script_tools.items()
+        tools.items()
     ):
 
         if keyword in script_text:
@@ -1002,8 +1024,8 @@ def detect_requirements(
     content,
 ):
     """
-    Detect Python packages from
-    requirements.txt.
+    Detect Python technologies
+    from requirements.txt.
     """
 
     technologies = Counter()
@@ -1053,8 +1075,8 @@ def detect_pyproject(
     content,
 ):
     """
-    Detect Python packages from
-    pyproject.toml.
+    Detect Python technologies
+    from pyproject.toml.
     """
 
     technologies = Counter()
@@ -1094,23 +1116,21 @@ def detect_repository_technologies(
     languages,
 ):
     """
-    Combine all technology detection
-    strategies for a repository.
+    Detect all technologies used
+    by a repository.
     """
 
     technologies = Counter()
 
+    # --------------------------------------------------------
     # Configuration files
+    # --------------------------------------------------------
+
     technologies.update(
         detect_special_files(
             files
         )
     )
-
-    normalized_files = {
-        file.lower()
-        for file in files
-    }
 
     # --------------------------------------------------------
     # package.json
@@ -1222,6 +1242,89 @@ def detect_repository_technologies(
 
 
 # ============================================================
+# TECHNOLOGY AGGREGATION
+# ============================================================
+
+def aggregate_technologies(
+    repositories,
+):
+    """
+    Calculate technology usage.
+
+    Percentage means:
+
+        repositories using technology
+        --------------------------------
+        total active repositories
+
+    This is intentionally NOT presented
+    as percentage of coding time.
+    """
+
+    technology_repositories = defaultdict(
+        set
+    )
+
+    for repository in repositories:
+
+        for technology in (
+            repository[
+                "technologies"
+            ]
+        ):
+
+            technology_repositories[
+                technology
+            ].add(
+                repository[
+                    "name"
+                ]
+            )
+
+    total_repositories = len(
+        repositories
+    )
+
+    result = []
+
+    for technology, repository_set in sorted(
+        technology_repositories.items(),
+        key=lambda item:
+            len(item[1]),
+        reverse=True,
+    ):
+
+        repository_count = len(
+            repository_set
+        )
+
+        percentage = 0
+
+        if total_repositories:
+
+            percentage = round(
+                repository_count
+                / total_repositories
+                * 100,
+                2,
+            )
+
+        result.append({
+
+            "technology":
+                technology,
+
+            "repositories":
+                repository_count,
+
+            "percentage":
+                percentage,
+        })
+
+    return result
+
+
+# ============================================================
 # REPOSITORY ANALYSIS
 # ============================================================
 
@@ -1234,21 +1337,12 @@ def analyze_repository(
     """
     Analyze one repository.
 
-    Returns None if the user
-    has no commits during the period.
+    Only compact information is returned.
     """
 
     full_name = repository[
         "full_name"
     ]
-
-    print(
-        f"  Analyzing {full_name}"
-    )
-
-    # --------------------------------------------------------
-    # Commits
-    # --------------------------------------------------------
 
     commits = get_repository_commits(
         github,
@@ -1261,18 +1355,17 @@ def analyze_repository(
 
         return None
 
-    # --------------------------------------------------------
-    # Languages
-    # --------------------------------------------------------
-
-    languages = get_repository_languages(
-        github,
-        full_name,
+    print(
+        f"  Active: {full_name} "
+        f"({len(commits)} commits)"
     )
 
-    # --------------------------------------------------------
-    # Files
-    # --------------------------------------------------------
+    languages = (
+        get_repository_languages(
+            github,
+            full_name,
+        )
+    )
 
     branch = (
         repository.get(
@@ -1287,10 +1380,6 @@ def analyze_repository(
         branch,
     )
 
-    # --------------------------------------------------------
-    # Technologies
-    # --------------------------------------------------------
-
     technologies = (
         detect_repository_technologies(
             github,
@@ -1301,49 +1390,33 @@ def analyze_repository(
         )
     )
 
-    # --------------------------------------------------------
-    # Daily activity
-    # --------------------------------------------------------
-
-    daily_activity = (
-        build_daily_commit_activity(
-            commits,
-            full_name,
+    daily_commits = (
+        extract_daily_commits(
+            commits
         )
     )
 
     return {
+
         "name":
             repository.get(
                 "name"
             ),
 
-        "full_name":
-            full_name,
-
-        "url":
-            repository.get(
-                "html_url"
-            ),
-
-        "private":
-            repository.get(
-                "private",
-                False,
-            ),
-
-        "fork":
-            repository.get(
-                "fork",
-                False,
-            ),
-
         "commits":
             len(commits),
 
+        "private":
+            bool(
+                repository.get(
+                    "private",
+                    False,
+                )
+            ),
+
         "languages":
             dict(
-                languages.most_common()
+                languages
             ),
 
         "technologies":
@@ -1351,9 +1424,9 @@ def analyze_repository(
                 technologies
             ),
 
-        "daily_activity":
-            convert_daily_activity(
-                daily_activity
+        "daily_commits":
+            dict(
+                daily_commits
             ),
     }
 
@@ -1362,309 +1435,109 @@ def analyze_repository(
 # DAILY ACTIVITY AGGREGATION
 # ============================================================
 
-def convert_daily_activity(
-    activity,
-):
-    """
-    Convert sets to JSON-compatible lists.
-    """
-
-    result = {}
-
-    for date, stats in (
-        activity.items()
-    ):
-
-        result[date] = {
-
-            "commits":
-                stats["commits"],
-
-            "repositories":
-                sorted(
-                    stats[
-                        "repositories"
-                    ]
-                ),
-        }
-
-    return result
-
-
 def aggregate_daily_activity(
-    repository_results,
+    repositories,
 ):
     """
-    Combine daily activity from all repositories.
+    Aggregate commits by day.
+
+    Output remains intentionally tiny.
     """
 
-    daily = defaultdict(
-        lambda: {
-            "commits": 0,
-            "repositories": set(),
-            "private_repositories": set(),
-            "public_repositories": set(),
-        }
-    )
+    daily = Counter()
 
-    for repository in (
-        repository_results
-    ):
+    for repository in repositories:
 
-        repository_name = (
+        for date, commits in (
             repository[
-                "full_name"
-            ]
-        )
-
-        is_private = (
-            repository[
-                "private"
-            ]
-        )
-
-        for date, activity in (
-            repository[
-                "daily_activity"
+                "daily_commits"
             ].items()
         ):
 
-            daily[date][
-                "commits"
-            ] += activity[
-                "commits"
-            ]
+            daily[
+                date
+            ] += commits
 
-            daily[date][
-                "repositories"
-            ].add(
-                repository_name
-            )
-
-            if is_private:
-
-                daily[date][
-                    "private_repositories"
-                ].add(
-                    repository_name
-                )
-
-            else:
-
-                daily[date][
-                    "public_repositories"
-                ].add(
-                    repository_name
-                )
-
-    result = {}
-
-    for date in sorted(
-        daily
-    ):
-
-        stats = daily[
-            date
-        ]
-
-        result[date] = {
-
-            "commits":
-                stats[
-                    "commits"
-                ],
-
-            "repositories":
-                sorted(
-                    stats[
-                        "repositories"
-                    ]
-                ),
-
-            "repository_count":
-                len(
-                    stats[
-                        "repositories"
-                    ]
-                ),
-
-            "private_repository_count":
-                len(
-                    stats[
-                        "private_repositories"
-                    ]
-                ),
-
-            "public_repository_count":
-                len(
-                    stats[
-                        "public_repositories"
-                    ]
-                ),
-        }
-
-    return result
-
-
-# ============================================================
-# GLOBAL AGGREGATION
-# ============================================================
-
-def aggregate_languages(
-    repository_results,
-):
-    """
-    Combine GitHub language statistics
-    across active repositories.
-    """
-
-    languages = Counter()
-
-    for repository in (
-        repository_results
-    ):
-
-        languages.update(
-            repository[
-                "languages"
-            ]
+    return dict(
+        sorted(
+            daily.items()
         )
-
-    return languages
-
-
-def aggregate_technologies(
-    repository_results,
-):
-    """
-    Count technologies by number
-    of repositories using them.
-    """
-
-    technology_repositories = defaultdict(
-        set
     )
 
-    for repository in (
-        repository_results
-    ):
 
-        for technology in (
-            repository[
-                "technologies"
-            ]
-        ):
+# ============================================================
+# ACTIVE REPOSITORY SUMMARY
+# ============================================================
 
-            technology_repositories[
-                technology
-            ].add(
-                repository[
-                    "full_name"
-                ]
-            )
+def build_repository_summary(
+    repositories,
+):
+    """
+    Return only the most useful
+    repository-level information.
+    """
 
     result = []
 
-    sorted_technologies = sorted(
-        technology_repositories.items(),
-        key=lambda item:
-            len(item[1]),
-        reverse=True,
-    )
-
-    for technology, repositories in (
-        sorted_technologies
-    ):
+    for repository in repositories:
 
         result.append({
 
-            "technology":
-                technology,
+            "name":
+                repository[
+                    "name"
+                ],
 
-            "repository_count":
-                len(repositories),
+            "commits":
+                repository[
+                    "commits"
+                ],
 
-            "repositories":
-                sorted(
-                    repositories
-                ),
+            "private":
+                repository[
+                    "private"
+                ],
         })
+
+    result.sort(
+        key=lambda repository:
+            repository[
+                "commits"
+            ],
+        reverse=True,
+    )
 
     return result
 
 
-def calculate_percentage(
-    counter,
-):
-    """
-    Convert a Counter into percentages.
-    """
-
-    total = sum(
-        counter.values()
-    )
-
-    if total == 0:
-
-        return {}
-
-    return {
-
-        key:
-            round(
-                value / total * 100,
-                2,
-            )
-
-        for key, value
-        in counter.most_common()
-    }
-
-
 # ============================================================
-# SNAPSHOT CREATION
+# SNAPSHOT
 # ============================================================
 
 def build_snapshot(
     start,
     end,
     accessible_repositories,
-    repository_results,
+    active_repositories,
 ):
     """
-    Build the rolling 12-month snapshot.
+    Build compact rolling 12-month analytics.
     """
 
     languages = aggregate_languages(
-        repository_results
+        active_repositories
     )
 
-    technologies = aggregate_technologies(
-        repository_results
+    technologies = (
+        aggregate_technologies(
+            active_repositories
+        )
     )
 
-    daily_activity = aggregate_daily_activity(
-        repository_results
-    )
-
-    private_repositories = sum(
-        1
-        for repository
-        in repository_results
-
-        if repository[
-            "private"
-        ]
-    )
-
-    public_repositories = sum(
-        1
-        for repository
-        in repository_results
-
-        if not repository[
-            "private"
-        ]
+    daily_activity = (
+        aggregate_daily_activity(
+            active_repositories
+        )
     )
 
     total_commits = sum(
@@ -1673,7 +1546,23 @@ def build_snapshot(
         ]
 
         for repository
-        in repository_results
+        in active_repositories
+    )
+
+    private_count = sum(
+        1
+
+        for repository
+        in active_repositories
+
+        if repository[
+            "private"
+        ]
+    )
+
+    public_count = (
+        len(active_repositories)
+        - private_count
     )
 
     return {
@@ -1699,14 +1588,14 @@ def build_snapshot(
 
             "active_repositories":
                 len(
-                    repository_results
+                    active_repositories
                 ),
 
-            "private_active_repositories":
-                private_repositories,
+            "private_repositories":
+                private_count,
 
-            "public_active_repositories":
-                public_repositories,
+            "public_repositories":
+                public_count,
 
             "commits":
                 total_commits,
@@ -1717,31 +1606,37 @@ def build_snapshot(
                 ),
         },
 
+        # ----------------------------------------------------
+        # Languages
+        # ----------------------------------------------------
+
         "languages": {
 
-            "bytes":
-                dict(
-                    languages.most_common()
-                ),
-
             "percentage":
-                calculate_percentage(
+                calculate_percentages(
                     languages
                 ),
         },
 
+        # ----------------------------------------------------
+        # Technologies
+        # ----------------------------------------------------
+
         "technologies":
             technologies,
 
+        # ----------------------------------------------------
+        # Top projects
+        # ----------------------------------------------------
+
         "repositories":
-            sorted(
-                repository_results,
-                key=lambda repository:
-                    repository[
-                        "commits"
-                    ],
-                reverse=True,
+            build_repository_summary(
+                active_repositories
             ),
+
+        # ----------------------------------------------------
+        # Daily activity
+        # ----------------------------------------------------
 
         "daily_activity":
             daily_activity,
@@ -1749,18 +1644,76 @@ def build_snapshot(
 
 
 # ============================================================
-# HISTORY MANAGEMENT
+# HISTORY
 # ============================================================
+
+def load_existing_data():
+    """
+    Load existing analytics history.
+    """
+
+    if not os.path.exists(
+        OUTPUT_FILE
+    ):
+
+        return {
+
+            "schema_version": 3,
+
+            "username":
+                GITHUB_USERNAME,
+
+            "updated_at":
+                None,
+
+            "current":
+                None,
+
+            "history":
+                [],
+        }
+
+    try:
+
+        with open(
+            OUTPUT_FILE,
+            "r",
+            encoding="utf-8",
+        ) as file:
+
+            return json.load(
+                file
+            )
+
+    except Exception:
+
+        return {
+
+            "schema_version": 3,
+
+            "username":
+                GITHUB_USERNAME,
+
+            "updated_at":
+                None,
+
+            "current":
+                None,
+
+            "history":
+                [],
+        }
+
 
 def update_history(
     data,
     snapshot,
 ):
     """
-    Add today's snapshot to history.
+    Add today's compact snapshot.
 
-    If today's snapshot already exists,
-    replace it instead of duplicating it.
+    Existing snapshot for the same date
+    is replaced.
     """
 
     history = data.get(
@@ -1768,18 +1721,19 @@ def update_history(
         []
     )
 
-    snapshot_date = snapshot[
+    today = snapshot[
         "date"
     ]
 
     history = [
+
         item
 
         for item in history
 
         if item.get(
             "date"
-        ) != snapshot_date
+        ) != today
     ]
 
     history.append(
@@ -1801,19 +1755,51 @@ def update_history(
     return data
 
 
+def save_data(
+    data,
+):
+    """
+    Persist compact analytics JSON.
+    """
+
+    directory = os.path.dirname(
+        OUTPUT_FILE
+    )
+
+    if directory:
+
+        os.makedirs(
+            directory,
+            exist_ok=True,
+        )
+
+    with open(
+        OUTPUT_FILE,
+        "w",
+        encoding="utf-8",
+    ) as file:
+
+        json.dump(
+            data,
+            file,
+            indent=2,
+            ensure_ascii=False,
+        )
+
+
 # ============================================================
 # MAIN PIPELINE
 # ============================================================
 
-def run_analysis():
+def run():
     """
-    Main analytics pipeline.
+    Run the complete analytics pipeline.
     """
 
     if not GITHUB_TOKEN:
 
         raise RuntimeError(
-            "GITHUB_TOKEN is not set."
+            "GITHUB_TOKEN is missing."
         )
 
     start, end = (
@@ -1821,7 +1807,16 @@ def run_analysis():
     )
 
     print(
-        f"\nAnalyzing @{GITHUB_USERNAME}"
+        "\n"
+        + "=" * 60
+    )
+
+    print(
+        "GitHub Engineering Analytics"
+    )
+
+    print(
+        f"User: @{GITHUB_USERNAME}"
     )
 
     print(
@@ -1830,12 +1825,16 @@ def run_analysis():
         f"{end.date()}"
     )
 
+    print(
+        "=" * 60
+    )
+
     github = GitHubClient(
         GITHUB_TOKEN
     )
 
     # --------------------------------------------------------
-    # 1. Repository discovery
+    # 1. Discover repositories
     # --------------------------------------------------------
 
     repositories = (
@@ -1845,7 +1844,7 @@ def run_analysis():
     )
 
     # --------------------------------------------------------
-    # 2. Repository analysis
+    # 2. Analyze active repositories
     # --------------------------------------------------------
 
     active_repositories = []
@@ -1874,7 +1873,7 @@ def run_analysis():
             )
 
     # --------------------------------------------------------
-    # 3. Build snapshot
+    # 3. Build compact snapshot
     # --------------------------------------------------------
 
     snapshot = build_snapshot(
@@ -1885,14 +1884,14 @@ def run_analysis():
     )
 
     # --------------------------------------------------------
-    # 4. Load existing data
+    # 4. Load existing history
     # --------------------------------------------------------
 
     data = load_existing_data()
 
     data[
         "schema_version"
-    ] = 2
+    ] = 3
 
     data[
         "username"
@@ -1900,15 +1899,16 @@ def run_analysis():
 
     data[
         "updated_at"
-    ] = to_iso_datetime(end)
+    ] = to_iso_datetime(
+        end
+    )
 
-    # Latest rolling snapshot
     data[
         "current"
     ] = snapshot
 
     # --------------------------------------------------------
-    # 5. Update history
+    # 5. Update daily history
     # --------------------------------------------------------
 
     data = update_history(
@@ -1928,7 +1928,7 @@ def run_analysis():
 
 
 # ============================================================
-# CLI
+# OUTPUT
 # ============================================================
 
 def print_summary(
@@ -1936,7 +1936,8 @@ def print_summary(
     data,
 ):
     """
-    Print a concise GitHub Actions summary.
+    Print useful information to
+    GitHub Actions logs.
     """
 
     summary = snapshot[
@@ -1949,7 +1950,7 @@ def print_summary(
     )
 
     print(
-        "GITHUB TECH STACK ANALYSIS COMPLETE"
+        "ANALYSIS COMPLETE"
     )
 
     print(
@@ -1963,12 +1964,12 @@ def print_summary(
 
     print(
         f"Private repositories: "
-        f"{summary['private_active_repositories']}"
+        f"{summary['private_repositories']}"
     )
 
     print(
         f"Public repositories : "
-        f"{summary['public_active_repositories']}"
+        f"{summary['public_repositories']}"
     )
 
     print(
@@ -1987,7 +1988,7 @@ def print_summary(
     )
 
     print(
-        f"\nOutput: {OUTPUT_FILE}"
+        f"\nSaved: {OUTPUT_FILE}"
     )
 
     print(
@@ -2003,9 +2004,7 @@ def main():
 
     try:
 
-        snapshot, data = (
-            run_analysis()
-        )
+        snapshot, data = run()
 
         print_summary(
             snapshot,
@@ -2015,7 +2014,7 @@ def main():
     except KeyboardInterrupt:
 
         print(
-            "\nAnalysis stopped."
+            "\nStopped."
         )
 
         sys.exit(130)
