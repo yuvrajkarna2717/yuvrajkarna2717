@@ -1,210 +1,27 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "username": "yuvrajkarna2717",
-  "updated_at": "2026-08-19T09:38:44.806119Z",
-  "current": {
-    "date": "2026-08-19",
-    "period": {
-      "from": "2025-08-19",
-      "to": "2026-08-19"
-    },
-    "summary": {
-      "accessible_repositories": 48,
-      "active_repositories": 21,
-      "private_repositories": 6,
-      "public_repositories": 15,
-      "commits": 214,
-      "active_days": 77
-    },
-    "languages": {
-      "percentage": {
-        "Java": 61.56,
-        "Vue": 16.01,
-        "TypeScript": 13.57,
-        "JavaScript": 4.8,
-        "C++": 1.3,
-        "Jupyter": 0.8,
-        "SCSS": 0.61,
-        "Python": 0.42,
-        "PLpgSQL": 0.2,
-        "HTML": 0.15,
-        "MDX": 0.14,
-        "Shell": 0.12,
-        "CSS": 0.1,
-        "Makefile": 0.09,
-        "Dockerfile": 0.04,
-        "C#": 0.04,
-        "Batchfile": 0.03
-      }
-    },
-    "technologies": [
-      {
-        "technology": "JavaScript",
-        "repositories": 9,
-        "percentage": 42.86
-      },
-      {
-        "technology": "TypeScript",
-        "repositories": 9,
-        "percentage": 42.86
-      },
-      {
-        "technology": "CSS",
-        "repositories": 7,
-        "percentage": 33.33
-      },
-      {
-        "technology": "GitHub Actions",
-        "repositories": 6,
-        "percentage": 28.57
-      },
-      {
-        "technology": "ESLint",
-        "repositories": 6,
-        "percentage": 28.57
-      },
-      {
-        "technology": "React",
-        "repositories": 5,
-        "percentage": 23.81
-      },
-      {
-        "technology": "HTML",
-        "repositories": 5,
-        "percentage": 23.81
-      },
-      {
-        "technology": "Tailwind CSS",
-        "repositories": 4,
-        "percentage": 19.05
-      },
-      {
-        "technology": "Docker",
-        "repositories": 4,
-        "percentage": 19.05
-      },
-      {
-        "technology": "Vite",
-        "repositories": 4,
-        "percentage": 19.05
-      },
-      {
-        "technology": "Shell",
-        "repositories": 3,
-        "percentage": 14.29
-      },
-      {
-        "technology": "Prettier",
-        "repositories": 3,
-        "percentage": 14.29
-      },
-      {
-        "technology": "Dockerfile",
-        "repositories": 3,
-        "percentage": 14.29
-      },
-      {
-        "technology": "Python",
-        "repositories": 2,
-        "percentage": 9.52
-      },
-      {
-        "technology": "Next.js",
-        "repositories": 2,
-        "percentage": 9.52
-      },
-      {
-        "technology": "C++",
-        "repositories": 2,
-        "percentage": 9.52
-      },
-      {
-        "technology": "Zod",
-        "repositories": 2,
-        "percentage": 9.52
-      },
-      {
-        "technology": "Express",
-        "repositories": 2,
-        "percentage": 9.52
-      },
-      {
-        "technology": "Vitest",
-        "repositories": 2,
-        "percentage": 9.52
-      },
-      {
-        "technology": "C#",
-        "repositories": 2,
-        "percentage": 9.52
-      },
-      {
-        "technology": "Mongoose",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "Jupyter",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "MDX",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "PostgreSQL",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "Redis",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "Google Gemini API",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "Rollup",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "Batchfile",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "Java",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "Makefile",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "PLpgSQL",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "SCSS",
-        "repositories": 1,
-        "percentage": 4.76
-      },
-      {
-        "technology": "Vue",
-        "repositories": 1,
-        "percentage": 4.76
-      }
-    ],
-    "repositories": [
+  "updated_at": "2026-08-19T10:12:22.116445Z",
+  "date": "2026-08-19",
+  "period": {
+    "from": "2025-08-19",
+    "to": "2026-08-19"
+  },
+  "activity": {
+    "commits": 159,
+    "issues": 19,
+    "pull_requests": 16,
+    "pull_request_reviews": 0,
+    "total_contributions": 284,
+    "restricted_contributions": 80,
+    "repositories_with_commits": 16
+  },
+  "repositories": {
+    "accessible": 48,
+    "analyzed": 21,
+    "private_analyzed": 6,
+    "public_analyzed": 15,
+    "top": [
       {
         "name": "mora",
         "commits": 45,
@@ -231,14 +48,14 @@
         "private": false
       },
       {
+        "name": "yuvrajkarna2717",
+        "commits": 12,
+        "private": false
+      },
+      {
         "name": "ai-ml-learning",
         "commits": 12,
         "private": true
-      },
-      {
-        "name": "yuvrajkarna2717",
-        "commits": 10,
-        "private": false
       },
       {
         "name": "Restart-DSA",
@@ -310,476 +127,557 @@
         "commits": 1,
         "private": false
       }
-    ],
-    "daily_activity": {
-      "2025-08-26": 1,
-      "2025-09-15": 2,
-      "2025-10-09": 2,
-      "2025-10-27": 1,
-      "2025-10-29": 4,
-      "2025-10-30": 1,
-      "2025-11-06": 2,
-      "2025-11-10": 1,
-      "2025-11-11": 1,
-      "2025-11-14": 2,
-      "2025-11-17": 2,
-      "2025-11-18": 3,
-      "2025-11-19": 2,
-      "2025-11-20": 3,
-      "2025-11-25": 1,
-      "2025-11-26": 1,
-      "2025-12-05": 7,
-      "2025-12-09": 7,
-      "2025-12-14": 4,
-      "2025-12-15": 1,
-      "2025-12-16": 1,
-      "2025-12-19": 3,
-      "2025-12-21": 1,
-      "2025-12-22": 5,
-      "2025-12-25": 5,
-      "2025-12-26": 4,
-      "2025-12-29": 3,
-      "2025-12-30": 13,
-      "2026-01-01": 1,
-      "2026-01-02": 22,
-      "2026-01-03": 1,
-      "2026-01-04": 1,
-      "2026-01-05": 5,
-      "2026-01-06": 8,
-      "2026-01-07": 3,
-      "2026-01-08": 1,
-      "2026-01-09": 1,
-      "2026-01-11": 2,
-      "2026-01-12": 1,
-      "2026-01-14": 1,
-      "2026-01-15": 1,
-      "2026-01-20": 1,
-      "2026-01-22": 5,
-      "2026-01-28": 1,
-      "2026-01-29": 1,
-      "2026-01-30": 2,
-      "2026-02-03": 2,
-      "2026-02-05": 1,
-      "2026-03-26": 1,
-      "2026-04-10": 1,
-      "2026-04-13": 1,
-      "2026-04-16": 2,
-      "2026-04-27": 1,
-      "2026-05-06": 1,
-      "2026-05-18": 7,
-      "2026-05-26": 2,
-      "2026-05-27": 1,
-      "2026-06-02": 1,
-      "2026-06-03": 2,
-      "2026-06-04": 3,
-      "2026-06-05": 3,
-      "2026-06-06": 2,
-      "2026-06-08": 4,
-      "2026-06-09": 6,
-      "2026-06-25": 10,
-      "2026-06-29": 1,
-      "2026-07-14": 1,
-      "2026-07-16": 1,
-      "2026-07-23": 1,
-      "2026-07-27": 1,
-      "2026-07-28": 1,
-      "2026-08-03": 3,
-      "2026-08-04": 3,
-      "2026-08-10": 3,
-      "2026-08-11": 1,
-      "2026-08-13": 2,
-      "2026-08-19": 4
+    ]
+  },
+  "languages": {
+    "percentage": {
+      "Java": 61.57,
+      "Vue": 16.01,
+      "TypeScript": 13.58,
+      "JavaScript": 4.8,
+      "C++": 1.3,
+      "Jupyter": 0.8,
+      "SCSS": 0.61,
+      "Python": 0.42,
+      "PLpgSQL": 0.2,
+      "HTML": 0.15,
+      "MDX": 0.14,
+      "Shell": 0.12,
+      "CSS": 0.1,
+      "Makefile": 0.09,
+      "Dockerfile": 0.04,
+      "C#": 0.04,
+      "Batchfile": 0.03
     }
   },
-  "history": [
+  "technologies": [
     {
-      "date": "2026-08-19",
-      "period": {
-        "from": "2025-08-19",
-        "to": "2026-08-19"
-      },
-      "summary": {
-        "accessible_repositories": 48,
-        "active_repositories": 21,
-        "private_repositories": 6,
-        "public_repositories": 15,
-        "commits": 214,
-        "active_days": 77
-      },
-      "languages": {
-        "percentage": {
-          "Java": 61.56,
-          "Vue": 16.01,
-          "TypeScript": 13.57,
-          "JavaScript": 4.8,
-          "C++": 1.3,
-          "Jupyter": 0.8,
-          "SCSS": 0.61,
-          "Python": 0.42,
-          "PLpgSQL": 0.2,
-          "HTML": 0.15,
-          "MDX": 0.14,
-          "Shell": 0.12,
-          "CSS": 0.1,
-          "Makefile": 0.09,
-          "Dockerfile": 0.04,
-          "C#": 0.04,
-          "Batchfile": 0.03
-        }
-      },
-      "technologies": [
-        {
-          "technology": "JavaScript",
-          "repositories": 9,
-          "percentage": 42.86
-        },
-        {
-          "technology": "TypeScript",
-          "repositories": 9,
-          "percentage": 42.86
-        },
-        {
-          "technology": "CSS",
-          "repositories": 7,
-          "percentage": 33.33
-        },
-        {
-          "technology": "GitHub Actions",
-          "repositories": 6,
-          "percentage": 28.57
-        },
-        {
-          "technology": "ESLint",
-          "repositories": 6,
-          "percentage": 28.57
-        },
-        {
-          "technology": "React",
-          "repositories": 5,
-          "percentage": 23.81
-        },
-        {
-          "technology": "HTML",
-          "repositories": 5,
-          "percentage": 23.81
-        },
-        {
-          "technology": "Tailwind CSS",
-          "repositories": 4,
-          "percentage": 19.05
-        },
-        {
-          "technology": "Docker",
-          "repositories": 4,
-          "percentage": 19.05
-        },
-        {
-          "technology": "Vite",
-          "repositories": 4,
-          "percentage": 19.05
-        },
-        {
-          "technology": "Shell",
-          "repositories": 3,
-          "percentage": 14.29
-        },
-        {
-          "technology": "Prettier",
-          "repositories": 3,
-          "percentage": 14.29
-        },
-        {
-          "technology": "Dockerfile",
-          "repositories": 3,
-          "percentage": 14.29
-        },
-        {
-          "technology": "Python",
-          "repositories": 2,
-          "percentage": 9.52
-        },
-        {
-          "technology": "Next.js",
-          "repositories": 2,
-          "percentage": 9.52
-        },
-        {
-          "technology": "C++",
-          "repositories": 2,
-          "percentage": 9.52
-        },
-        {
-          "technology": "Zod",
-          "repositories": 2,
-          "percentage": 9.52
-        },
-        {
-          "technology": "Express",
-          "repositories": 2,
-          "percentage": 9.52
-        },
-        {
-          "technology": "Vitest",
-          "repositories": 2,
-          "percentage": 9.52
-        },
-        {
-          "technology": "C#",
-          "repositories": 2,
-          "percentage": 9.52
-        },
-        {
-          "technology": "Mongoose",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "Jupyter",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "MDX",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "PostgreSQL",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "Redis",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "Google Gemini API",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "Rollup",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "Batchfile",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "Java",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "Makefile",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "PLpgSQL",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "SCSS",
-          "repositories": 1,
-          "percentage": 4.76
-        },
-        {
-          "technology": "Vue",
-          "repositories": 1,
-          "percentage": 4.76
-        }
-      ],
-      "repositories": [
-        {
-          "name": "mora",
-          "commits": 45,
-          "private": false
-        },
-        {
-          "name": "openbooks-api",
-          "commits": 41,
-          "private": false
-        },
-        {
-          "name": "thedigitalprofile.com",
-          "commits": 26,
-          "private": true
-        },
-        {
-          "name": "yuvrajkarna",
-          "commits": 20,
-          "private": false
-        },
-        {
-          "name": "react-hook-granth",
-          "commits": 14,
-          "private": false
-        },
-        {
-          "name": "ai-ml-learning",
-          "commits": 12,
-          "private": true
-        },
-        {
-          "name": "yuvrajkarna2717",
-          "commits": 10,
-          "private": false
-        },
-        {
-          "name": "Restart-DSA",
-          "commits": 10,
-          "private": true
-        },
-        {
-          "name": "CP-31-Sheet",
-          "commits": 9,
-          "private": false
-        },
-        {
-          "name": "Sorting_Visualizer",
-          "commits": 5,
-          "private": false
-        },
-        {
-          "name": "DevOps",
-          "commits": 5,
-          "private": true
-        },
-        {
-          "name": "CS-Fundamentals",
-          "commits": 3,
-          "private": false
-        },
-        {
-          "name": "gitwhistle",
-          "commits": 3,
-          "private": false
-        },
-        {
-          "name": "interview-prep-docs",
-          "commits": 2,
-          "private": true
-        },
-        {
-          "name": "trackit-cli",
-          "commits": 2,
-          "private": false
-        },
-        {
-          "name": "yc-opensource-startups",
-          "commits": 2,
-          "private": true
-        },
-        {
-          "name": "prefixpilot",
-          "commits": 1,
-          "private": false
-        },
-        {
-          "name": "quickrev-bot",
-          "commits": 1,
-          "private": false
-        },
-        {
-          "name": "kestra",
-          "commits": 1,
-          "private": false
-        },
-        {
-          "name": "c-sharp",
-          "commits": 1,
-          "private": false
-        },
-        {
-          "name": "GameStore.Api",
-          "commits": 1,
-          "private": false
-        }
-      ],
-      "daily_activity": {
-        "2025-08-26": 1,
-        "2025-09-15": 2,
-        "2025-10-09": 2,
-        "2025-10-27": 1,
-        "2025-10-29": 4,
-        "2025-10-30": 1,
-        "2025-11-06": 2,
-        "2025-11-10": 1,
-        "2025-11-11": 1,
-        "2025-11-14": 2,
-        "2025-11-17": 2,
-        "2025-11-18": 3,
-        "2025-11-19": 2,
-        "2025-11-20": 3,
-        "2025-11-25": 1,
-        "2025-11-26": 1,
-        "2025-12-05": 7,
-        "2025-12-09": 7,
-        "2025-12-14": 4,
-        "2025-12-15": 1,
-        "2025-12-16": 1,
-        "2025-12-19": 3,
-        "2025-12-21": 1,
-        "2025-12-22": 5,
-        "2025-12-25": 5,
-        "2025-12-26": 4,
-        "2025-12-29": 3,
-        "2025-12-30": 13,
-        "2026-01-01": 1,
-        "2026-01-02": 22,
-        "2026-01-03": 1,
-        "2026-01-04": 1,
-        "2026-01-05": 5,
-        "2026-01-06": 8,
-        "2026-01-07": 3,
-        "2026-01-08": 1,
-        "2026-01-09": 1,
-        "2026-01-11": 2,
-        "2026-01-12": 1,
-        "2026-01-14": 1,
-        "2026-01-15": 1,
-        "2026-01-20": 1,
-        "2026-01-22": 5,
-        "2026-01-28": 1,
-        "2026-01-29": 1,
-        "2026-01-30": 2,
-        "2026-02-03": 2,
-        "2026-02-05": 1,
-        "2026-03-26": 1,
-        "2026-04-10": 1,
-        "2026-04-13": 1,
-        "2026-04-16": 2,
-        "2026-04-27": 1,
-        "2026-05-06": 1,
-        "2026-05-18": 7,
-        "2026-05-26": 2,
-        "2026-05-27": 1,
-        "2026-06-02": 1,
-        "2026-06-03": 2,
-        "2026-06-04": 3,
-        "2026-06-05": 3,
-        "2026-06-06": 2,
-        "2026-06-08": 4,
-        "2026-06-09": 6,
-        "2026-06-25": 10,
-        "2026-06-29": 1,
-        "2026-07-14": 1,
-        "2026-07-16": 1,
-        "2026-07-23": 1,
-        "2026-07-27": 1,
-        "2026-07-28": 1,
-        "2026-08-03": 3,
-        "2026-08-04": 3,
-        "2026-08-10": 3,
-        "2026-08-11": 1,
-        "2026-08-13": 2,
-        "2026-08-19": 4
-      }
+      "technology": "JavaScript",
+      "repositories": 9,
+      "percentage": 42.86
+    },
+    {
+      "technology": "TypeScript",
+      "repositories": 9,
+      "percentage": 42.86
+    },
+    {
+      "technology": "CSS",
+      "repositories": 7,
+      "percentage": 33.33
+    },
+    {
+      "technology": "GitHub Actions",
+      "repositories": 6,
+      "percentage": 28.57
+    },
+    {
+      "technology": "ESLint",
+      "repositories": 6,
+      "percentage": 28.57
+    },
+    {
+      "technology": "React",
+      "repositories": 5,
+      "percentage": 23.81
+    },
+    {
+      "technology": "HTML",
+      "repositories": 5,
+      "percentage": 23.81
+    },
+    {
+      "technology": "Tailwind CSS",
+      "repositories": 4,
+      "percentage": 19.05
+    },
+    {
+      "technology": "Docker",
+      "repositories": 4,
+      "percentage": 19.05
+    },
+    {
+      "technology": "Shell",
+      "repositories": 3,
+      "percentage": 14.29
+    },
+    {
+      "technology": "Vite",
+      "repositories": 3,
+      "percentage": 14.29
+    },
+    {
+      "technology": "Prettier",
+      "repositories": 3,
+      "percentage": 14.29
+    },
+    {
+      "technology": "Dockerfile",
+      "repositories": 3,
+      "percentage": 14.29
+    },
+    {
+      "technology": "Python",
+      "repositories": 2,
+      "percentage": 9.52
+    },
+    {
+      "technology": "Next.js",
+      "repositories": 2,
+      "percentage": 9.52
+    },
+    {
+      "technology": "C++",
+      "repositories": 2,
+      "percentage": 9.52
+    },
+    {
+      "technology": "Zod",
+      "repositories": 2,
+      "percentage": 9.52
+    },
+    {
+      "technology": "Express",
+      "repositories": 2,
+      "percentage": 9.52
+    },
+    {
+      "technology": "Vitest",
+      "repositories": 2,
+      "percentage": 9.52
+    },
+    {
+      "technology": "C#",
+      "repositories": 2,
+      "percentage": 9.52
+    },
+    {
+      "technology": "Mongoose",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "Jupyter",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "MDX",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "PostgreSQL",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "Redis",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "Google Gemini API",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "Batchfile",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "Java",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "Makefile",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "PLpgSQL",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "SCSS",
+      "repositories": 1,
+      "percentage": 4.76
+    },
+    {
+      "technology": "Vue",
+      "repositories": 1,
+      "percentage": 4.76
     }
-  ]
+  ],
+  "daily_activity": {
+    "2025-08-19": 5,
+    "2025-08-20": 7,
+    "2025-08-21": 1,
+    "2025-08-22": 0,
+    "2025-08-23": 0,
+    "2025-08-24": 0,
+    "2025-08-25": 0,
+    "2025-08-26": 1,
+    "2025-08-27": 0,
+    "2025-08-28": 0,
+    "2025-08-29": 0,
+    "2025-08-30": 0,
+    "2025-08-31": 0,
+    "2025-09-01": 0,
+    "2025-09-02": 0,
+    "2025-09-03": 0,
+    "2025-09-04": 0,
+    "2025-09-05": 1,
+    "2025-09-06": 0,
+    "2025-09-07": 0,
+    "2025-09-08": 3,
+    "2025-09-09": 0,
+    "2025-09-10": 0,
+    "2025-09-11": 0,
+    "2025-09-12": 0,
+    "2025-09-13": 0,
+    "2025-09-14": 0,
+    "2025-09-15": 2,
+    "2025-09-16": 0,
+    "2025-09-17": 0,
+    "2025-09-18": 0,
+    "2025-09-19": 0,
+    "2025-09-20": 0,
+    "2025-09-21": 0,
+    "2025-09-22": 0,
+    "2025-09-23": 0,
+    "2025-09-24": 0,
+    "2025-09-25": 0,
+    "2025-09-26": 0,
+    "2025-09-27": 0,
+    "2025-09-28": 0,
+    "2025-09-29": 0,
+    "2025-09-30": 0,
+    "2025-10-01": 0,
+    "2025-10-02": 0,
+    "2025-10-03": 0,
+    "2025-10-04": 0,
+    "2025-10-05": 0,
+    "2025-10-06": 0,
+    "2025-10-07": 0,
+    "2025-10-08": 0,
+    "2025-10-09": 2,
+    "2025-10-10": 0,
+    "2025-10-11": 0,
+    "2025-10-12": 0,
+    "2025-10-13": 0,
+    "2025-10-14": 0,
+    "2025-10-15": 0,
+    "2025-10-16": 0,
+    "2025-10-17": 0,
+    "2025-10-18": 0,
+    "2025-10-19": 0,
+    "2025-10-20": 0,
+    "2025-10-21": 0,
+    "2025-10-22": 0,
+    "2025-10-23": 0,
+    "2025-10-24": 1,
+    "2025-10-25": 0,
+    "2025-10-26": 0,
+    "2025-10-27": 1,
+    "2025-10-28": 0,
+    "2025-10-29": 6,
+    "2025-10-30": 1,
+    "2025-10-31": 0,
+    "2025-11-01": 0,
+    "2025-11-02": 0,
+    "2025-11-03": 1,
+    "2025-11-04": 0,
+    "2025-11-05": 0,
+    "2025-11-06": 2,
+    "2025-11-07": 1,
+    "2025-11-08": 0,
+    "2025-11-09": 0,
+    "2025-11-10": 1,
+    "2025-11-11": 1,
+    "2025-11-12": 0,
+    "2025-11-13": 0,
+    "2025-11-14": 3,
+    "2025-11-15": 0,
+    "2025-11-16": 0,
+    "2025-11-17": 2,
+    "2025-11-18": 3,
+    "2025-11-19": 2,
+    "2025-11-20": 4,
+    "2025-11-21": 0,
+    "2025-11-22": 0,
+    "2025-11-23": 0,
+    "2025-11-24": 2,
+    "2025-11-25": 1,
+    "2025-11-26": 1,
+    "2025-11-27": 0,
+    "2025-11-28": 0,
+    "2025-11-29": 0,
+    "2025-11-30": 0,
+    "2025-12-01": 0,
+    "2025-12-02": 0,
+    "2025-12-03": 0,
+    "2025-12-04": 0,
+    "2025-12-05": 0,
+    "2025-12-06": 17,
+    "2025-12-07": 0,
+    "2025-12-08": 3,
+    "2025-12-09": 8,
+    "2025-12-10": 2,
+    "2025-12-11": 0,
+    "2025-12-12": 0,
+    "2025-12-13": 0,
+    "2025-12-14": 4,
+    "2025-12-15": 1,
+    "2025-12-16": 2,
+    "2025-12-17": 0,
+    "2025-12-18": 0,
+    "2025-12-19": 3,
+    "2025-12-20": 0,
+    "2025-12-21": 1,
+    "2025-12-22": 6,
+    "2025-12-23": 0,
+    "2025-12-24": 0,
+    "2025-12-25": 5,
+    "2025-12-26": 3,
+    "2025-12-27": 1,
+    "2025-12-28": 0,
+    "2025-12-29": 3,
+    "2025-12-30": 20,
+    "2025-12-31": 0,
+    "2026-01-01": 1,
+    "2026-01-02": 33,
+    "2026-01-03": 1,
+    "2026-01-04": 1,
+    "2026-01-05": 5,
+    "2026-01-06": 8,
+    "2026-01-07": 3,
+    "2026-01-08": 1,
+    "2026-01-09": 1,
+    "2026-01-10": 0,
+    "2026-01-11": 2,
+    "2026-01-12": 0,
+    "2026-01-13": 1,
+    "2026-01-14": 1,
+    "2026-01-15": 0,
+    "2026-01-16": 1,
+    "2026-01-17": 0,
+    "2026-01-18": 1,
+    "2026-01-19": 0,
+    "2026-01-20": 1,
+    "2026-01-21": 0,
+    "2026-01-22": 5,
+    "2026-01-23": 0,
+    "2026-01-24": 0,
+    "2026-01-25": 0,
+    "2026-01-26": 0,
+    "2026-01-27": 0,
+    "2026-01-28": 1,
+    "2026-01-29": 1,
+    "2026-01-30": 2,
+    "2026-01-31": 1,
+    "2026-02-01": 0,
+    "2026-02-02": 0,
+    "2026-02-03": 2,
+    "2026-02-04": 0,
+    "2026-02-05": 1,
+    "2026-02-06": 0,
+    "2026-02-07": 0,
+    "2026-02-08": 0,
+    "2026-02-09": 1,
+    "2026-02-10": 0,
+    "2026-02-11": 0,
+    "2026-02-12": 0,
+    "2026-02-13": 0,
+    "2026-02-14": 0,
+    "2026-02-15": 0,
+    "2026-02-16": 0,
+    "2026-02-17": 0,
+    "2026-02-18": 0,
+    "2026-02-19": 0,
+    "2026-02-20": 0,
+    "2026-02-21": 0,
+    "2026-02-22": 0,
+    "2026-02-23": 0,
+    "2026-02-24": 0,
+    "2026-02-25": 0,
+    "2026-02-26": 0,
+    "2026-02-27": 0,
+    "2026-02-28": 0,
+    "2026-03-01": 0,
+    "2026-03-02": 0,
+    "2026-03-03": 0,
+    "2026-03-04": 0,
+    "2026-03-05": 0,
+    "2026-03-06": 0,
+    "2026-03-07": 0,
+    "2026-03-08": 0,
+    "2026-03-09": 0,
+    "2026-03-10": 0,
+    "2026-03-11": 0,
+    "2026-03-12": 0,
+    "2026-03-13": 0,
+    "2026-03-14": 0,
+    "2026-03-15": 0,
+    "2026-03-16": 0,
+    "2026-03-17": 0,
+    "2026-03-18": 0,
+    "2026-03-19": 0,
+    "2026-03-20": 0,
+    "2026-03-21": 0,
+    "2026-03-22": 0,
+    "2026-03-23": 0,
+    "2026-03-24": 0,
+    "2026-03-25": 0,
+    "2026-03-26": 1,
+    "2026-03-27": 0,
+    "2026-03-28": 0,
+    "2026-03-29": 0,
+    "2026-03-30": 0,
+    "2026-03-31": 0,
+    "2026-04-01": 0,
+    "2026-04-02": 0,
+    "2026-04-03": 0,
+    "2026-04-04": 0,
+    "2026-04-05": 0,
+    "2026-04-06": 0,
+    "2026-04-07": 0,
+    "2026-04-08": 0,
+    "2026-04-09": 0,
+    "2026-04-10": 1,
+    "2026-04-11": 0,
+    "2026-04-12": 0,
+    "2026-04-13": 2,
+    "2026-04-14": 0,
+    "2026-04-15": 0,
+    "2026-04-16": 2,
+    "2026-04-17": 0,
+    "2026-04-18": 0,
+    "2026-04-19": 0,
+    "2026-04-20": 0,
+    "2026-04-21": 0,
+    "2026-04-22": 0,
+    "2026-04-23": 0,
+    "2026-04-24": 0,
+    "2026-04-25": 0,
+    "2026-04-26": 0,
+    "2026-04-27": 0,
+    "2026-04-28": 1,
+    "2026-04-29": 0,
+    "2026-04-30": 0,
+    "2026-05-01": 0,
+    "2026-05-02": 0,
+    "2026-05-03": 0,
+    "2026-05-04": 0,
+    "2026-05-05": 0,
+    "2026-05-06": 1,
+    "2026-05-07": 0,
+    "2026-05-08": 0,
+    "2026-05-09": 0,
+    "2026-05-10": 0,
+    "2026-05-11": 0,
+    "2026-05-12": 0,
+    "2026-05-13": 0,
+    "2026-05-14": 0,
+    "2026-05-15": 0,
+    "2026-05-16": 0,
+    "2026-05-17": 0,
+    "2026-05-18": 7,
+    "2026-05-19": 0,
+    "2026-05-20": 0,
+    "2026-05-21": 0,
+    "2026-05-22": 0,
+    "2026-05-23": 0,
+    "2026-05-24": 0,
+    "2026-05-25": 0,
+    "2026-05-26": 1,
+    "2026-05-27": 2,
+    "2026-05-28": 0,
+    "2026-05-29": 0,
+    "2026-05-30": 0,
+    "2026-05-31": 0,
+    "2026-06-01": 0,
+    "2026-06-02": 1,
+    "2026-06-03": 2,
+    "2026-06-04": 3,
+    "2026-06-05": 3,
+    "2026-06-06": 3,
+    "2026-06-07": 0,
+    "2026-06-08": 3,
+    "2026-06-09": 3,
+    "2026-06-10": 4,
+    "2026-06-11": 0,
+    "2026-06-12": 0,
+    "2026-06-13": 0,
+    "2026-06-14": 0,
+    "2026-06-15": 0,
+    "2026-06-16": 0,
+    "2026-06-17": 0,
+    "2026-06-18": 0,
+    "2026-06-19": 0,
+    "2026-06-20": 0,
+    "2026-06-21": 0,
+    "2026-06-22": 0,
+    "2026-06-23": 0,
+    "2026-06-24": 0,
+    "2026-06-25": 10,
+    "2026-06-26": 0,
+    "2026-06-27": 0,
+    "2026-06-28": 0,
+    "2026-06-29": 1,
+    "2026-06-30": 0,
+    "2026-07-01": 0,
+    "2026-07-02": 0,
+    "2026-07-03": 0,
+    "2026-07-04": 0,
+    "2026-07-05": 0,
+    "2026-07-06": 0,
+    "2026-07-07": 0,
+    "2026-07-08": 0,
+    "2026-07-09": 0,
+    "2026-07-10": 0,
+    "2026-07-11": 0,
+    "2026-07-12": 0,
+    "2026-07-13": 0,
+    "2026-07-14": 1,
+    "2026-07-15": 0,
+    "2026-07-16": 1,
+    "2026-07-17": 0,
+    "2026-07-18": 0,
+    "2026-07-19": 0,
+    "2026-07-20": 0,
+    "2026-07-21": 0,
+    "2026-07-22": 0,
+    "2026-07-23": 1,
+    "2026-07-24": 0,
+    "2026-07-25": 0,
+    "2026-07-26": 0,
+    "2026-07-27": 1,
+    "2026-07-28": 1,
+    "2026-07-29": 0,
+    "2026-07-30": 0,
+    "2026-07-31": 0,
+    "2026-08-01": 0,
+    "2026-08-02": 0,
+    "2026-08-03": 4,
+    "2026-08-04": 3,
+    "2026-08-05": 0,
+    "2026-08-06": 0,
+    "2026-08-07": 0,
+    "2026-08-08": 0,
+    "2026-08-09": 0,
+    "2026-08-10": 4,
+    "2026-08-11": 1,
+    "2026-08-12": 0,
+    "2026-08-13": 2,
+    "2026-08-14": 0,
+    "2026-08-15": 0,
+    "2026-08-16": 0,
+    "2026-08-17": 0,
+    "2026-08-18": 0,
+    "2026-08-19": 5
+  }
 }
