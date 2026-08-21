@@ -1,19 +1,19 @@
 {
   "schema_version": 4,
   "username": "yuvrajkarna2717",
-  "updated_at": "2026-08-20T03:48:34.673822Z",
-  "date": "2026-08-20",
+  "updated_at": "2026-08-21T03:51:37.596026Z",
+  "date": "2026-08-21",
   "period": {
-    "from": "2025-08-20",
-    "to": "2026-08-20"
+    "from": "2025-08-21",
+    "to": "2026-08-21"
   },
   "activity": {
     "commits": 167,
     "issues": 19,
     "pull_requests": 16,
     "pull_request_reviews": 0,
-    "total_contributions": 287,
-    "restricted_contributions": 75,
+    "total_contributions": 280,
+    "restricted_contributions": 68,
     "repositories_with_commits": 16
   },
   "repositories": {
@@ -313,7 +313,6 @@
     }
   ],
   "daily_activity": {
-    "2025-08-20": 7,
     "2025-08-21": 1,
     "2025-08-22": 0,
     "2025-08-23": 0,
@@ -678,6 +677,7 @@
     "2026-08-17": 0,
     "2026-08-18": 0,
     "2026-08-19": 13,
-    "2026-08-20": 0
+    "2026-08-20": 0,
+    "2026-08-21": 0
   }
 }
