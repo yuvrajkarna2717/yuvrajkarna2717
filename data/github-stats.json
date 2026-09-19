@@ -1,26 +1,26 @@
 {
   "schema_version": 4,
   "username": "yuvrajkarna2717",
-  "updated_at": "2026-09-12T11:04:10.185422Z",
-  "date": "2026-09-12",
+  "updated_at": "2026-09-19T11:19:22.180363Z",
+  "date": "2026-09-19",
   "period": {
-    "from": "2025-09-12",
-    "to": "2026-09-12"
+    "from": "2025-09-19",
+    "to": "2026-09-19"
   },
   "activity": {
-    "commits": 183,
+    "commits": 181,
     "issues": 19,
     "pull_requests": 19,
     "pull_request_reviews": 0,
     "total_contributions": 300,
-    "restricted_contributions": 69,
-    "repositories_with_commits": 17
+    "restricted_contributions": 71,
+    "repositories_with_commits": 15
   },
   "repositories": {
-    "accessible": 49,
-    "analyzed": 23,
-    "private_analyzed": 7,
-    "public_analyzed": 16,
+    "accessible": 50,
+    "analyzed": 22,
+    "private_analyzed": 8,
+    "public_analyzed": 14,
     "top": [
       {
         "name": "mora",
@@ -108,6 +108,11 @@
         "private": true
       },
       {
+        "name": "oops-example-python",
+        "commits": 1,
+        "private": true
+      },
+      {
         "name": "relational-database-design",
         "commits": 1,
         "private": false
@@ -126,29 +131,19 @@
         "name": "kestra",
         "commits": 1,
         "private": false
-      },
-      {
-        "name": "c-sharp",
-        "commits": 1,
-        "private": false
-      },
-      {
-        "name": "GameStore.Api",
-        "commits": 1,
-        "private": false
       }
     ]
   },
   "languages": {
     "percentage": {
-      "Java": 60.04,
-      "Vue": 15.61,
-      "TypeScript": 15.0,
-      "JavaScript": 5.29,
+      "Java": 59.9,
+      "Vue": 15.58,
+      "TypeScript": 14.96,
+      "JavaScript": 5.28,
       "C++": 1.26,
+      "Python": 0.78,
       "Jupyter": 0.78,
       "SCSS": 0.6,
-      "Python": 0.52,
       "PLpgSQL": 0.19,
       "HTML": 0.17,
       "MDX": 0.14,
@@ -156,7 +151,6 @@
       "Makefile": 0.09,
       "CSS": 0.08,
       "Dockerfile": 0.04,
-      "C#": 0.04,
       "Batchfile": 0.03
     }
   },
@@ -164,172 +158,160 @@
     {
       "technology": "JavaScript",
       "repositories": 10,
-      "percentage": 43.48
+      "percentage": 45.45
     },
     {
       "technology": "TypeScript",
       "repositories": 9,
-      "percentage": 39.13
+      "percentage": 40.91
     },
     {
       "technology": "CSS",
       "repositories": 7,
-      "percentage": 30.43
-    },
-    {
-      "technology": "HTML",
-      "repositories": 6,
-      "percentage": 26.09
-    },
-    {
-      "technology": "ESLint",
-      "repositories": 6,
-      "percentage": 26.09
+      "percentage": 31.82
     },
     {
       "technology": "GitHub Actions",
       "repositories": 6,
-      "percentage": 26.09
+      "percentage": 27.27
+    },
+    {
+      "technology": "HTML",
+      "repositories": 6,
+      "percentage": 27.27
+    },
+    {
+      "technology": "ESLint",
+      "repositories": 6,
+      "percentage": 27.27
     },
     {
       "technology": "React",
       "repositories": 5,
-      "percentage": 21.74
+      "percentage": 22.73
     },
     {
       "technology": "Docker",
       "repositories": 4,
-      "percentage": 17.39
+      "percentage": 18.18
     },
     {
       "technology": "Tailwind CSS",
       "repositories": 4,
-      "percentage": 17.39
+      "percentage": 18.18
+    },
+    {
+      "technology": "Python",
+      "repositories": 3,
+      "percentage": 13.64
     },
     {
       "technology": "Express",
       "repositories": 3,
-      "percentage": 13.04
+      "percentage": 13.64
     },
     {
       "technology": "Zod",
       "repositories": 3,
-      "percentage": 13.04
+      "percentage": 13.64
     },
     {
       "technology": "Dockerfile",
       "repositories": 3,
-      "percentage": 13.04
+      "percentage": 13.64
     },
     {
       "technology": "Shell",
       "repositories": 3,
-      "percentage": 13.04
+      "percentage": 13.64
     },
     {
       "technology": "Prettier",
       "repositories": 3,
-      "percentage": 13.04
+      "percentage": 13.64
     },
     {
       "technology": "Vite",
       "repositories": 3,
-      "percentage": 13.04
+      "percentage": 13.64
     },
     {
       "technology": "C++",
       "repositories": 2,
-      "percentage": 8.7
+      "percentage": 9.09
     },
     {
       "technology": "Mongoose",
       "repositories": 2,
-      "percentage": 8.7
+      "percentage": 9.09
     },
     {
       "technology": "Vitest",
       "repositories": 2,
-      "percentage": 8.7
-    },
-    {
-      "technology": "Python",
-      "repositories": 2,
-      "percentage": 8.7
+      "percentage": 9.09
     },
     {
       "technology": "Next.js",
       "repositories": 2,
-      "percentage": 8.7
-    },
-    {
-      "technology": "C#",
-      "repositories": 2,
-      "percentage": 8.7
+      "percentage": 9.09
     },
     {
       "technology": "Jupyter",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "MDX",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "PostgreSQL",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "Redis",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "Google Gemini API",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "Batchfile",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "Java",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "Makefile",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "PLpgSQL",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "SCSS",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     },
     {
       "technology": "Vue",
       "repositories": 1,
-      "percentage": 4.35
+      "percentage": 4.55
     }
   ],
   "daily_activity": {
-    "2025-09-12": 0,
-    "2025-09-13": 0,
-    "2025-09-14": 0,
-    "2025-09-15": 2,
-    "2025-09-16": 0,
-    "2025-09-17": 0,
-    "2025-09-18": 0,
     "2025-09-19": 0,
     "2025-09-20": 0,
     "2025-09-21": 0,
@@ -688,6 +670,13 @@
     "2026-09-09": 17,
     "2026-09-10": 0,
     "2026-09-11": 0,
-    "2026-09-12": 0
+    "2026-09-12": 0,
+    "2026-09-13": 0,
+    "2026-09-14": 2,
+    "2026-09-15": 0,
+    "2026-09-16": 0,
+    "2026-09-17": 0,
+    "2026-09-18": 0,
+    "2026-09-19": 0
   }
 }
