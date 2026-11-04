@@ -8,14 +8,18 @@
   <img src="https://img.shields.io/github/followers/yuvrajkarna2717?color=1a2c4a&labelColor=0d1420&style=flat-square&logo=github&logoColor=4A9EFF" alt="followers"/>
 </p>
 
+<p align="center">
+  <img src="https://gitlyy.vercel.app/api/contribution?username=yuvrajkarna2717&hide_border=true" width="100%" />
+</p>
+
 </div>
 
 ```text
 guest@yuvraj-dev:~$ whoami
 ──────────────────────────────────────────────────────────────────────
-  editor      vs code / pycharm / cursor / antigravity
+  editor      vs code / pycharm / kiro / antigravity
   shell       bash
-  languages   javascript · typescript · python · java · c++
+  languages   javascript · typescript · python · c++ 
   stack       react.js · next.js · node.js · fastapi
   focus       ai/ml · full-stack apps · dev tooling · open source
 ──────────────────────────────────────────────────────────────────────
@@ -47,69 +51,6 @@ Create one beautiful profile to showcase everything you do — in a single link.
 </tr>
 </table>
 
-</div>
-
-<!-- GITHUB_STATS_START -->
-
-<div align="center">
-
-<img src="./assets/github-stats.svg" alt="Yuvraj Karna's GitHub activity terminal" width="880" />
-
-<sub>auto-generated · refreshed 2026-09-19 11:20 UTC</sub>
-
-</div>
-
-<!-- GITHUB_STATS_END -->
-
-<details>
-<summary><b>▸ tech stack</b></summary>
-<br>
-
-<table align="center">
-<tr>
-<td><b>Languages</b></td>
-<td>
-  <img src="https://img.shields.io/badge/-JavaScript-1a2c4a?style=flat-square&labelColor=0d1420&logo=javascript&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-TypeScript-1a2c4a?style=flat-square&labelColor=0d1420&logo=typescript&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-Python-1a2c4a?style=flat-square&labelColor=0d1420&logo=python&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-Java-1a2c4a?style=flat-square&labelColor=0d1420&logo=openjdk&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-C++-1a2c4a?style=flat-square&labelColor=0d1420&logo=cplusplus&logoColor=4A9EFF" />
-</td>
-</tr>
-<tr>
-<td><b>Frontend</b></td>
-<td>
-  <img src="https://img.shields.io/badge/-React-1a2c4a?style=flat-square&labelColor=0d1420&logo=react&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-Next.js-1a2c4a?style=flat-square&labelColor=0d1420&logo=nextdotjs&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-Tailwind-1a2c4a?style=flat-square&labelColor=0d1420&logo=tailwind-css&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-HTML5-1a2c4a?style=flat-square&labelColor=0d1420&logo=html5&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-CSS3-1a2c4a?style=flat-square&labelColor=0d1420&logo=css3&logoColor=4A9EFF" />
-</td>
-</tr>
-<tr>
-<td><b>Backend</b></td>
-<td>
-  <img src="https://img.shields.io/badge/-Node.js-1a2c4a?style=flat-square&labelColor=0d1420&logo=nodedotjs&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-Express-1a2c4a?style=flat-square&labelColor=0d1420&logo=express&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-NestJS-1a2c4a?style=flat-square&labelColor=0d1420&logo=nestjs&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-FastAPI-1a2c4a?style=flat-square&labelColor=0d1420&logo=fastapi&logoColor=4A9EFF" />
-</td>
-</tr>
-<tr>
-<td><b>Database</b></td>
-<td>
-  <img src="https://img.shields.io/badge/-MongoDB-1a2c4a?style=flat-square&labelColor=0d1420&logo=mongodb&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-MySQL-1a2c4a?style=flat-square&labelColor=0d1420&logo=mysql&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-Redis-1a2c4a?style=flat-square&labelColor=0d1420&logo=redis&logoColor=4A9EFF" />
-  <img src="https://img.shields.io/badge/-Firebase-1a2c4a?style=flat-square&labelColor=0d1420&logo=firebase&logoColor=4A9EFF" />
-</td>
-</tr>
-</table>
-
-</details>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=yuvrajkarna2717&background=070B12&border=1F4068&stroke=1F4068&ring=4A9EFF&fire=3DDC84&currStreakNum=4A9EFF&sideNums=7DD3FF&currStreakLabel=4A9EFF&sideLabels=5B6B85&dates=1F4068&hide_border=false" alt="GitHub Streak" height="180"/>
 </div>
 
 ## connect
