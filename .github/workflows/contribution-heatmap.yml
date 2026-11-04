@@ -1,0 +1,50 @@
+name: Update contribution heatmap
+
+on:
+  schedule:
+    # Daily at 06:17 UTC. GitHub may delay scheduled workflows during high load.
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-heatmap
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Generate SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.CONTRIBUTION_TOKEN }}
+          # Leave CONTRIBUTION_YEAR unset to use the current UTC year.
+          OUTPUT_FILE: assets/contribution-heatmap.svg
+        run: npm run generate
+
+      - name: Commit updated SVG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add assets/contribution-heatmap.svg
+
+          if git diff --cached --quiet; then
+            echo "Heatmap has not changed."
+            exit 0
+          fi
+
+          git commit -m "chore: update GitHub contribution heatmap"
+          # The stats workflow also pushes to this branch; rebase to avoid rejected pushes.
+          git pull --rebase
+          git push

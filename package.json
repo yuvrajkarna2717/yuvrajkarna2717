@@ -1,0 +1,13 @@
+{
+  "name": "github-contribution-heatmap",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Generate a GitHub profile contribution heatmap SVG from the GitHub GraphQL API.",
+  "scripts": {
+    "generate": "node scripts/generate-heatmap.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
