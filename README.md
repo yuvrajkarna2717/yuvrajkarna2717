@@ -2,6 +2,15 @@
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1200&color=4A9EFF&background=00000000&center=true&vCenter=true&width=560&height=50&lines=%24+whoami;Yuvraj+Karna;Software+Engineer+%7C+AI/ML" alt="typing intro" />
 
+<p align="center">
+  <img
+    src="./artascii-image.svg"
+    alt="ASCII art portrait"
+    width="40%"
+    height="40%"
+  />
+</p>
+
 <p>
   <img src="https://visitor-badge.laobi.icu/badge?page_id=yuvrajkarna2717&color=1a2c4a" alt="visitors"/>
   <img src="https://komarev.com/ghpvc/?username=yuvrajkarna2717&color=1a2c4a&style=flat-square" alt="views"/>
